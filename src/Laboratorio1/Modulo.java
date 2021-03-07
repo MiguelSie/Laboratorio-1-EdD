@@ -49,6 +49,18 @@ public class Modulo extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
+        ModuloCitas = new javax.swing.JFrame();
+        consultaVet = new javax.swing.JRadioButton();
+        control = new javax.swing.JRadioButton();
+        despa = new javax.swing.JRadioButton();
+        vacun = new javax.swing.JRadioButton();
+        guard = new javax.swing.JRadioButton();
+        radio = new javax.swing.JRadioButton();
+        baño = new javax.swing.JRadioButton();
+        solicitarBtn = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        modifBtn = new javax.swing.JButton();
+        citasOp = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -157,16 +169,28 @@ public class Modulo extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Cedula ", "Nombre perro", "Raza perro", "Color perro", "Nacimiento"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setResizable(false);
+            jTable1.getColumnModel().getColumn(4).setResizable(false);
+        }
 
         jButton3.setText("Eliminar");
 
@@ -211,6 +235,83 @@ public class Modulo extends javax.swing.JFrame {
         ActualizarDatosLayout.setVerticalGroup(
             ActualizarDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        citasOp.add(consultaVet);
+        consultaVet.setText("Consulta Veterinario $60.000 1h");
+
+        citasOp.add(control);
+        control.setText("Control $10.000 1/2h");
+
+        citasOp.add(despa);
+        despa.setText("Desparasitación $40.000 1/2h");
+
+        citasOp.add(vacun);
+        vacun.setText("Vacunación $35.000 1/2h");
+
+        citasOp.add(guard);
+        guard.setText("Guardería $35.000 1 día");
+
+        citasOp.add(radio);
+        radio.setText("Radiología $100.000 1h");
+
+        citasOp.add(baño);
+        baño.setText("Baño $25.000 2h");
+
+        solicitarBtn.setText("Solicitar");
+
+        jButton4.setText("Cancelar una cita");
+
+        modifBtn.setText("Modificar una cita");
+
+        org.jdesktop.layout.GroupLayout ModuloCitasLayout = new org.jdesktop.layout.GroupLayout(ModuloCitas.getContentPane());
+        ModuloCitas.getContentPane().setLayout(ModuloCitasLayout);
+        ModuloCitasLayout.setHorizontalGroup(
+            ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(ModuloCitasLayout.createSequentialGroup()
+                .addContainerGap()
+                .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(control)
+                    .add(consultaVet)
+                    .add(despa)
+                    .add(vacun)
+                    .add(guard)
+                    .add(radio)
+                    .add(baño)
+                    .add(ModuloCitasLayout.createSequentialGroup()
+                        .add(21, 21, 21)
+                        .add(solicitarBtn)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 18, Short.MAX_VALUE)
+                .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, modifBtn)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jButton4))
+                .addContainerGap())
+        );
+        ModuloCitasLayout.setVerticalGroup(
+            ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(ModuloCitasLayout.createSequentialGroup()
+                .addContainerGap()
+                .add(consultaVet)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(control)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(despa)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(vacun)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(guard)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(radio)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(ModuloCitasLayout.createSequentialGroup()
+                        .add(baño)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(solicitarBtn)
+                            .add(modifBtn)))
+                    .add(jButton4))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -333,17 +434,25 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JFrame ActualizarDatos;
     private javax.swing.JButton Admin;
     private javax.swing.JButton Cliente;
+    private javax.swing.JFrame ModuloCitas;
     private javax.swing.JFrame ModuloCliente;
     private javax.swing.JButton Veterinario;
     private javax.swing.JButton añadirBtn;
+    private javax.swing.JRadioButton baño;
     private javax.swing.JButton buscarBtn;
     private javax.swing.JTextField ced;
     private javax.swing.JTextField cedulaBuscar;
+    private javax.swing.ButtonGroup citasOp;
     private javax.swing.JTextField colorPer;
+    private javax.swing.JRadioButton consultaVet;
+    private javax.swing.JRadioButton control;
+    private javax.swing.JRadioButton despa;
     private com.toedter.calendar.JDateChooser fechaPer;
+    private javax.swing.JRadioButton guard;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -357,8 +466,12 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton modifBtn;
     private javax.swing.JTextField nomPer;
+    private javax.swing.JRadioButton radio;
     private javax.swing.JTextField razaPer;
+    private javax.swing.JButton solicitarBtn;
+    private javax.swing.JRadioButton vacun;
     // End of variables declaration//GEN-END:variables
 
 }

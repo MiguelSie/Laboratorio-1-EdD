@@ -235,12 +235,45 @@
                 <Component class="javax.swing.JTable" name="jTable1">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="4">
-                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                      <Table columnCount="5" rowCount="0">
+                        <Column editable="true" title="Cedula " type="java.lang.Integer"/>
+                        <Column editable="true" title="Nombre perro" type="java.lang.String"/>
+                        <Column editable="true" title="Raza perro" type="java.lang.String"/>
+                        <Column editable="true" title="Color perro" type="java.lang.String"/>
+                        <Column editable="true" title="Nacimiento" type="java.lang.String"/>
                       </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -255,6 +288,143 @@
         </Container>
       </SubComponents>
     </Container>
+    <Container class="javax.swing.JFrame" name="ModuloCitas">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="control" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="consultaVet" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="despa" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="vacun" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="guard" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="radio" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="baño" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
+                          <Component id="solicitarBtn" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="modifBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton4" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="consultaVet" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="control" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="despa" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="vacun" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="guard" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="radio" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="baño" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="solicitarBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="modifBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="32" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JRadioButton" name="consultaVet">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="citasOp"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Consulta Veterinario $60.000 1h"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="control">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="citasOp"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Control $10.000 1/2h"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="despa">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="citasOp"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Desparasitaci&#xf3;n $40.000 1/2h"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="vacun">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="citasOp"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Vacunaci&#xf3;n $35.000 1/2h"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="guard">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="citasOp"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Guarder&#xed;a $35.000 1 d&#xed;a"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="radio">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="citasOp"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Radiolog&#xed;a $100.000 1h"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="ba&#xf1;o">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="citasOp"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ba&#xf1;o $25.000 2h"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="solicitarBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Solicitar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cancelar una cita"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="modifBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Modificar una cita"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.ButtonGroup" name="citasOp">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
