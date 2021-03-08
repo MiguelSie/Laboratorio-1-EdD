@@ -58,9 +58,18 @@ public class Modulo extends javax.swing.JFrame {
         radio = new javax.swing.JRadioButton();
         baño = new javax.swing.JRadioButton();
         solicitarBtn = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         modifBtn = new javax.swing.JButton();
         citasOp = new javax.swing.ButtonGroup();
+        ModificarCitasCliente = new javax.swing.JFrame();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        cancelarCitaBtn = new javax.swing.JButton();
+        ModificarCitaBtn = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jFrame1 = new javax.swing.JFrame();
+        jPanel5 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -260,9 +269,7 @@ public class Modulo extends javax.swing.JFrame {
 
         solicitarBtn.setText("Solicitar");
 
-        jButton4.setText("Cancelar una cita");
-
-        modifBtn.setText("Modificar una cita");
+        modifBtn.setText("Cancelar o modificar una cita");
 
         org.jdesktop.layout.GroupLayout ModuloCitasLayout = new org.jdesktop.layout.GroupLayout(ModuloCitas.getContentPane());
         ModuloCitas.getContentPane().setLayout(ModuloCitasLayout);
@@ -271,21 +278,22 @@ public class Modulo extends javax.swing.JFrame {
             .add(ModuloCitasLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(control)
-                    .add(consultaVet)
-                    .add(despa)
-                    .add(vacun)
-                    .add(guard)
-                    .add(radio)
-                    .add(baño)
+                    .add(ModuloCitasLayout.createSequentialGroup()
+                        .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(baño)
+                            .add(control)
+                            .add(consultaVet)
+                            .add(despa)
+                            .add(vacun)
+                            .add(guard)
+                            .add(radio))
+                        .addContainerGap(132, Short.MAX_VALUE))
                     .add(ModuloCitasLayout.createSequentialGroup()
                         .add(21, 21, 21)
-                        .add(solicitarBtn)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 18, Short.MAX_VALUE)
-                .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, modifBtn)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jButton4))
-                .addContainerGap())
+                        .add(solicitarBtn)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(modifBtn)
+                        .add(24, 24, 24))))
         );
         ModuloCitasLayout.setVerticalGroup(
             ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -303,15 +311,110 @@ public class Modulo extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(radio)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(ModuloCitasLayout.createSequentialGroup()
-                        .add(baño)
+                .add(baño)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(solicitarBtn)
+                    .add(modifBtn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 35, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        jLabel9.setText("Cédula");
+
+        cancelarCitaBtn.setText("Cancelar");
+
+        ModificarCitaBtn.setText("Modificar");
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Cedula", "Servicio", "Precio", "Fecha", "Hora"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable2);
+        if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(0).setResizable(false);
+            jTable2.getColumnModel().getColumn(1).setResizable(false);
+            jTable2.getColumnModel().getColumn(2).setResizable(false);
+            jTable2.getColumnModel().getColumn(3).setResizable(false);
+            jTable2.getColumnModel().getColumn(4).setResizable(false);
+        }
+
+        org.jdesktop.layout.GroupLayout jPanel4Layout = new org.jdesktop.layout.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel4Layout.createSequentialGroup()
+                .add(jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel4Layout.createSequentialGroup()
+                        .add(15, 15, 15)
+                        .add(jLabel9)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(solicitarBtn)
-                            .add(modifBtn)))
-                    .add(jButton4))
-                .addContainerGap(32, Short.MAX_VALUE))
+                        .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 67, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 125, Short.MAX_VALUE)
+                        .add(cancelarCitaBtn)
+                        .add(18, 18, 18)
+                        .add(ModificarCitaBtn))
+                    .add(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel4Layout.createSequentialGroup()
+                .add(19, 19, 19)
+                .add(jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel9)
+                    .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(cancelarCitaBtn)
+                    .add(ModificarCitaBtn))
+                .add(18, 18, 18)
+                .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        org.jdesktop.layout.GroupLayout ModificarCitasClienteLayout = new org.jdesktop.layout.GroupLayout(ModificarCitasCliente.getContentPane());
+        ModificarCitasCliente.getContentPane().setLayout(ModificarCitasClienteLayout);
+        ModificarCitasClienteLayout.setHorizontalGroup(
+            ModificarCitasClienteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ModificarCitasClienteLayout.setVerticalGroup(
+            ModificarCitasClienteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        org.jdesktop.layout.GroupLayout jPanel5Layout = new org.jdesktop.layout.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 400, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 300, Short.MAX_VALUE)
+        );
+
+        org.jdesktop.layout.GroupLayout jFrame1Layout = new org.jdesktop.layout.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -434,12 +537,15 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JFrame ActualizarDatos;
     private javax.swing.JButton Admin;
     private javax.swing.JButton Cliente;
+    private javax.swing.JButton ModificarCitaBtn;
+    private javax.swing.JFrame ModificarCitasCliente;
     private javax.swing.JFrame ModuloCitas;
     private javax.swing.JFrame ModuloCliente;
     private javax.swing.JButton Veterinario;
     private javax.swing.JButton añadirBtn;
     private javax.swing.JRadioButton baño;
     private javax.swing.JButton buscarBtn;
+    private javax.swing.JButton cancelarCitaBtn;
     private javax.swing.JTextField ced;
     private javax.swing.JTextField cedulaBuscar;
     private javax.swing.ButtonGroup citasOp;
@@ -452,7 +558,7 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -461,11 +567,17 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton modifBtn;
     private javax.swing.JTextField nomPer;
     private javax.swing.JRadioButton radio;
