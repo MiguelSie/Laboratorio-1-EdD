@@ -795,17 +795,16 @@ public class Modulo extends javax.swing.JFrame {
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel1Layout.createSequentialGroup()
                         .add(87, 87, 87)
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel1)
-                            .add(jPanel1Layout.createSequentialGroup()
-                                .add(53, 53, 53)
-                                .add(jLabel2))))
+                        .add(jLabel1))
                     .add(jPanel1Layout.createSequentialGroup()
                         .add(126, 126, 126)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                             .add(Veterinario, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .add(Admin, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                            .add(Cliente, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .add(Cliente, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .add(jLabel2)
+                                .add(11, 11, 11)))))
                 .addContainerGap(100, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -922,6 +921,7 @@ public class Modulo extends javax.swing.JFrame {
         }
         
         String dia= Integer.toString(fechaCliente.getCalendar().get(Calendar.DAY_OF_MONTH));
+        
         
     }//GEN-LAST:event_añadirBtnActionPerformed
 
