@@ -15,8 +15,11 @@ public class Modulo extends javax.swing.JFrame {
     /** Creates new form Modulo */
     public Modulo() {
         initComponents();
+        setResizable(false);
+        setLocation(720,360);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-
+    
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -39,8 +42,8 @@ public class Modulo extends javax.swing.JFrame {
         nomPer = new javax.swing.JTextField();
         ced = new javax.swing.JTextField();
         añadirBtn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        actualizarDatos = new javax.swing.JButton();
+        moduloCitas = new javax.swing.JButton();
         ActualizarDatos = new javax.swing.JFrame();
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -68,14 +71,41 @@ public class Modulo extends javax.swing.JFrame {
         ModificarCitaBtn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jFrame1 = new javax.swing.JFrame();
-        jPanel5 = new javax.swing.JPanel();
+        ModuloVeterinario = new javax.swing.JFrame();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        botonAgenda = new javax.swing.JButton();
+        botonHisClinica = new javax.swing.JButton();
+        agendaVet = new javax.swing.JFrame();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        botonRegresar = new javax.swing.JButton();
+        historiaClinica = new javax.swing.JFrame();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        añadirInfoClinica = new javax.swing.JButton();
+        botonHisClinicas = new javax.swing.JButton();
+        regresarVet = new javax.swing.JButton();
+        datosClinicos = new javax.swing.JFrame();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        botonRegresarClinica = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Cliente = new javax.swing.JButton();
         Veterinario = new javax.swing.JButton();
         Admin = new javax.swing.JButton();
+
+        jPanel2.setToolTipText("");
 
         jLabel3.setText("Cédula");
 
@@ -91,9 +121,19 @@ public class Modulo extends javax.swing.JFrame {
 
         añadirBtn.setText("Añadir");
 
-        jButton1.setText("Actualizar datos");
+        actualizarDatos.setText("Actualizar datos");
+        actualizarDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarDatosActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Módulo de citas");
+        moduloCitas.setText("Módulo de citas");
+        moduloCitas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moduloCitasActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -116,21 +156,21 @@ public class Modulo extends javax.swing.JFrame {
                             .add(jLabel7))
                         .add(18, 18, 18)))
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(fechaPer, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                    .add(fechaPer, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(ced)
                     .add(nomPer)
                     .add(razaPer)
                     .add(colorPer))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 65, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jButton1)
-                    .add(jButton2))
+                    .add(actualizarDatos)
+                    .add(moduloCitas))
                 .add(26, 26, 26))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel2Layout.createSequentialGroup()
-                .add(27, 27, 27)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel3)
                     .add(ced, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
@@ -138,7 +178,7 @@ public class Modulo extends javax.swing.JFrame {
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel4)
                     .add(nomPer, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(actualizarDatos, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(28, 28, 28)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel5)
@@ -147,29 +187,25 @@ public class Modulo extends javax.swing.JFrame {
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel6)
                     .add(colorPer, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(moduloCitas, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(25, 25, 25)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(jLabel7)
                     .add(fechaPer, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(30, 30, 30)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(añadirBtn)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .add(17, 17, 17))
         );
 
         org.jdesktop.layout.GroupLayout ModuloClienteLayout = new org.jdesktop.layout.GroupLayout(ModuloCliente.getContentPane());
         ModuloCliente.getContentPane().setLayout(ModuloClienteLayout);
         ModuloClienteLayout.setHorizontalGroup(
             ModuloClienteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(ModuloClienteLayout.createSequentialGroup()
-                .add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(0, 0, Short.MAX_VALUE))
+            .add(jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         ModuloClienteLayout.setVerticalGroup(
             ModuloClienteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(ModuloClienteLayout.createSequentialGroup()
-                .add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(0, 0, Short.MAX_VALUE))
+            .add(jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jLabel8.setText("Ingrese su cédula");
@@ -216,7 +252,7 @@ public class Modulo extends javax.swing.JFrame {
                         .add(cedulaBuscar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 69, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(18, 18, 18)
                         .add(buscarBtn)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 90, Short.MAX_VALUE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 150, Short.MAX_VALUE)
                         .add(jButton3))
                     .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .add(26, 26, 26))
@@ -232,7 +268,7 @@ public class Modulo extends javax.swing.JFrame {
                     .add(jButton3))
                 .add(18, 18, 18)
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         org.jdesktop.layout.GroupLayout ActualizarDatosLayout = new org.jdesktop.layout.GroupLayout(ActualizarDatos.getContentPane());
@@ -287,7 +323,7 @@ public class Modulo extends javax.swing.JFrame {
                             .add(vacun)
                             .add(guard)
                             .add(radio))
-                        .addContainerGap(132, Short.MAX_VALUE))
+                        .addContainerGap(134, Short.MAX_VALUE))
                     .add(ModuloCitasLayout.createSequentialGroup()
                         .add(21, 21, 21)
                         .add(solicitarBtn)
@@ -316,7 +352,7 @@ public class Modulo extends javax.swing.JFrame {
                 .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(solicitarBtn)
                     .add(modifBtn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 35, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jLabel9.setText("Cédula");
@@ -395,29 +431,241 @@ public class Modulo extends javax.swing.JFrame {
             .add(jPanel4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        org.jdesktop.layout.GroupLayout jPanel5Layout = new org.jdesktop.layout.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 400, Short.MAX_VALUE)
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Veterinario");
+        jLabel14.setToolTipText("");
+        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        botonAgenda.setText("Agenda");
+        botonAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgendaActionPerformed(evt);
+            }
+        });
+
+        botonHisClinica.setText("Historias Clinicas");
+        botonHisClinica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonHisClinicaActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout jPanel6Layout = new org.jdesktop.layout.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel6Layout.createSequentialGroup()
+                .add(64, 64, 64)
+                .add(jLabel14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 270, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(67, Short.MAX_VALUE))
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                    .add(botonHisClinica, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(botonAgenda, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .add(138, 138, 138))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 300, Short.MAX_VALUE)
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel6Layout.createSequentialGroup()
+                .add(33, 33, 33)
+                .add(jLabel14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 40, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(18, 18, 18)
+                .add(botonAgenda, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 34, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(18, 18, 18)
+                .add(botonHisClinica, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        org.jdesktop.layout.GroupLayout jFrame1Layout = new org.jdesktop.layout.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        org.jdesktop.layout.GroupLayout ModuloVeterinarioLayout = new org.jdesktop.layout.GroupLayout(ModuloVeterinario.getContentPane());
+        ModuloVeterinario.getContentPane().setLayout(ModuloVeterinarioLayout);
+        ModuloVeterinarioLayout.setHorizontalGroup(
+            ModuloVeterinarioLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        ModuloVeterinarioLayout.setVerticalGroup(
+            ModuloVeterinarioLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Cedula", "Servicio", "Precio", "Fecha", "Hora"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
+
+        botonRegresar.setText("Regresar");
+        botonRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegresarActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout agendaVetLayout = new org.jdesktop.layout.GroupLayout(agendaVet.getContentPane());
+        agendaVet.getContentPane().setLayout(agendaVetLayout);
+        agendaVetLayout.setHorizontalGroup(
+            agendaVetLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, agendaVetLayout.createSequentialGroup()
+                .addContainerGap()
+                .add(agendaVetLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(agendaVetLayout.createSequentialGroup()
+                        .add(0, 0, Short.MAX_VALUE)
+                        .add(botonRegresar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 99, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jScrollPane3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        agendaVetLayout.setVerticalGroup(
+            agendaVetLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(agendaVetLayout.createSequentialGroup()
+                .addContainerGap()
+                .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 275, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(botonRegresar, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jLabel10.setText("Fecha de la Consulta");
+        jLabel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel11.setText("Cedula");
+        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel12.setText("Nombre del Perro");
+        jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel13.setText("Diagnóstico");
+        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel15.setText("Prescripción");
+        jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        añadirInfoClinica.setText("Añadir información");
+
+        botonHisClinicas.setText("Historias Clinicas");
+        botonHisClinicas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonHisClinicasActionPerformed(evt);
+            }
+        });
+
+        regresarVet.setText("Regresar");
+        regresarVet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                regresarVetActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout historiaClinicaLayout = new org.jdesktop.layout.GroupLayout(historiaClinica.getContentPane());
+        historiaClinica.getContentPane().setLayout(historiaClinicaLayout);
+        historiaClinicaLayout.setHorizontalGroup(
+            historiaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(historiaClinicaLayout.createSequentialGroup()
+                .addContainerGap()
+                .add(historiaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jTextField3)
+                    .add(jTextField2)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, historiaClinicaLayout.createSequentialGroup()
+                        .add(0, 0, Short.MAX_VALUE)
+                        .add(botonHisClinicas))
+                    .add(historiaClinicaLayout.createSequentialGroup()
+                        .add(historiaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jLabel15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(historiaClinicaLayout.createSequentialGroup()
+                                .add(historiaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                                    .add(jLabel12, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(jLabel10, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                                    .add(jLabel11, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(jLabel13, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(historiaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                    .add(jTextField4)
+                                    .add(jTextField5)
+                                    .add(jDateChooser1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)))
+                            .add(añadirInfoClinica, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 141, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 33, Short.MAX_VALUE)
+                        .add(regresarVet, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 126, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        historiaClinicaLayout.setVerticalGroup(
+            historiaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(historiaClinicaLayout.createSequentialGroup()
+                .add(27, 27, 27)
+                .add(historiaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(historiaClinicaLayout.createSequentialGroup()
+                        .add(historiaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                            .add(jLabel10, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(jDateChooser1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
+                        .add(33, 33, 33))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, historiaClinicaLayout.createSequentialGroup()
+                        .add(botonHisClinicas, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 52, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(6, 6, 6)))
+                .add(historiaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jLabel11, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, historiaClinicaLayout.createSequentialGroup()
+                        .add(jTextField4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(4, 4, 4)))
+                .add(18, 18, 18)
+                .add(historiaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel12, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 32, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jTextField5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(18, 18, 18)
+                .add(jLabel13, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 84, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jLabel15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jTextField3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 11, Short.MAX_VALUE)
+                .add(historiaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(añadirInfoClinica, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(regresarVet, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Fecha", "Cedula", "Nombre del Perro", "Diagnóstico", "Descripción"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable4);
+
+        botonRegresarClinica.setText("Regresar");
+        botonRegresarClinica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegresarClinicaActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout datosClinicosLayout = new org.jdesktop.layout.GroupLayout(datosClinicos.getContentPane());
+        datosClinicos.getContentPane().setLayout(datosClinicosLayout);
+        datosClinicosLayout.setHorizontalGroup(
+            datosClinicosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, datosClinicosLayout.createSequentialGroup()
+                .add(0, 0, Short.MAX_VALUE)
+                .add(botonRegresarClinica, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 97, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+            .add(jScrollPane4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 592, Short.MAX_VALUE)
+        );
+        datosClinicosLayout.setVerticalGroup(
+            datosClinicosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(datosClinicosLayout.createSequentialGroup()
+                .add(jScrollPane4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 256, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(botonRegresarClinica, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setMaximumSize(new java.awt.Dimension(3367, 3367));
 
         jLabel1.setText("Módulo de administración Veterinaria");
 
@@ -458,7 +706,7 @@ public class Modulo extends javax.swing.JFrame {
                             .add(Veterinario, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .add(Admin, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                             .add(Cliente, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -491,12 +739,84 @@ public class Modulo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void VeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeterinarioActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        ModuloVeterinario.setSize(400,400);
+        ModuloVeterinario.setResizable(false);
+        ModuloVeterinario.setLocation(720,360);
+        ModuloVeterinario.setVisible(true);
     }//GEN-LAST:event_VeterinarioActionPerformed
 
     private void ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteActionPerformed
+        this.setVisible(false);
+        ModuloCliente.setSize(410,440);
+        ModuloCliente.setResizable(false);
+        ModuloCliente.setLocation(720, 360);
         ModuloCliente.setVisible(true);
     }//GEN-LAST:event_ClienteActionPerformed
+
+    private void actualizarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarDatosActionPerformed
+        this.setVisible(false);
+        ActualizarDatos.setSize(540,405);
+        ActualizarDatos.setResizable(false);
+        ActualizarDatos.setLocation(720,360);
+        ActualizarDatos.setVisible(true);
+    }//GEN-LAST:event_actualizarDatosActionPerformed
+
+    private void moduloCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moduloCitasActionPerformed
+        this.setVisible(false);
+        ModuloCitas.setSize(355,345);
+        ModuloCitas.setResizable(false);
+        ModuloCitas.setLocation(720,360);
+        ModuloCitas.setVisible(true);
+    }//GEN-LAST:event_moduloCitasActionPerformed
+
+    private void botonAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgendaActionPerformed
+        this.setVisible(false);
+        agendaVet.setSize(400,400);
+        agendaVet.setResizable(false);
+        agendaVet.setLocation(720,360);
+        agendaVet.setVisible(true);
+    }//GEN-LAST:event_botonAgendaActionPerformed
+
+    private void botonHisClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHisClinicaActionPerformed
+        this.setVisible(false);
+        datosClinicos.setSize(400,400);
+        datosClinicos.setResizable(false);
+        datosClinicos.setLocation(720,360);
+        datosClinicos.setVisible(true);
+    }//GEN-LAST:event_botonHisClinicaActionPerformed
+
+    private void botonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarActionPerformed
+        this.setVisible(false);
+        ModuloVeterinario.setSize(400,400);
+        ModuloVeterinario.setResizable(false);
+        ModuloVeterinario.setLocation(720,360);
+        ModuloVeterinario.setVisible(true);
+    }//GEN-LAST:event_botonRegresarActionPerformed
+
+    private void botonHisClinicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHisClinicasActionPerformed
+        this.setVisible(false);
+        datosClinicos.setSize(400,400);
+        datosClinicos.setResizable(false);
+        datosClinicos.setLocation(720,360);
+        datosClinicos.setVisible(true);
+    }//GEN-LAST:event_botonHisClinicasActionPerformed
+
+    private void regresarVetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarVetActionPerformed
+        this.setVisible(false);
+        ModuloVeterinario.setSize(400,400);
+        ModuloVeterinario.setResizable(false);
+        ModuloVeterinario.setLocation(720,360);
+        ModuloVeterinario.setVisible(true);
+    }//GEN-LAST:event_regresarVetActionPerformed
+
+    private void botonRegresarClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarClinicaActionPerformed
+        this.setVisible(false);
+        historiaClinica.setSize(400,400);
+        historiaClinica.setResizable(false);
+        historiaClinica.setLocation(720,360);
+        historiaClinica.setVisible(true);
+    }//GEN-LAST:event_botonRegresarClinicaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -532,7 +852,7 @@ public class Modulo extends javax.swing.JFrame {
             }
         });
     }
-
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame ActualizarDatos;
     private javax.swing.JButton Admin;
@@ -541,9 +861,18 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JFrame ModificarCitasCliente;
     private javax.swing.JFrame ModuloCitas;
     private javax.swing.JFrame ModuloCliente;
+    private javax.swing.JFrame ModuloVeterinario;
     private javax.swing.JButton Veterinario;
+    private javax.swing.JButton actualizarDatos;
+    private javax.swing.JFrame agendaVet;
     private javax.swing.JButton añadirBtn;
+    private javax.swing.JButton añadirInfoClinica;
     private javax.swing.JRadioButton baño;
+    private javax.swing.JButton botonAgenda;
+    private javax.swing.JButton botonHisClinica;
+    private javax.swing.JButton botonHisClinicas;
+    private javax.swing.JButton botonRegresar;
+    private javax.swing.JButton botonRegresarClinica;
     private javax.swing.JButton buscarBtn;
     private javax.swing.JButton cancelarCitaBtn;
     private javax.swing.JTextField ced;
@@ -552,14 +881,20 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JTextField colorPer;
     private javax.swing.JRadioButton consultaVet;
     private javax.swing.JRadioButton control;
+    private javax.swing.JFrame datosClinicos;
     private javax.swing.JRadioButton despa;
     private com.toedter.calendar.JDateChooser fechaPer;
     private javax.swing.JRadioButton guard;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JFrame historiaClinica;
     private javax.swing.JButton jButton3;
-    private javax.swing.JFrame jFrame1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -572,16 +907,26 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     private javax.swing.JButton modifBtn;
+    private javax.swing.JButton moduloCitas;
     private javax.swing.JTextField nomPer;
     private javax.swing.JRadioButton radio;
     private javax.swing.JTextField razaPer;
+    private javax.swing.JButton regresarVet;
     private javax.swing.JButton solicitarBtn;
     private javax.swing.JRadioButton vacun;
     // End of variables declaration//GEN-END:variables
