@@ -6,10 +6,20 @@
 
 package Laboratorio1;
 
-/**
- *
- * @author migue
- */
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Calendar;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableModel;
+
+
 public class Modulo extends javax.swing.JFrame {
 
     /** Creates new form Modulo */
@@ -73,13 +83,11 @@ public class Modulo extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         ModuloVeterinario = new javax.swing.JFrame();
         jPanel6 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
         botonAgenda = new javax.swing.JButton();
         botonHisClinica = new javax.swing.JButton();
         agendaVet = new javax.swing.JFrame();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
-        botonRegresar = new javax.swing.JButton();
         historiaClinica = new javax.swing.JFrame();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -93,11 +101,21 @@ public class Modulo extends javax.swing.JFrame {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         añadirInfoClinica = new javax.swing.JButton();
         botonHisClinicas = new javax.swing.JButton();
-        regresarVet = new javax.swing.JButton();
         datosClinicos = new javax.swing.JFrame();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
-        botonRegresarClinica = new javax.swing.JButton();
+        ModuloAdmin = new javax.swing.JFrame();
+        jPanel5 = new javax.swing.JPanel();
+        genFact = new javax.swing.JButton();
+        gestAgenda = new javax.swing.JButton();
+        agendaAdmin = new javax.swing.JFrame();
+        jPanel7 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        jLabel14 = new javax.swing.JLabel();
+        cedAdmin = new javax.swing.JTextField();
+        elimBtnAdmin = new javax.swing.JButton();
+        asigBtnAdmin = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -120,6 +138,11 @@ public class Modulo extends javax.swing.JFrame {
         ced.setToolTipText("");
 
         añadirBtn.setText("Añadir");
+        añadirBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                añadirBtnActionPerformed(evt);
+            }
+        });
 
         actualizarDatos.setText("Actualizar datos");
         actualizarDatos.addActionListener(new java.awt.event.ActionListener() {
@@ -156,11 +179,11 @@ public class Modulo extends javax.swing.JFrame {
                             .add(jLabel7))
                         .add(18, 18, 18)))
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(fechaPer, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(ced)
                     .add(nomPer)
                     .add(razaPer)
-                    .add(colorPer))
+                    .add(colorPer)
+                    .add(fechaPer, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(actualizarDatos)
@@ -431,12 +454,6 @@ public class Modulo extends javax.swing.JFrame {
             .add(jPanel4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Veterinario");
-        jLabel14.setToolTipText("");
-        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
         botonAgenda.setText("Agenda");
         botonAgenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -456,37 +473,33 @@ public class Modulo extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel6Layout.createSequentialGroup()
-                .add(64, 64, 64)
-                .add(jLabel14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 270, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                    .add(botonHisClinica, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(botonAgenda, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .add(138, 138, 138))
+                .add(100, 100, 100)
+                .add(jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(botonHisClinica)
+                    .add(botonAgenda, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 133, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel6Layout.createSequentialGroup()
-                .add(33, 33, 33)
-                .add(jLabel14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 40, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(18, 18, 18)
+                .add(55, 55, 55)
                 .add(botonAgenda, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 34, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(18, 18, 18)
+                .add(42, 42, 42)
                 .add(botonHisClinica, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         org.jdesktop.layout.GroupLayout ModuloVeterinarioLayout = new org.jdesktop.layout.GroupLayout(ModuloVeterinario.getContentPane());
         ModuloVeterinario.getContentPane().setLayout(ModuloVeterinarioLayout);
         ModuloVeterinarioLayout.setHorizontalGroup(
             ModuloVeterinarioLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, ModuloVeterinarioLayout.createSequentialGroup()
+                .add(0, 0, Short.MAX_VALUE)
+                .add(jPanel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
         );
         ModuloVeterinarioLayout.setVerticalGroup(
             ModuloVeterinarioLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
         );
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
@@ -499,33 +512,20 @@ public class Modulo extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(jTable3);
 
-        botonRegresar.setText("Regresar");
-        botonRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonRegresarActionPerformed(evt);
-            }
-        });
-
         org.jdesktop.layout.GroupLayout agendaVetLayout = new org.jdesktop.layout.GroupLayout(agendaVet.getContentPane());
         agendaVet.getContentPane().setLayout(agendaVetLayout);
         agendaVetLayout.setHorizontalGroup(
             agendaVetLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, agendaVetLayout.createSequentialGroup()
                 .addContainerGap()
-                .add(agendaVetLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(agendaVetLayout.createSequentialGroup()
-                        .add(0, 0, Short.MAX_VALUE)
-                        .add(botonRegresar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 99, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(jScrollPane3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE))
+                .add(jScrollPane3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
                 .addContainerGap())
         );
         agendaVetLayout.setVerticalGroup(
             agendaVetLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(agendaVetLayout.createSequentialGroup()
                 .addContainerGap()
-                .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 275, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(botonRegresar, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .add(jScrollPane3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -550,13 +550,6 @@ public class Modulo extends javax.swing.JFrame {
         botonHisClinicas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonHisClinicasActionPerformed(evt);
-            }
-        });
-
-        regresarVet.setText("Regresar");
-        regresarVet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                regresarVetActionPerformed(evt);
             }
         });
 
@@ -587,8 +580,7 @@ public class Modulo extends javax.swing.JFrame {
                                     .add(jTextField5)
                                     .add(jDateChooser1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)))
                             .add(añadirInfoClinica, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 141, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 33, Short.MAX_VALUE)
-                        .add(regresarVet, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 126, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(0, 159, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         historiaClinicaLayout.setVerticalGroup(
@@ -609,7 +601,6 @@ public class Modulo extends javax.swing.JFrame {
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, historiaClinicaLayout.createSequentialGroup()
                         .add(jTextField4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(4, 4, 4)))
-                .add(18, 18, 18)
                 .add(historiaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel12, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 32, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jTextField5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
@@ -622,9 +613,7 @@ public class Modulo extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jTextField3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 11, Short.MAX_VALUE)
-                .add(historiaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(añadirInfoClinica, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(regresarVet, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .add(añadirInfoClinica)
                 .addContainerGap())
         );
 
@@ -638,29 +627,134 @@ public class Modulo extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(jTable4);
 
-        botonRegresarClinica.setText("Regresar");
-        botonRegresarClinica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonRegresarClinicaActionPerformed(evt);
-            }
-        });
-
         org.jdesktop.layout.GroupLayout datosClinicosLayout = new org.jdesktop.layout.GroupLayout(datosClinicos.getContentPane());
         datosClinicos.getContentPane().setLayout(datosClinicosLayout);
         datosClinicosLayout.setHorizontalGroup(
             datosClinicosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, datosClinicosLayout.createSequentialGroup()
-                .add(0, 0, Short.MAX_VALUE)
-                .add(botonRegresarClinica, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 97, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
             .add(jScrollPane4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 592, Short.MAX_VALUE)
         );
         datosClinicosLayout.setVerticalGroup(
             datosClinicosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(datosClinicosLayout.createSequentialGroup()
-                .add(jScrollPane4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 256, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(botonRegresarClinica, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                .add(jScrollPane4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
                 .addContainerGap())
+        );
+
+        org.jdesktop.layout.GroupLayout jPanel5Layout = new org.jdesktop.layout.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 402, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 66, Short.MAX_VALUE)
+        );
+
+        genFact.setText("Generar factura");
+        genFact.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                genFactActionPerformed(evt);
+            }
+        });
+
+        gestAgenda.setText("Gestión de agenda");
+
+        org.jdesktop.layout.GroupLayout ModuloAdminLayout = new org.jdesktop.layout.GroupLayout(ModuloAdmin.getContentPane());
+        ModuloAdmin.getContentPane().setLayout(ModuloAdminLayout);
+        ModuloAdminLayout.setHorizontalGroup(
+            ModuloAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(ModuloAdminLayout.createSequentialGroup()
+                .add(jPanel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(0, 0, Short.MAX_VALUE))
+            .add(ModuloAdminLayout.createSequentialGroup()
+                .add(128, 128, 128)
+                .add(ModuloAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(gestAgenda, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                    .add(genFact, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        ModuloAdminLayout.setVerticalGroup(
+            ModuloAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(ModuloAdminLayout.createSequentialGroup()
+                .add(jPanel5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(gestAgenda, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(39, 39, 39)
+                .add(genFact, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(82, 82, 82))
+        );
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Cedula", "Servicio", "Precio", "Fecha", "Hora"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(jTable5);
+        if (jTable5.getColumnModel().getColumnCount() > 0) {
+            jTable5.getColumnModel().getColumn(0).setResizable(false);
+            jTable5.getColumnModel().getColumn(1).setResizable(false);
+            jTable5.getColumnModel().getColumn(2).setResizable(false);
+            jTable5.getColumnModel().getColumn(3).setResizable(false);
+            jTable5.getColumnModel().getColumn(4).setResizable(false);
+        }
+
+        jLabel14.setText("Cédula");
+
+        elimBtnAdmin.setText("Eliminar");
+
+        asigBtnAdmin.setText("Asignar");
+
+        org.jdesktop.layout.GroupLayout jPanel7Layout = new org.jdesktop.layout.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jLabel14)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(cedAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 82, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(asigBtnAdmin)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(elimBtnAdmin)
+                .addContainerGap())
+            .add(jScrollPane5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel7Layout.createSequentialGroup()
+                .add(16, 16, 16)
+                .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(jLabel14)
+                    .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(cedAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(elimBtnAdmin)
+                        .add(asigBtnAdmin)))
+                .add(18, 18, 18)
+                .add(jScrollPane5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE))
+        );
+
+        org.jdesktop.layout.GroupLayout agendaAdminLayout = new org.jdesktop.layout.GroupLayout(agendaAdmin.getContentPane());
+        agendaAdmin.getContentPane().setLayout(agendaAdminLayout);
+        agendaAdminLayout.setHorizontalGroup(
+            agendaAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        agendaAdminLayout.setVerticalGroup(
+            agendaAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -672,6 +766,7 @@ public class Modulo extends javax.swing.JFrame {
         jLabel2.setText("Ingresar como...");
 
         Cliente.setText("Cliente");
+        Cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Cliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ClienteActionPerformed(evt);
@@ -686,6 +781,11 @@ public class Modulo extends javax.swing.JFrame {
         });
 
         Admin.setText("Administrador");
+        Admin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdminActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -739,23 +839,23 @@ public class Modulo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void VeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeterinarioActionPerformed
-        this.setVisible(false);
-        ModuloVeterinario.setSize(400,400);
+
+        ModuloVeterinario.setSize(400,250);
         ModuloVeterinario.setResizable(false);
         ModuloVeterinario.setLocation(720,360);
         ModuloVeterinario.setVisible(true);
     }//GEN-LAST:event_VeterinarioActionPerformed
 
     private void ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteActionPerformed
-        this.setVisible(false);
-        ModuloCliente.setSize(410,440);
+        
+        ModuloCliente.setSize(410,400);
         ModuloCliente.setResizable(false);
         ModuloCliente.setLocation(720, 360);
         ModuloCliente.setVisible(true);
     }//GEN-LAST:event_ClienteActionPerformed
 
     private void actualizarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarDatosActionPerformed
-        this.setVisible(false);
+        
         ActualizarDatos.setSize(540,405);
         ActualizarDatos.setResizable(false);
         ActualizarDatos.setLocation(720,360);
@@ -763,60 +863,65 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_actualizarDatosActionPerformed
 
     private void moduloCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moduloCitasActionPerformed
-        this.setVisible(false);
+        
         ModuloCitas.setSize(355,345);
         ModuloCitas.setResizable(false);
         ModuloCitas.setLocation(720,360);
         ModuloCitas.setVisible(true);
     }//GEN-LAST:event_moduloCitasActionPerformed
 
+    private void botonHisClinicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHisClinicasActionPerformed
+        
+        datosClinicos.setSize(420,420);
+        datosClinicos.setResizable(false);
+        datosClinicos.setLocation(720,360);
+        datosClinicos.setVisible(true);
+    }//GEN-LAST:event_botonHisClinicasActionPerformed
+
+    private void botonHisClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHisClinicaActionPerformed
+
+        historiaClinica.setSize(500,500);
+        historiaClinica.setResizable(false);
+        historiaClinica.setLocation(720,360);
+        historiaClinica.setVisible(true);
+    }//GEN-LAST:event_botonHisClinicaActionPerformed
+
     private void botonAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgendaActionPerformed
-        this.setVisible(false);
+
         agendaVet.setSize(400,400);
         agendaVet.setResizable(false);
         agendaVet.setLocation(720,360);
         agendaVet.setVisible(true);
     }//GEN-LAST:event_botonAgendaActionPerformed
 
-    private void botonHisClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHisClinicaActionPerformed
-        this.setVisible(false);
-        datosClinicos.setSize(400,400);
-        datosClinicos.setResizable(false);
-        datosClinicos.setLocation(720,360);
-        datosClinicos.setVisible(true);
-    }//GEN-LAST:event_botonHisClinicaActionPerformed
+    private void genFactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genFactActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_genFactActionPerformed
 
-    private void botonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarActionPerformed
-        this.setVisible(false);
-        ModuloVeterinario.setSize(400,400);
-        ModuloVeterinario.setResizable(false);
-        ModuloVeterinario.setLocation(720,360);
-        ModuloVeterinario.setVisible(true);
-    }//GEN-LAST:event_botonRegresarActionPerformed
+    private void AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminActionPerformed
+        ModuloAdmin.setSize(400,200);
+        ModuloAdmin.setResizable(false);
+        ModuloAdmin.setLocation(720,360);
+        ModuloAdmin.setVisible(true);
+    }//GEN-LAST:event_AdminActionPerformed
 
-    private void botonHisClinicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHisClinicasActionPerformed
-        this.setVisible(false);
-        datosClinicos.setSize(400,400);
-        datosClinicos.setResizable(false);
-        datosClinicos.setLocation(720,360);
-        datosClinicos.setVisible(true);
-    }//GEN-LAST:event_botonHisClinicasActionPerformed
-
-    private void regresarVetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarVetActionPerformed
-        this.setVisible(false);
-        ModuloVeterinario.setSize(400,400);
-        ModuloVeterinario.setResizable(false);
-        ModuloVeterinario.setLocation(720,360);
-        ModuloVeterinario.setVisible(true);
-    }//GEN-LAST:event_regresarVetActionPerformed
-
-    private void botonRegresarClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarClinicaActionPerformed
-        this.setVisible(false);
-        historiaClinica.setSize(400,400);
-        historiaClinica.setResizable(false);
-        historiaClinica.setLocation(720,360);
-        historiaClinica.setVisible(true);
-    }//GEN-LAST:event_botonRegresarClinicaActionPerformed
+    private void añadirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirBtnActionPerformed
+        String nDir= "C:\\GestiónVeterinaria";
+        File user = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombre= "Clientes.csv"; 
+        File clientes= new File (ruta, nombre); //Archivo clientes
+        
+        if (!clientes.exists()) { //No existe el archivo
+            user.mkdir();
+            try {
+                clientes.createNewFile();
+            } catch (IOException ex) {
+                System.out.println("Error en la creación del archivo");
+            }
+        }
+        
+    }//GEN-LAST:event_añadirBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -859,23 +964,25 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JButton Cliente;
     private javax.swing.JButton ModificarCitaBtn;
     private javax.swing.JFrame ModificarCitasCliente;
+    private javax.swing.JFrame ModuloAdmin;
     private javax.swing.JFrame ModuloCitas;
     private javax.swing.JFrame ModuloCliente;
     private javax.swing.JFrame ModuloVeterinario;
     private javax.swing.JButton Veterinario;
     private javax.swing.JButton actualizarDatos;
+    private javax.swing.JFrame agendaAdmin;
     private javax.swing.JFrame agendaVet;
+    private javax.swing.JButton asigBtnAdmin;
     private javax.swing.JButton añadirBtn;
     private javax.swing.JButton añadirInfoClinica;
     private javax.swing.JRadioButton baño;
     private javax.swing.JButton botonAgenda;
     private javax.swing.JButton botonHisClinica;
     private javax.swing.JButton botonHisClinicas;
-    private javax.swing.JButton botonRegresar;
-    private javax.swing.JButton botonRegresarClinica;
     private javax.swing.JButton buscarBtn;
     private javax.swing.JButton cancelarCitaBtn;
     private javax.swing.JTextField ced;
+    private javax.swing.JTextField cedAdmin;
     private javax.swing.JTextField cedulaBuscar;
     private javax.swing.ButtonGroup citasOp;
     private javax.swing.JTextField colorPer;
@@ -883,7 +990,10 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JRadioButton control;
     private javax.swing.JFrame datosClinicos;
     private javax.swing.JRadioButton despa;
+    private javax.swing.JButton elimBtnAdmin;
     private com.toedter.calendar.JDateChooser fechaPer;
+    private javax.swing.JButton genFact;
+    private javax.swing.JButton gestAgenda;
     private javax.swing.JRadioButton guard;
     private javax.swing.JFrame historiaClinica;
     private javax.swing.JButton jButton3;
@@ -907,15 +1017,19 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -926,7 +1040,6 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JTextField nomPer;
     private javax.swing.JRadioButton radio;
     private javax.swing.JTextField razaPer;
-    private javax.swing.JButton regresarVet;
     private javax.swing.JButton solicitarBtn;
     private javax.swing.JRadioButton vacun;
     // End of variables declaration//GEN-END:variables
