@@ -47,11 +47,11 @@
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="ced" alignment="0" max="32767" attributes="0"/>
+                          <Component id="cedCliente" alignment="0" max="32767" attributes="0"/>
                           <Component id="nomPer" alignment="0" max="32767" attributes="0"/>
                           <Component id="razaPer" alignment="0" max="32767" attributes="0"/>
                           <Component id="colorPer" alignment="0" max="32767" attributes="0"/>
-                          <Component id="fechaCliente" max="32767" attributes="0"/>
+                          <Component id="fechaNacim" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -68,7 +68,7 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ced" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cedCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -90,7 +90,7 @@
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                          <Component id="fechaCliente" min="-2" max="-2" attributes="0"/>
+                          <Component id="fechaNacim" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="añadirBtn" min="-2" max="-2" attributes="0"/>
@@ -125,7 +125,7 @@
                 <Property name="text" type="java.lang.String" value="Fecha de nacimiento"/>
               </Properties>
             </Component>
-            <Component class="com.toedter.calendar.JDateChooser" name="fechaCliente">
+            <Component class="com.toedter.calendar.JDateChooser" name="fechaNacim">
             </Component>
             <Component class="javax.swing.JTextField" name="colorPer">
             </Component>
@@ -133,7 +133,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="nomPer">
             </Component>
-            <Component class="javax.swing.JTextField" name="ced">
+            <Component class="javax.swing.JTextField" name="cedCliente">
               <Properties>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
@@ -192,11 +192,11 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="cedulaBuscar" min="-2" pref="69" max="-2" attributes="0"/>
+                              <Component id="cedulaBuscarCliente" min="-2" pref="69" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="buscarBtn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="150" max="32767" attributes="0"/>
-                              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                              <Component id="elimBtnCliente" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -210,9 +210,9 @@
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cedulaBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cedulaBuscarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="buscarBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="elimBtnCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="216" max="-2" attributes="0"/>
@@ -227,7 +227,7 @@
                 <Property name="text" type="java.lang.String" value="Ingrese su c&#xe9;dula"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="cedulaBuscar">
+            <Component class="javax.swing.JTextField" name="cedulaBuscarCliente">
             </Component>
             <Component class="javax.swing.JButton" name="buscarBtn">
               <Properties>
@@ -238,7 +238,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable1">
+                <Component class="javax.swing.JTable" name="tablaClientes">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="5" rowCount="0">
@@ -285,7 +285,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="jButton3">
+            <Component class="javax.swing.JButton" name="elimBtnCliente">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>

@@ -46,22 +46,22 @@ public class Modulo extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        fechaCliente = new com.toedter.calendar.JDateChooser();
+        fechaNacim = new com.toedter.calendar.JDateChooser();
         colorPer = new javax.swing.JTextField();
         razaPer = new javax.swing.JTextField();
         nomPer = new javax.swing.JTextField();
-        ced = new javax.swing.JTextField();
+        cedCliente = new javax.swing.JTextField();
         añadirBtn = new javax.swing.JButton();
         actualizarDatos = new javax.swing.JButton();
         moduloCitas = new javax.swing.JButton();
         ActualizarDatos = new javax.swing.JFrame();
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        cedulaBuscar = new javax.swing.JTextField();
+        cedulaBuscarCliente = new javax.swing.JTextField();
         buscarBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
+        tablaClientes = new javax.swing.JTable();
+        elimBtnCliente = new javax.swing.JButton();
         ModuloCitas = new javax.swing.JFrame();
         consultaVet = new javax.swing.JRadioButton();
         control = new javax.swing.JRadioButton();
@@ -135,7 +135,7 @@ public class Modulo extends javax.swing.JFrame {
 
         jLabel7.setText("Fecha de nacimiento");
 
-        ced.setToolTipText("");
+        cedCliente.setToolTipText("");
 
         añadirBtn.setText("Añadir");
         añadirBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -179,11 +179,11 @@ public class Modulo extends javax.swing.JFrame {
                             .add(jLabel7))
                         .add(18, 18, 18)))
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(ced)
+                    .add(cedCliente)
                     .add(nomPer)
                     .add(razaPer)
                     .add(colorPer)
-                    .add(fechaCliente, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(fechaNacim, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(actualizarDatos)
@@ -196,7 +196,7 @@ public class Modulo extends javax.swing.JFrame {
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel3)
-                    .add(ced, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(cedCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(28, 28, 28)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel4)
@@ -214,7 +214,7 @@ public class Modulo extends javax.swing.JFrame {
                 .add(25, 25, 25)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(jLabel7)
-                    .add(fechaCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(fechaNacim, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(añadirBtn)
                 .add(17, 17, 17))
@@ -235,7 +235,7 @@ public class Modulo extends javax.swing.JFrame {
 
         buscarBtn.setText("Buscar");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -251,16 +251,16 @@ public class Modulo extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setResizable(false);
+        jScrollPane1.setViewportView(tablaClientes);
+        if (tablaClientes.getColumnModel().getColumnCount() > 0) {
+            tablaClientes.getColumnModel().getColumn(0).setResizable(false);
+            tablaClientes.getColumnModel().getColumn(1).setResizable(false);
+            tablaClientes.getColumnModel().getColumn(2).setResizable(false);
+            tablaClientes.getColumnModel().getColumn(3).setResizable(false);
+            tablaClientes.getColumnModel().getColumn(4).setResizable(false);
         }
 
-        jButton3.setText("Eliminar");
+        elimBtnCliente.setText("Eliminar");
 
         org.jdesktop.layout.GroupLayout jPanel3Layout = new org.jdesktop.layout.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -272,11 +272,11 @@ public class Modulo extends javax.swing.JFrame {
                     .add(jPanel3Layout.createSequentialGroup()
                         .add(jLabel8)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(cedulaBuscar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 69, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(cedulaBuscarCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 69, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(18, 18, 18)
                         .add(buscarBtn)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 150, Short.MAX_VALUE)
-                        .add(jButton3))
+                        .add(elimBtnCliente))
                     .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .add(26, 26, 26))
         );
@@ -286,9 +286,9 @@ public class Modulo extends javax.swing.JFrame {
                 .add(18, 18, 18)
                 .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel8)
-                    .add(cedulaBuscar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(cedulaBuscarCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(buscarBtn)
-                    .add(jButton3))
+                    .add(elimBtnCliente))
                 .add(18, 18, 18)
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(28, Short.MAX_VALUE))
@@ -920,9 +920,36 @@ public class Modulo extends javax.swing.JFrame {
             }
         }
         
-        String dia= Integer.toString(fechaCliente.getCalendar().get(Calendar.DAY_OF_MONTH));
+
+        String dia= Integer.toString(fechaNacim.getCalendar().get(Calendar.DAY_OF_MONTH));
+        String mes = Integer.toString(fechaNacim.getCalendar().get(Calendar.MONTH) + 1);
+        String año = Integer.toString(fechaNacim.getCalendar().get(Calendar.YEAR));
+        String fechaN= dia+"/"+mes+"/"+año;
         
+        int cedula= Integer.parseInt(cedCliente.getText());
+        String nombreP = nomPer.getText();
+        String razaP= razaPer.getText();
+        String colorP= colorPer.getText();
         
+        try (FileWriter fw = new FileWriter(clientes.getAbsoluteFile(), true)) {
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(cedula + "," + nombreP + "," + razaP + "," + colorP + "," + fechaN );
+            bw.newLine();
+            bw.flush();
+            bw.close();
+            fw.close();
+
+        } catch (IOException ex) {
+            
+        }
+        
+        DefaultTableModel model = (DefaultTableModel) tablaClientes.getModel();
+        model.addRow(new Object[]{cedula, nombreP, razaP, colorP, fechaN});
+        
+        nomPer.setText("");
+        cedCliente.setText("");
+        razaPer.setText("");
+        colorPer.setText("");
     }//GEN-LAST:event_añadirBtnActionPerformed
 
     /**
@@ -983,9 +1010,9 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JButton botonHisClinicas;
     private javax.swing.JButton buscarBtn;
     private javax.swing.JButton cancelarCitaBtn;
-    private javax.swing.JTextField ced;
     private javax.swing.JTextField cedAdmin;
-    private javax.swing.JTextField cedulaBuscar;
+    private javax.swing.JTextField cedCliente;
+    private javax.swing.JTextField cedulaBuscarCliente;
     private javax.swing.ButtonGroup citasOp;
     private javax.swing.JTextField colorPer;
     private javax.swing.JRadioButton consultaVet;
@@ -993,12 +1020,12 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JFrame datosClinicos;
     private javax.swing.JRadioButton despa;
     private javax.swing.JButton elimBtnAdmin;
-    private com.toedter.calendar.JDateChooser fechaCliente;
+    private javax.swing.JButton elimBtnCliente;
+    private com.toedter.calendar.JDateChooser fechaNacim;
     private javax.swing.JButton genFact;
     private javax.swing.JButton gestAgenda;
     private javax.swing.JRadioButton guard;
     private javax.swing.JFrame historiaClinica;
-    private javax.swing.JButton jButton3;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1027,7 +1054,6 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
@@ -1043,6 +1069,7 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JRadioButton radio;
     private javax.swing.JTextField razaPer;
     private javax.swing.JButton solicitarBtn;
+    private javax.swing.JTable tablaClientes;
     private javax.swing.JRadioButton vacun;
     // End of variables declaration//GEN-END:variables
 
