@@ -6,4 +6,5 @@ public class Laboratorio1 {
         Modulo M = new Modulo();
         M.setVisible(true);
     }
+    
 }
