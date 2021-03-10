@@ -46,7 +46,7 @@ public class Modulo extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        fechaPer = new com.toedter.calendar.JDateChooser();
+        fechaCliente = new com.toedter.calendar.JDateChooser();
         colorPer = new javax.swing.JTextField();
         razaPer = new javax.swing.JTextField();
         nomPer = new javax.swing.JTextField();
@@ -183,7 +183,7 @@ public class Modulo extends javax.swing.JFrame {
                     .add(nomPer)
                     .add(razaPer)
                     .add(colorPer)
-                    .add(fechaPer, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(fechaCliente, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(actualizarDatos)
@@ -214,7 +214,7 @@ public class Modulo extends javax.swing.JFrame {
                 .add(25, 25, 25)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(jLabel7)
-                    .add(fechaPer, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(fechaCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(añadirBtn)
                 .add(17, 17, 17))
@@ -921,6 +921,8 @@ public class Modulo extends javax.swing.JFrame {
             }
         }
         
+        String dia= Integer.toString(fechaCliente.getCalendar().get(Calendar.DAY_OF_MONTH));
+        
     }//GEN-LAST:event_añadirBtnActionPerformed
 
     /**
@@ -991,7 +993,7 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JFrame datosClinicos;
     private javax.swing.JRadioButton despa;
     private javax.swing.JButton elimBtnAdmin;
-    private com.toedter.calendar.JDateChooser fechaPer;
+    private com.toedter.calendar.JDateChooser fechaCliente;
     private javax.swing.JButton genFact;
     private javax.swing.JButton gestAgenda;
     private javax.swing.JRadioButton guard;

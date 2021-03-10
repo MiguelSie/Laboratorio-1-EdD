@@ -51,7 +51,7 @@
                           <Component id="nomPer" alignment="0" max="32767" attributes="0"/>
                           <Component id="razaPer" alignment="0" max="32767" attributes="0"/>
                           <Component id="colorPer" alignment="0" max="32767" attributes="0"/>
-                          <Component id="fechaPer" max="32767" attributes="0"/>
+                          <Component id="fechaCliente" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -90,7 +90,7 @@
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                          <Component id="fechaPer" min="-2" max="-2" attributes="0"/>
+                          <Component id="fechaCliente" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="añadirBtn" min="-2" max="-2" attributes="0"/>
@@ -125,7 +125,7 @@
                 <Property name="text" type="java.lang.String" value="Fecha de nacimiento"/>
               </Properties>
             </Component>
-            <Component class="com.toedter.calendar.JDateChooser" name="fechaPer">
+            <Component class="com.toedter.calendar.JDateChooser" name="fechaCliente">
             </Component>
             <Component class="javax.swing.JTextField" name="colorPer">
             </Component>
