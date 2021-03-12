@@ -248,6 +248,8 @@ public class Modulo extends javax.swing.JFrame {
                 .add(17, 17, 17))
         );
 
+        fechaNacim.getAccessibleContext().setAccessibleDescription("");
+
         org.jdesktop.layout.GroupLayout ModuloClienteLayout = new org.jdesktop.layout.GroupLayout(ModuloCliente.getContentPane());
         ModuloCliente.getContentPane().setLayout(ModuloClienteLayout);
         ModuloClienteLayout.setHorizontalGroup(
@@ -1107,11 +1109,13 @@ public class Modulo extends javax.swing.JFrame {
             }
         }
         
-
+        
         String dia= Integer.toString(fechaNacim.getCalendar().get(Calendar.DAY_OF_MONTH));
         String mes = Integer.toString(fechaNacim.getCalendar().get(Calendar.MONTH) + 1);
         String año = Integer.toString(fechaNacim.getCalendar().get(Calendar.YEAR));
-        String fechaN= dia+"/"+mes+"/"+año;
+        String fechaN= dia+"/"+mes+"/"+año;      
+        
+        
         
         try {
         cedula = Integer.parseInt(cedCliente.getText());
@@ -1153,6 +1157,7 @@ public class Modulo extends javax.swing.JFrame {
         if(selectedRow != -1){
             model.removeRow(selectedRow);
         }
+        
     }//GEN-LAST:event_elimBtnClienteActionPerformed
 
     private void buscarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBtnActionPerformed
