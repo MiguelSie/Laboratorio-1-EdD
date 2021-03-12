@@ -1024,6 +1024,41 @@ public class Modulo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void guardarClientes(DefaultTableModel model){
+    String sDir = "C:\\GestiónVeterinaria";
+        File f = new File(sDir);
+        String ruta = "C:\\GestiónVeterinaria"; //Carpeta donde se guarda el archivo
+        String fileName = "Clientes.csv"; //Nombre archivo
+        File clientes = new File(ruta, fileName);
+
+        if (!clientes.exists()) { //No existe el archivo
+            f.mkdir();
+            try {
+                clientes.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error");
+            }
+        }
+        try (FileWriter fw = new FileWriter(clientes.getAbsoluteFile())) {
+            BufferedWriter bw = new BufferedWriter(fw);
+            for (int i = 0; i < model.getRowCount(); i++) {
+                //casting 
+                int cedula = (int) model.getValueAt(i, 0);
+                String nomPer = (String) model.getValueAt(i, 1);
+                String razaPer = (String) model.getValueAt(i, 2);
+                String colorPer = (String) model.getValueAt(i, 3);
+                String fecha= (String) model.getValueAt(i,4);
+                bw.write(cedula + "," + nomPer + "," + razaPer + "," + colorPer+ "," + fecha);
+                bw.newLine();
+            }
+            bw.flush();
+            bw.close();
+            fw.close();
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Error al crear el archivo");
+        }
+    }
+    
     private void VeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeterinarioActionPerformed
 
         ModuloVeterinario.setSize(400,250);
@@ -1041,7 +1076,7 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_ClienteActionPerformed
 
     private void actualizarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarDatosActionPerformed
-        
+        //Hacer que la tabla se cree desde aquí
         ActualizarDatos.setSize(540,405);
         ActualizarDatos.setResizable(false);
         ActualizarDatos.setLocation(720,360);
@@ -1093,7 +1128,7 @@ public class Modulo extends javax.swing.JFrame {
 
     private void añadirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirBtnActionPerformed
         String nDir= "C:\\GestiónVeterinaria";
-        File user = new File(nDir); //Carpeta en el disco C
+        File f = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
         String nombre= "Clientes.csv"; 
         File clientes= new File (ruta, nombre); //Archivo clientes
@@ -1101,11 +1136,11 @@ public class Modulo extends javax.swing.JFrame {
         int cedula = 0;
         
         if (!clientes.exists()) { //No existe el archivo
-            user.mkdir();
+            f.mkdir();
             try {
                 clientes.createNewFile();
             } catch (IOException ex) {
-                System.out.println("Error en la creación del archivo");
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
             }
         }
         
@@ -1139,6 +1174,7 @@ public class Modulo extends javax.swing.JFrame {
             
         }
         
+        //Hacer que la tabla se configure desde el archivo usando el botón Actualizar Datos
         DefaultTableModel model = (DefaultTableModel) tablaClientes.getModel();
         model.addRow(new Object[]{cedula, nombreP, razaP, colorP, fechaN});
         nomPer.setText("");
@@ -1152,23 +1188,30 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_cedClienteActionPerformed
 
     private void elimBtnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elimBtnClienteActionPerformed
+        //Hacer que al eliminar una row no se guarde la tabla completa, sino solo que
+        //se eliminó una row, pues interfiere con el botón de Buscar
         DefaultTableModel model = (DefaultTableModel) tablaClientes.getModel();
         int selectedRow = tablaClientes.getSelectedRow();
         if(selectedRow != -1){
             model.removeRow(selectedRow);
         }
-        
+        guardarClientes(model);
     }//GEN-LAST:event_elimBtnClienteActionPerformed
 
     private void buscarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBtnActionPerformed
         DefaultTableModel model = (DefaultTableModel) tablaClientes.getModel();
         int buscarCedula = Integer.parseInt(cedulaBuscarCliente.getText());
-        for (int i = 0; i < model.getRowCount(); i++){
-            int cedula = (int) model.getValueAt(i, 0);
-            if (cedula != buscarCedula){
+        
+        int i=0;
+        while (i<model.getRowCount()){
+        int cedClienteBusc = (int) model.getValueAt(i, 0);
+            if (buscarCedula == cedClienteBusc){
+                i++;
+            } else {
                 model.removeRow(i);
             }
-    }
+        }
+        
     }//GEN-LAST:event_buscarBtnActionPerformed
 
     private void gestAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestAgendaActionPerformed
