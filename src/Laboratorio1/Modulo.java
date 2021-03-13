@@ -1025,10 +1025,10 @@ public class Modulo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void guardarClientes(DefaultTableModel model){
-    String sDir = "C:\\GestiónVeterinaria";
+        String sDir = "C:\\GestiónVeterinaria";
         File f = new File(sDir);
         String ruta = "C:\\GestiónVeterinaria"; //Carpeta donde se guarda el archivo
-        String fileName = "Clientes.csv"; //Nombre archivo
+        String fileName = "Clientes.csv"; 
         File clientes = new File(ruta, fileName);
 
         if (!clientes.exists()) { //No existe el archivo
@@ -1042,7 +1042,6 @@ public class Modulo extends javax.swing.JFrame {
         try (FileWriter fw = new FileWriter(clientes.getAbsoluteFile())) {
             BufferedWriter bw = new BufferedWriter(fw);
             for (int i = 0; i < model.getRowCount(); i++) {
-                //casting 
                 int cedula = (int) model.getValueAt(i, 0);
                 String nomPer = (String) model.getValueAt(i, 1);
                 String razaPer = (String) model.getValueAt(i, 2);
@@ -1076,7 +1075,40 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_ClienteActionPerformed
 
     private void actualizarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarDatosActionPerformed
-        //Hacer que la tabla se cree desde aquí
+
+        String nDir= "C:\\GestiónVeterinaria";
+        File f = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombre= "Clientes.csv"; 
+        File clientes= new File (ruta, nombre); //Archivo clientes
+        
+        
+        if (!clientes.exists()) { //No existe el archivo
+            f.mkdir();
+            try {
+                clientes.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        DefaultTableModel model = (DefaultTableModel) tablaClientes.getModel();
+        
+        model.setRowCount(0);
+            try (Scanner sc = new Scanner(clientes)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedula = Integer.parseInt(data[0]);
+                    String nomPer = data[1];
+                    String razaPer = data[2];
+                    String colorPer = data[3];
+                    String fecha= data[4];
+                    model.addRow(new Object[]{cedula, nomPer, razaPer, colorPer, fecha});
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
+            }
+        
         ActualizarDatos.setSize(540,405);
         ActualizarDatos.setResizable(false);
         ActualizarDatos.setLocation(720,360);
@@ -1174,9 +1206,8 @@ public class Modulo extends javax.swing.JFrame {
             
         }
         
-        //Hacer que la tabla se configure desde el archivo usando el botón Actualizar Datos
-        DefaultTableModel model = (DefaultTableModel) tablaClientes.getModel();
-        model.addRow(new Object[]{cedula, nombreP, razaP, colorP, fechaN});
+//        DefaultTableModel model = (DefaultTableModel) tablaClientes.getModel();
+//        model.addRow(new Object[]{cedula, nombreP, razaP, colorP, fechaN});
         nomPer.setText("");
         cedCliente.setText("");
         razaPer.setText("");
@@ -1188,8 +1219,9 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_cedClienteActionPerformed
 
     private void elimBtnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elimBtnClienteActionPerformed
-        //Hacer que al eliminar una row no se guarde la tabla completa, sino solo que
-        //se eliminó una row, pues interfiere con el botón de Buscar
+        //Tenemos que hacer que, al eliminar una row, no se guarde todo el modelo
+        //de la nueva tabla, sino que solo se guarde (en el archivo) la row que
+        //se eliminó, pues interfiere con el botón de buscar
         DefaultTableModel model = (DefaultTableModel) tablaClientes.getModel();
         int selectedRow = tablaClientes.getSelectedRow();
         if(selectedRow != -1){
@@ -1199,12 +1231,14 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_elimBtnClienteActionPerformed
 
     private void buscarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBtnActionPerformed
+        //Para que al buscar, se busque en todo el archivo, podemos hacer que
+        //este se cargue de nuevo al oprimir este botón
         DefaultTableModel model = (DefaultTableModel) tablaClientes.getModel();
         int buscarCedula = Integer.parseInt(cedulaBuscarCliente.getText());
         
         int i=0;
         while (i<model.getRowCount()){
-        int cedClienteBusc = (int) model.getValueAt(i, 0);
+        int cedClienteBusc = (int) (model.getValueAt(i, 0));
             if (buscarCedula == cedClienteBusc){
                 i++;
             } else {
