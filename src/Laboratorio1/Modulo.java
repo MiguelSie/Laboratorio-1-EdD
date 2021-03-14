@@ -62,6 +62,7 @@ public class Modulo extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaClientes = new javax.swing.JTable();
         elimBtnCliente = new javax.swing.JButton();
+        guardarBtn = new javax.swing.JButton();
         ModuloCitas = new javax.swing.JFrame();
         consultaVet = new javax.swing.JRadioButton();
         control = new javax.swing.JRadioButton();
@@ -302,6 +303,13 @@ public class Modulo extends javax.swing.JFrame {
             }
         });
 
+        guardarBtn.setText("Guardar");
+        guardarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarBtnActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout jPanel3Layout = new org.jdesktop.layout.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -315,9 +323,11 @@ public class Modulo extends javax.swing.JFrame {
                         .add(cedulaBuscarCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 69, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(18, 18, 18)
                         .add(buscarBtn)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 150, Short.MAX_VALUE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(guardarBtn)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(elimBtnCliente))
-                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE))
                 .add(26, 26, 26))
         );
         jPanel3Layout.setVerticalGroup(
@@ -328,7 +338,8 @@ public class Modulo extends javax.swing.JFrame {
                     .add(jLabel8)
                     .add(cedulaBuscarCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(buscarBtn)
-                    .add(elimBtnCliente))
+                    .add(elimBtnCliente)
+                    .add(guardarBtn))
                 .add(18, 18, 18)
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(28, Short.MAX_VALUE))
@@ -1025,11 +1036,11 @@ public class Modulo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void guardarClientes(DefaultTableModel model){
-        String sDir = "C:\\GestiónVeterinaria";
-        File f = new File(sDir);
+        String nDir = "C:\\GestiónVeterinaria";
+        File f = new File(nDir);
         String ruta = "C:\\GestiónVeterinaria"; //Carpeta donde se guarda el archivo
-        String fileName = "Clientes.csv"; 
-        File clientes = new File(ruta, fileName);
+        String nombre = "Clientes.csv"; 
+        File clientes = new File(ruta, nombre);
 
         if (!clientes.exists()) { //No existe el archivo
             f.mkdir();
@@ -1183,13 +1194,17 @@ public class Modulo extends javax.swing.JFrame {
         String fechaN= dia+"/"+mes+"/"+año;      
         
         
-        
         try {
         cedula = Integer.parseInt(cedCliente.getText());
         } catch (java.lang.NumberFormatException ex) {
+            try{
             cedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Error al ingresar la cédula, ingrese una cédula correcta.")); 
+            } catch (java.lang.NumberFormatException exx){
+
+            }
         }
         
+
         String nombreP = nomPer.getText();
         String razaP= razaPer.getText();
         String colorP= colorPer.getText();
@@ -1206,8 +1221,7 @@ public class Modulo extends javax.swing.JFrame {
             
         }
         
-//        DefaultTableModel model = (DefaultTableModel) tablaClientes.getModel();
-//        model.addRow(new Object[]{cedula, nombreP, razaP, colorP, fechaN});
+
         nomPer.setText("");
         cedCliente.setText("");
         razaPer.setText("");
@@ -1224,17 +1238,91 @@ public class Modulo extends javax.swing.JFrame {
         //se eliminó, pues interfiere con el botón de buscar
         DefaultTableModel model = (DefaultTableModel) tablaClientes.getModel();
         int selectedRow = tablaClientes.getSelectedRow();
-        if(selectedRow != -1){
-            model.removeRow(selectedRow);
+        int cedulaRow = (int) model.getValueAt(selectedRow, 0);
+        String nomPerRow = (String) model.getValueAt(selectedRow, 1);
+        String razaPerRow = (String) model.getValueAt(selectedRow, 2);
+        String colorPerRow = (String) model.getValueAt(selectedRow, 3);
+        String fechaRow= (String) model.getValueAt(selectedRow,4);
+        
+        String nDir= "C:\\GestiónVeterinaria";
+        File f = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombre= "Clientes.csv"; 
+        File clientes= new File (ruta, nombre); //Archivo clientes
+        
+        
+        if (!clientes.exists()) { //No existe el archivo
+            f.mkdir();
+            try {
+                clientes.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
         }
+        
+        model.setRowCount(0);
+            try (Scanner sc = new Scanner(clientes)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedula = Integer.parseInt(data[0]);
+                    String nomPer = data[1];
+                    String razaPer = data[2];
+                    String colorPer = data[3]; 
+                    String fecha= data[4];
+                    if (cedula==cedulaRow && nomPer.equals(nomPerRow) && razaPer.equals(razaPerRow) && colorPer.equals(colorPerRow) && fecha.equals(fechaRow)){
+                    } else {
+                    model.addRow(new Object[]{cedula, nomPer, razaPer, colorPer, fecha});                  
+                    }
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
+            }
+
         guardarClientes(model);
     }//GEN-LAST:event_elimBtnClienteActionPerformed
 
     private void buscarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBtnActionPerformed
-        //Para que al buscar, se busque en todo el archivo, podemos hacer que
-        //este se cargue de nuevo al oprimir este botón
+        
+        String nDir= "C:\\GestiónVeterinaria";
+        File f = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombre= "Clientes.csv"; 
+        File clientes= new File (ruta, nombre); //Archivo clientes
+        
+        
+        if (!clientes.exists()) { //No existe el archivo
+            f.mkdir();
+            try {
+                clientes.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
         DefaultTableModel model = (DefaultTableModel) tablaClientes.getModel();
-        int buscarCedula = Integer.parseInt(cedulaBuscarCliente.getText());
+        
+        model.setRowCount(0);
+            try (Scanner sc = new Scanner(clientes)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedula = Integer.parseInt(data[0]);
+                    String nomPer = data[1];
+                    String razaPer = data[2];
+                    String colorPer = data[3];
+                    String fecha= data[4];
+                    model.addRow(new Object[]{cedula, nomPer, razaPer, colorPer, fecha});
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
+            }
+            
+            int buscarCedula=0;
+            try {
+            buscarCedula = Integer.parseInt(cedulaBuscarCliente.getText());
+            } catch (NumberFormatException exx){
+            
+            }
         
         int i=0;
         while (i<model.getRowCount()){
@@ -1261,6 +1349,11 @@ public class Modulo extends javax.swing.JFrame {
         AgendaAdmin.setLocation(720,360);
         AgendaAdmin.setVisible(true);
     }//GEN-LAST:event_verAgendaBtnActionPerformed
+
+    private void guardarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarBtnActionPerformed
+        DefaultTableModel model = (DefaultTableModel) tablaClientes.getModel();
+        guardarClientes(model);
+    }//GEN-LAST:event_guardarBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1338,6 +1431,7 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JButton genFact;
     private javax.swing.JButton gestAgenda;
     private javax.swing.JRadioButton guard;
+    private javax.swing.JButton guardarBtn;
     private javax.swing.JButton jButton1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
