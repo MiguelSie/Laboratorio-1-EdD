@@ -88,6 +88,7 @@ public class Modulo extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaCitas = new javax.swing.JTable();
         buscarCitaBtn = new javax.swing.JButton();
+        guardarAgendaBtn = new javax.swing.JButton();
         ModuloVeterinario = new javax.swing.JFrame();
         jPanel6 = new javax.swing.JPanel();
         botonAgenda = new javax.swing.JButton();
@@ -118,13 +119,14 @@ public class Modulo extends javax.swing.JFrame {
         AgendaAdmin = new javax.swing.JFrame();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        tablaAdmin = new javax.swing.JTable();
         jLabel14 = new javax.swing.JLabel();
         cedAdmin = new javax.swing.JTextField();
         elimBtnAdmin = new javax.swing.JButton();
         asigBtnAdmin = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        modificarAdmin = new javax.swing.JButton();
         buscarAdmin = new javax.swing.JButton();
+        guardarAdmin = new javax.swing.JButton();
         AsignarAdmin = new javax.swing.JFrame();
         consultaAdm = new javax.swing.JRadioButton();
         controlAdm = new javax.swing.JRadioButton();
@@ -145,7 +147,7 @@ public class Modulo extends javax.swing.JFrame {
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jLabel21 = new javax.swing.JLabel();
         jDateChooser3 = new com.toedter.calendar.JDateChooser();
-        jButton1 = new javax.swing.JButton();
+        asignarDatosAdmin = new javax.swing.JButton();
         verAgendaBtn = new javax.swing.JButton();
         GestionAdmin = new javax.swing.JFrame();
         BotonesAdmin = new javax.swing.ButtonGroup();
@@ -518,8 +520,18 @@ public class Modulo extends javax.swing.JFrame {
         jLabel9.setText("Cédula");
 
         cancelarCitaBtn.setText("Cancelar");
+        cancelarCitaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarCitaBtnActionPerformed(evt);
+            }
+        });
 
         ModificarCitaBtn.setText("Modificar");
+        ModificarCitaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModificarCitaBtnActionPerformed(evt);
+            }
+        });
 
         tablaCitas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -553,6 +565,13 @@ public class Modulo extends javax.swing.JFrame {
             }
         });
 
+        guardarAgendaBtn.setText("Guardar");
+        guardarAgendaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarAgendaBtnActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout jPanel4Layout = new org.jdesktop.layout.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -565,28 +584,36 @@ public class Modulo extends javax.swing.JFrame {
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(buscarCedulaCita, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 67, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(buscarCitaBtn)
-                        .add(18, 18, 18)
-                        .add(cancelarCitaBtn)
-                        .add(18, 18, 18)
+                        .add(buscarCitaBtn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 95, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                            .add(cancelarCitaBtn, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                            .add(guardarAgendaBtn, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(ModificarCitaBtn))
                     .add(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
-                        .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 476, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel4Layout.createSequentialGroup()
-                .add(19, 19, 19)
-                .add(jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel9)
-                    .add(buscarCedulaCita, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(cancelarCitaBtn)
-                    .add(ModificarCitaBtn)
-                    .add(buscarCitaBtn))
-                .add(18, 18, 18)
-                .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                .add(jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel4Layout.createSequentialGroup()
+                        .add(19, 19, 19)
+                        .add(jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(jLabel9)
+                            .add(buscarCedulaCita, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(ModificarCitaBtn)
+                            .add(buscarCitaBtn)))
+                    .add(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(cancelarCitaBtn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 16, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(guardarAgendaBtn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 16, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -619,21 +646,21 @@ public class Modulo extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel6Layout.createSequentialGroup()
-                .add(100, 100, 100)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(137, Short.MAX_VALUE)
                 .add(jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(botonHisClinica)
                     .add(botonAgenda, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 133, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(162, Short.MAX_VALUE))
+                .add(125, 125, 125))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel6Layout.createSequentialGroup()
                 .add(55, 55, 55)
                 .add(botonAgenda, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 34, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(42, 42, 42)
+                .add(44, 44, 44)
                 .add(botonHisClinica, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         org.jdesktop.layout.GroupLayout ModuloVeterinarioLayout = new org.jdesktop.layout.GroupLayout(ModuloVeterinario.getContentPane());
@@ -787,9 +814,7 @@ public class Modulo extends javax.swing.JFrame {
         );
         DatosClinicosLayout.setVerticalGroup(
             DatosClinicosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(DatosClinicosLayout.createSequentialGroup()
-                .add(jScrollPane4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
-                .addContainerGap())
+            .add(jScrollPane4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
         );
 
         org.jdesktop.layout.GroupLayout jPanel5Layout = new org.jdesktop.layout.GroupLayout(jPanel5);
@@ -842,7 +867,7 @@ public class Modulo extends javax.swing.JFrame {
                 .add(82, 82, 82))
         );
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        tablaAdmin.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -858,13 +883,13 @@ public class Modulo extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane5.setViewportView(jTable5);
-        if (jTable5.getColumnModel().getColumnCount() > 0) {
-            jTable5.getColumnModel().getColumn(0).setResizable(false);
-            jTable5.getColumnModel().getColumn(1).setResizable(false);
-            jTable5.getColumnModel().getColumn(2).setResizable(false);
-            jTable5.getColumnModel().getColumn(3).setResizable(false);
-            jTable5.getColumnModel().getColumn(4).setResizable(false);
+        jScrollPane5.setViewportView(tablaAdmin);
+        if (tablaAdmin.getColumnModel().getColumnCount() > 0) {
+            tablaAdmin.getColumnModel().getColumn(0).setResizable(false);
+            tablaAdmin.getColumnModel().getColumn(1).setResizable(false);
+            tablaAdmin.getColumnModel().getColumn(2).setResizable(false);
+            tablaAdmin.getColumnModel().getColumn(3).setResizable(false);
+            tablaAdmin.getColumnModel().getColumn(4).setResizable(false);
         }
 
         jLabel14.setText("Cédula");
@@ -883,10 +908,10 @@ public class Modulo extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Modificar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        modificarAdmin.setText("Modificar");
+        modificarAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                modificarAdminActionPerformed(evt);
             }
         });
 
@@ -894,6 +919,13 @@ public class Modulo extends javax.swing.JFrame {
         buscarAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buscarAdminActionPerformed(evt);
+            }
+        });
+
+        guardarAdmin.setText("Guardar");
+        guardarAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarAdminActionPerformed(evt);
             }
         });
 
@@ -911,26 +943,34 @@ public class Modulo extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(asigBtnAdmin)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jButton2)
+                .add(modificarAdmin)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(elimBtnAdmin)
+                .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(elimBtnAdmin)
+                    .add(guardarAdmin))
                 .addContainerGap())
             .add(jScrollPane5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel7Layout.createSequentialGroup()
-                .add(16, 16, 16)
-                .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(jLabel14)
-                    .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                        .add(cedAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(elimBtnAdmin)
-                        .add(asigBtnAdmin)
-                        .add(jButton2)
-                        .add(buscarAdmin)))
-                .add(18, 18, 18)
-                .add(jScrollPane5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE))
+                .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel7Layout.createSequentialGroup()
+                        .add(16, 16, 16)
+                        .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(jLabel14)
+                            .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                .add(cedAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(asigBtnAdmin)
+                                .add(modificarAdmin)
+                                .add(buscarAdmin))))
+                    .add(jPanel7Layout.createSequentialGroup()
+                        .add(7, 7, 7)
+                        .add(elimBtnAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 17, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(guardarAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jScrollPane5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE))
         );
 
         org.jdesktop.layout.GroupLayout AgendaAdminLayout = new org.jdesktop.layout.GroupLayout(AgendaAdmin.getContentPane());
@@ -977,7 +1017,12 @@ public class Modulo extends javax.swing.JFrame {
 
         jLabel21.setText("Fecha de la Consulta");
 
-        jButton1.setText("Asignar");
+        asignarDatosAdmin.setText("Asignar");
+        asignarDatosAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                asignarDatosAdminActionPerformed(evt);
+            }
+        });
 
         verAgendaBtn.setText("Ver Agenda");
         verAgendaBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -1027,7 +1072,7 @@ public class Modulo extends javax.swing.JFrame {
                                 .add(jDateChooser3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(jLabel21)))
                     .add(AsignarAdminLayout.createSequentialGroup()
-                        .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 190, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(asignarDatosAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 190, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(verAgendaBtn, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -1077,7 +1122,7 @@ public class Modulo extends javax.swing.JFrame {
                         .add(jDateChooser3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .add(17, 17, 17)
                 .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jButton1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                    .add(asignarDatosAdmin, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
                     .add(verAgendaBtn, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -1086,11 +1131,11 @@ public class Modulo extends javax.swing.JFrame {
         GestionAdmin.getContentPane().setLayout(GestionAdminLayout);
         GestionAdminLayout.setHorizontalGroup(
             GestionAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 400, Short.MAX_VALUE)
+            .add(0, 442, Short.MAX_VALUE)
         );
         GestionAdminLayout.setVerticalGroup(
             GestionAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 300, Short.MAX_VALUE)
+            .add(0, 330, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1207,8 +1252,40 @@ public class Modulo extends javax.swing.JFrame {
         }
     }
     
-    private void VeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeterinarioActionPerformed
+    private void guardarAgenda(DefaultTableModel model){
+        String nDir = "C:\\GestiónVeterinaria";
+        File a = new File(nDir);
+        String ruta = "C:\\GestiónVeterinaria"; //Carpeta donde se guarda el archivo
+        String nombre = "Agenda.csv"; 
+        File agenda = new File(ruta, nombre);
 
+        if (!agenda.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                agenda.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error");
+            }
+        }
+        try (FileWriter aw = new FileWriter(agenda.getAbsoluteFile())) {
+            BufferedWriter baw = new BufferedWriter(aw);
+            for (int i = 0; i < model.getRowCount(); i++) {
+                int cedula = (int) model.getValueAt(i, 0);
+                String servicio = (String) model.getValueAt(i, 1);
+                int precio = (int) model.getValueAt(i, 2);
+                String fecha = (String) model.getValueAt(i, 3);
+                baw.write(cedula + "," + servicio + "," + precio + "," + fecha);
+                baw.newLine();
+            }
+            baw.flush();
+            baw.close();
+            aw.close();
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Error al crear el archivo");
+        }
+    }
+    private void VeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeterinarioActionPerformed
+        //Abre el módulo Veterinario
         ModuloVeterinario.setSize(400,250);
         ModuloVeterinario.setResizable(false);
         ModuloVeterinario.setLocation(720,360);
@@ -1216,7 +1293,7 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_VeterinarioActionPerformed
 
     private void ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteActionPerformed
-        
+        //Abre el módulo Cliente
         ModuloCliente.setSize(410,400);
         ModuloCliente.setResizable(false);
         ModuloCliente.setLocation(720, 360);
@@ -1224,7 +1301,7 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_ClienteActionPerformed
 
     private void actualizarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarDatosActionPerformed
-
+        //Abre el frame para actualizar datos del cliente
         String nDir= "C:\\GestiónVeterinaria";
         File f = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
@@ -1265,7 +1342,7 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_actualizarDatosActionPerformed
 
     private void moduloCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moduloCitasActionPerformed
-        
+        //Abre el módulo de Citas
         ModuloCitas.setSize(355,345);
         ModuloCitas.setResizable(false);
         ModuloCitas.setLocation(720,360);
@@ -1277,7 +1354,7 @@ public class Modulo extends javax.swing.JFrame {
         File hc = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
         String nombre= "HistoriaClinica.csv"; 
-        File historiaclinica= new File (ruta, nombre); //Archivo clientes
+        File historiaclinica= new File (ruta, nombre); //Archivo Historia Clinica
         
         
         if (!historiaclinica.exists()) { //No existe el archivo
@@ -1321,7 +1398,7 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_botonHisClinicaActionPerformed
 
     private void botonAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgendaActionPerformed
-
+        
         AgendaVet.setSize(400,400);
         AgendaVet.setResizable(false);
         AgendaVet.setLocation(720,360);
@@ -1333,6 +1410,7 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_genFactActionPerformed
 
     private void AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminActionPerformed
+        //Abre el módulo Admin
         ModuloAdmin.setSize(400,200);
         ModuloAdmin.setResizable(false);
         ModuloAdmin.setLocation(720,360);
@@ -1340,6 +1418,8 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_AdminActionPerformed
 
     private void añadirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirBtnActionPerformed
+        //Añade datos a la tabla de datos del cliente
+        
         String nDir= "C:\\GestiónVeterinaria";
         File f = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
@@ -1507,6 +1587,40 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_buscarBtnActionPerformed
 
     private void gestAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestAgendaActionPerformed
+        //Muestra el Frame con el archivo agenda
+        String nDir= "C:\\GestiónVeterinaria";
+        File a = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombre= "Agenda.csv"; 
+        File agenda= new File (ruta, nombre); //Archivo Agenda
+        
+        
+        if (!agenda.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                agenda.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        DefaultTableModel model = (DefaultTableModel) tablaAdmin.getModel();
+        
+        //Escribe los datos del archivo Agenda en la tabla
+        model.setRowCount(0);
+            try (Scanner sc = new Scanner(agenda)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedula = Integer.parseInt(data[0]);
+                    String servicio = data[1];
+                    int precio = Integer.parseInt(data[2]);
+                    String fecha = data[3];
+                    model.addRow(new Object[]{cedula, servicio, precio, fecha});
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
+            }
+        
         AsignarAdmin.setSize(426,331);
         AsignarAdmin.setResizable(false);
         AsignarAdmin.setLocation(720,360);
@@ -1526,11 +1640,12 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_guardarBtnActionPerformed
 
     private void solicitarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solicitarBtnActionPerformed
+        //Añade datos al archivo Agenda
         String nDir= "C:\\GestiónVeterinaria";
         File a = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
         String nombre= "Agenda.csv"; 
-        File agenda= new File (ruta, nombre); //Archivo clientes
+        File agenda= new File (ruta, nombre); //Archivo agenda
         
         
         if (!agenda.exists()) { //No existe el archivo
@@ -1551,7 +1666,7 @@ public class Modulo extends javax.swing.JFrame {
         String año = Integer.toString(fechaCita.getCalendar().get(Calendar.YEAR));
         String fechaCita= dia+"/"+mes+"/"+año;
         
-        
+        //Recibe el número de cédula y lo verifica
         try {
         cedula = Integer.parseInt(cedulaCita.getText());
         } catch (java.lang.NumberFormatException ex) {
@@ -1562,7 +1677,7 @@ public class Modulo extends javax.swing.JFrame {
             }
         }
         
-        
+        //Se verifica cuál Servicio ha sido solicitado junto con su precio
        if (consultaVet.isSelected()) {
            servicio = "Consulta Veterinario";
            precio = 60000;
@@ -1588,6 +1703,7 @@ public class Modulo extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null, "Seleccione un servicio");
        }
        
+       //Se escriben los datos recolectados en el Archivo Agenda
        try (FileWriter aw = new FileWriter(agenda.getAbsoluteFile(), true)) {
             BufferedWriter abw = new BufferedWriter(aw);
             abw.write(cedula + "," + servicio + "," + precio + "," + fechaCita);
@@ -1670,11 +1786,12 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_añadirInfoClinicaActionPerformed
 
     private void buscarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarAdminActionPerformed
+        //Verifica la existencia del archivo agenda y busca dependiendo de la cédula digitada
         String nDir= "C:\\GestiónVeterinaria";
         File a = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
         String nombre= "Agenda.csv"; 
-        File agenda= new File (ruta, nombre); //Archivo clientes
+        File agenda= new File (ruta, nombre); //Archivo Agenda
         
         
         if (!agenda.exists()) { //No existe el archivo
@@ -1685,22 +1802,39 @@ public class Modulo extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
             }
         }
+        DefaultTableModel model = (DefaultTableModel) tablaAdmin.getModel();
         
-        int cedula = 0;
+        //Escribe los datos del archivo Agenda en la tabla
+        model.setRowCount(0);
+            try (Scanner sc = new Scanner(agenda)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedula = Integer.parseInt(data[0]);
+                    String servicio = data[1];
+                    int precio = Integer.parseInt(data[2]);
+                    String fecha = data[3];
+                    model.addRow(new Object[]{cedula, servicio, precio, fecha});
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
+            }
+            
+            int buscarCedula=0;
+            try {
+            buscarCedula = Integer.parseInt(cedAdmin.getText());
+            } catch (NumberFormatException exx){
+            buscarCedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite una cédula correcta"));
+            }
         
-        String dia= Integer.toString(fechaCita.getCalendar().get(Calendar.DAY_OF_MONTH));
-        String mes = Integer.toString(fechaCita.getCalendar().get(Calendar.MONTH) + 1);
-        String año = Integer.toString(fechaCita.getCalendar().get(Calendar.YEAR));
-        String fechaCita= dia+"/"+mes+"/"+año;
-        
-        
-        try {
-        cedula = Integer.parseInt(cedAdmin.getText());
-        } catch (java.lang.NumberFormatException ex) {
-            try{
-            cedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Error al ingresar la cédula, ingrese una cédula correcta.")); 
-            } catch (java.lang.NumberFormatException exx){
-
+        //Ciclo de búsqueda para la cedula digitada
+        int i=0;
+        while (i<model.getRowCount()){
+        int cedClienteBusc = (int) (model.getValueAt(i, 0));
+            if (buscarCedula == cedClienteBusc){
+                i++;
+            } else {
+                model.removeRow(i);
             }
         }
     }//GEN-LAST:event_buscarAdminActionPerformed
@@ -1734,47 +1868,15 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_bañoMouseClicked
 
     private void asigBtnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asigBtnAdminActionPerformed
-        String nDir= "C:\\GestiónVeterinaria";
-        File a = new File(nDir); //Carpeta en el disco C
-        String ruta = "C:\\GestiónVeterinaria";
-        String nombre= "Agenda.csv"; 
-        File agenda= new File (ruta, nombre); //Archivo clientes
         
-        
-        if (!agenda.exists()) { //No existe el archivo
-            a.mkdir();
-            try {
-                agenda.createNewFile();
-            } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
-            }
-        }
-        
-        int cedula = 0;
-        
-        String dia= Integer.toString(fechaCita.getCalendar().get(Calendar.DAY_OF_MONTH));
-        String mes = Integer.toString(fechaCita.getCalendar().get(Calendar.MONTH) + 1);
-        String año = Integer.toString(fechaCita.getCalendar().get(Calendar.YEAR));
-        String fechaCita= dia+"/"+mes+"/"+año;
-        
-        
-        try {
-        cedula = Integer.parseInt(cedAdmin.getText());
-        } catch (java.lang.NumberFormatException ex) {
-            try{
-            cedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Error al ingresar la cédula, ingrese una cédula correcta.")); 
-            } catch (java.lang.NumberFormatException exx){
-
-            }
-        }
     }//GEN-LAST:event_asigBtnAdminActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void modificarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarAdminActionPerformed
         String nDir= "C:\\GestiónVeterinaria";
         File a = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
         String nombre= "Agenda.csv"; 
-        File agenda= new File (ruta, nombre); //Archivo clientes
+        File agenda= new File (ruta, nombre); //Archivo agenda
         
         
         if (!agenda.exists()) { //No existe el archivo
@@ -1803,14 +1905,22 @@ public class Modulo extends javax.swing.JFrame {
 
             }
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_modificarAdminActionPerformed
 
     private void elimBtnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elimBtnAdminActionPerformed
+        //Función cancelar Cita, se elimina del archivo directamente para evitar que tenga problemas de lógica con el botón buscar
+        DefaultTableModel model = (DefaultTableModel) tablaAdmin.getModel();
+        int selectedRow = tablaAdmin.getSelectedRow();
+        int cedulaRow = (int) model.getValueAt(selectedRow, 0);
+        String servicioRow = (String) model.getValueAt(selectedRow, 1);
+        int precioRow = (int) model.getValueAt(selectedRow, 2);
+        String fechaRow = (String) model.getValueAt(selectedRow, 3);
+        
         String nDir= "C:\\GestiónVeterinaria";
         File a = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
         String nombre= "Agenda.csv"; 
-        File agenda= new File (ruta, nombre); //Archivo clientes
+        File agenda= new File (ruta, nombre); //Archivo Agenda
         
         
         if (!agenda.exists()) { //No existe el archivo
@@ -1822,32 +1932,34 @@ public class Modulo extends javax.swing.JFrame {
             }
         }
         
-        int cedula = 0;
-        
-        String dia= Integer.toString(fechaCita.getCalendar().get(Calendar.DAY_OF_MONTH));
-        String mes = Integer.toString(fechaCita.getCalendar().get(Calendar.MONTH) + 1);
-        String año = Integer.toString(fechaCita.getCalendar().get(Calendar.YEAR));
-        String fechaCita= dia+"/"+mes+"/"+año;
-        
-        
-        try {
-        cedula = Integer.parseInt(cedAdmin.getText());
-        } catch (java.lang.NumberFormatException ex) {
-            try{
-            cedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Error al ingresar la cédula, ingrese una cédula correcta.")); 
-            } catch (java.lang.NumberFormatException exx){
-
+        model.setRowCount(0);
+            try (Scanner sc = new Scanner(agenda)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedula = Integer.parseInt(data[0]);
+                    String servicio = data[1];
+                    int precio = Integer.parseInt(data[2]);
+                    String fecha = data[3]; 
+                    if (cedula==cedulaRow && servicio.equals(servicioRow) && precio == precioRow && fecha.equals(fechaRow)){
+                    } else {
+                    model.addRow(new Object[]{cedula, servicio, precio, fecha});                  
+                    }
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
             }
-        }
-        
+
+        guardarAgenda(model);
     }//GEN-LAST:event_elimBtnAdminActionPerformed
 
     private void modifBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifBtnActionPerformed
+        //Muestra el Frame con el archivo agenda
         String nDir= "C:\\GestiónVeterinaria";
         File a = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
         String nombre= "Agenda.csv"; 
-        File agenda= new File (ruta, nombre); //Archivo clientes
+        File agenda= new File (ruta, nombre); //Archivo Agenda
         
         
         if (!agenda.exists()) { //No existe el archivo
@@ -1860,6 +1972,7 @@ public class Modulo extends javax.swing.JFrame {
         }
         DefaultTableModel model = (DefaultTableModel) tablaCitas.getModel();
         
+        //Escribe los datos del archivo Agenda en la tabla
         model.setRowCount(0);
             try (Scanner sc = new Scanner(agenda)) {
                 while (sc.hasNextLine()) {
@@ -1882,11 +1995,12 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_modifBtnActionPerformed
 
     private void buscarCitaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarCitaBtnActionPerformed
+        //Verifica la existencia del archivo agenda y busca dependiendo de la cédula digitada
         String nDir= "C:\\GestiónVeterinaria";
         File a = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
         String nombre= "Agenda.csv"; 
-        File agenda= new File (ruta, nombre); //Archivo clientes
+        File agenda= new File (ruta, nombre); //Archivo Agenda
         
         
         if (!agenda.exists()) { //No existe el archivo
@@ -1899,6 +2013,7 @@ public class Modulo extends javax.swing.JFrame {
         }
         DefaultTableModel model = (DefaultTableModel) tablaCitas.getModel();
         
+        //Escribe los datos del archivo Agenda en la tabla
         model.setRowCount(0);
             try (Scanner sc = new Scanner(agenda)) {
                 while (sc.hasNextLine()) {
@@ -1921,6 +2036,7 @@ public class Modulo extends javax.swing.JFrame {
             
             }
         
+        //Ciclo de búsqueda para la cedula digitada
         int i=0;
         while (i<model.getRowCount()){
         int cedClienteBusc = (int) (model.getValueAt(i, 0));
@@ -1932,6 +2048,70 @@ public class Modulo extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_buscarCitaBtnActionPerformed
+
+    private void cancelarCitaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarCitaBtnActionPerformed
+        //Función cancelar Cita, se elimina del archivo directamente para evitar que tenga problemas de lógica con el botón buscar
+        DefaultTableModel model = (DefaultTableModel) tablaCitas.getModel();
+        int selectedRow = tablaCitas.getSelectedRow();
+        int cedulaRow = (int) model.getValueAt(selectedRow, 0);
+        String servicioRow = (String) model.getValueAt(selectedRow, 1);
+        int precioRow = (int) model.getValueAt(selectedRow, 2);
+        String fechaRow = (String) model.getValueAt(selectedRow, 3);
+        
+        String nDir= "C:\\GestiónVeterinaria";
+        File a = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombre= "Agenda.csv"; 
+        File agenda= new File (ruta, nombre); //Archivo Agenda
+        
+        
+        if (!agenda.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                agenda.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        
+        model.setRowCount(0);
+            try (Scanner sc = new Scanner(agenda)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedula = Integer.parseInt(data[0]);
+                    String servicio = data[1];
+                    int precio = Integer.parseInt(data[2]);
+                    String fecha = data[3]; 
+                    if (cedula==cedulaRow && servicio.equals(servicioRow) && precio == precioRow && fecha.equals(fechaRow)){
+                    } else {
+                    model.addRow(new Object[]{cedula, servicio, precio, fecha});                  
+                    }
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
+            }
+
+        guardarAgenda(model);
+    }//GEN-LAST:event_cancelarCitaBtnActionPerformed
+
+    private void guardarAgendaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarAgendaBtnActionPerformed
+        DefaultTableModel model = (DefaultTableModel) tablaCitas.getModel();
+        guardarAgenda(model);
+    }//GEN-LAST:event_guardarAgendaBtnActionPerformed
+
+    private void ModificarCitaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarCitaBtnActionPerformed
+        
+    }//GEN-LAST:event_ModificarCitaBtnActionPerformed
+
+    private void guardarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarAdminActionPerformed
+        DefaultTableModel model = (DefaultTableModel) tablaAdmin.getModel();
+        guardarAgenda(model);
+    }//GEN-LAST:event_guardarAdminActionPerformed
+
+    private void asignarDatosAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asignarDatosAdminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_asignarDatosAdminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1988,6 +2168,7 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JButton Veterinario;
     private javax.swing.JButton actualizarDatos;
     private javax.swing.JButton asigBtnAdmin;
+    private javax.swing.JButton asignarDatosAdmin;
     private javax.swing.JButton añadirBtn;
     private javax.swing.JButton añadirInfoClinica;
     private javax.swing.JRadioButton baño;
@@ -2022,10 +2203,10 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JButton genFact;
     private javax.swing.JButton gestAgenda;
     private javax.swing.JRadioButton guard;
+    private javax.swing.JButton guardarAdmin;
+    private javax.swing.JButton guardarAgendaBtn;
     private javax.swing.JButton guardarBtn;
     private javax.swing.JRadioButton guarderíaAdm;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private com.toedter.calendar.JDateChooser jDateChooser3;
     private javax.swing.JLabel jLabel1;
@@ -2065,12 +2246,12 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JButton modifBtn;
+    private javax.swing.JButton modificarAdmin;
     private javax.swing.JButton moduloCitas;
     private javax.swing.JTextField nomPer;
     private javax.swing.JTextField perroHC;
@@ -2079,6 +2260,7 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JRadioButton radiologíaAdm;
     private javax.swing.JTextField razaPer;
     private javax.swing.JButton solicitarBtn;
+    private javax.swing.JTable tablaAdmin;
     private javax.swing.JTable tablaCitas;
     private javax.swing.JTable tablaClientes;
     private javax.swing.JTable tablaClinica;
