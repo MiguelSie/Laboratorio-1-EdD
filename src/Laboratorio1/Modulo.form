@@ -411,6 +411,7 @@
             <Property name="text" type="java.lang.String" value="Consulta Veterinario $60.000 1h"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="consultaVetMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultaVetActionPerformed"/>
           </Events>
         </Component>
@@ -421,6 +422,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Control $10.000 1/2h"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="controlMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="despa">
           <Properties>
@@ -429,6 +433,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Desparasitaci&#xf3;n $40.000 1/2h"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="despaMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="vacun">
           <Properties>
@@ -437,6 +444,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Vacunaci&#xf3;n $35.000 1/2h"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="vacunMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="guard">
           <Properties>
@@ -445,6 +455,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Guarder&#xed;a $35.000 1 d&#xed;a"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="guardMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="radio">
           <Properties>
@@ -453,6 +466,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Radiolog&#xed;a $100.000 1h"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="radioMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="ba&#xf1;o">
           <Properties>
@@ -461,6 +477,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Ba&#xf1;o $25.000 2h"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ba&#xf1;oMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="solicitarBtn">
           <Properties>
@@ -1103,12 +1122,16 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="cedAdmin" min="-2" pref="82" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="buscarAdmin" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="asigBtnAdmin" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="elimBtnAdmin" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane5" alignment="0" pref="460" max="32767" attributes="0"/>
+                  <Component id="jScrollPane5" alignment="0" pref="597" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -1121,6 +1144,8 @@
                               <Component id="cedAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="elimBtnAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="asigBtnAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="buscarAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -1192,11 +1217,33 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="elimBtnAdminActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="asigBtnAdmin">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Asignar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="asigBtnAdminActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Modificar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="buscarAdmin">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Buscar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarAdminActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

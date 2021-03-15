@@ -122,6 +122,8 @@ public class Modulo extends javax.swing.JFrame {
         cedAdmin = new javax.swing.JTextField();
         elimBtnAdmin = new javax.swing.JButton();
         asigBtnAdmin = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        buscarAdmin = new javax.swing.JButton();
         AsignarAdmin = new javax.swing.JFrame();
         consultaAdm = new javax.swing.JRadioButton();
         controlAdm = new javax.swing.JRadioButton();
@@ -364,6 +366,11 @@ public class Modulo extends javax.swing.JFrame {
 
         citasOp.add(consultaVet);
         consultaVet.setText("Consulta Veterinario $60.000 1h");
+        consultaVet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                consultaVetMouseClicked(evt);
+            }
+        });
         consultaVet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 consultaVetActionPerformed(evt);
@@ -372,21 +379,51 @@ public class Modulo extends javax.swing.JFrame {
 
         citasOp.add(control);
         control.setText("Control $10.000 1/2h");
+        control.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                controlMouseClicked(evt);
+            }
+        });
 
         citasOp.add(despa);
         despa.setText("Desparasitación $40.000 1/2h");
+        despa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                despaMouseClicked(evt);
+            }
+        });
 
         citasOp.add(vacun);
         vacun.setText("Vacunación $35.000 1/2h");
+        vacun.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vacunMouseClicked(evt);
+            }
+        });
 
         citasOp.add(guard);
         guard.setText("Guardería $35.000 1 día");
+        guard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                guardMouseClicked(evt);
+            }
+        });
 
         citasOp.add(radio);
         radio.setText("Radiología $100.000 1h");
+        radio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                radioMouseClicked(evt);
+            }
+        });
 
         citasOp.add(baño);
         baño.setText("Baño $25.000 2h");
+        baño.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bañoMouseClicked(evt);
+            }
+        });
 
         solicitarBtn.setText("Solicitar");
         solicitarBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -817,8 +854,32 @@ public class Modulo extends javax.swing.JFrame {
         jLabel14.setText("Cédula");
 
         elimBtnAdmin.setText("Eliminar");
+        elimBtnAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                elimBtnAdminActionPerformed(evt);
+            }
+        });
 
         asigBtnAdmin.setText("Asignar");
+        asigBtnAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                asigBtnAdminActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Modificar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        buscarAdmin.setText("Buscar");
+        buscarAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarAdminActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout jPanel7Layout = new org.jdesktop.layout.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -830,11 +891,15 @@ public class Modulo extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(cedAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 82, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(buscarAdmin)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(asigBtnAdmin)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jButton2)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(elimBtnAdmin)
                 .addContainerGap())
-            .add(jScrollPane5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+            .add(jScrollPane5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -845,7 +910,9 @@ public class Modulo extends javax.swing.JFrame {
                     .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                         .add(cedAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(elimBtnAdmin)
-                        .add(asigBtnAdmin)))
+                        .add(asigBtnAdmin)
+                        .add(jButton2)
+                        .add(buscarAdmin)))
                 .add(18, 18, 18)
                 .add(jScrollPane5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE))
         );
@@ -1443,7 +1510,7 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_guardarBtnActionPerformed
 
     private void solicitarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solicitarBtnActionPerformed
-           String nDir= "C:\\GestiónVeterinaria";
+        String nDir= "C:\\GestiónVeterinaria";
         File a = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
         String nombre= "Agenda.csv"; 
@@ -1547,6 +1614,179 @@ public class Modulo extends javax.swing.JFrame {
         prescripcionHC.setText("");
     }//GEN-LAST:event_añadirInfoClinicaActionPerformed
 
+    private void buscarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarAdminActionPerformed
+        String nDir= "C:\\GestiónVeterinaria";
+        File a = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombre= "Agenda.csv"; 
+        File agenda= new File (ruta, nombre); //Archivo clientes
+        
+        
+        if (!agenda.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                agenda.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        
+        int cedula = 0;
+        
+        String dia= Integer.toString(fechaCita.getCalendar().get(Calendar.DAY_OF_MONTH));
+        String mes = Integer.toString(fechaCita.getCalendar().get(Calendar.MONTH) + 1);
+        String año = Integer.toString(fechaCita.getCalendar().get(Calendar.YEAR));
+        String fechaCita= dia+"/"+mes+"/"+año;
+        
+        
+        try {
+        cedula = Integer.parseInt(cedAdmin.getText());
+        } catch (java.lang.NumberFormatException ex) {
+            try{
+            cedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Error al ingresar la cédula, ingrese una cédula correcta.")); 
+            } catch (java.lang.NumberFormatException exx){
+
+            }
+        }
+    }//GEN-LAST:event_buscarAdminActionPerformed
+
+    private void consultaVetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultaVetMouseClicked
+        //TODO add your handling code here
+    }//GEN-LAST:event_consultaVetMouseClicked
+
+    private void controlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_controlMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_controlMouseClicked
+
+    private void despaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_despaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_despaMouseClicked
+
+    private void vacunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vacunMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vacunMouseClicked
+
+    private void guardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guardMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_guardMouseClicked
+
+    private void radioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_radioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioMouseClicked
+
+    private void bañoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bañoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bañoMouseClicked
+
+    private void asigBtnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asigBtnAdminActionPerformed
+        String nDir= "C:\\GestiónVeterinaria";
+        File a = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombre= "Agenda.csv"; 
+        File agenda= new File (ruta, nombre); //Archivo clientes
+        
+        
+        if (!agenda.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                agenda.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        
+        int cedula = 0;
+        
+        String dia= Integer.toString(fechaCita.getCalendar().get(Calendar.DAY_OF_MONTH));
+        String mes = Integer.toString(fechaCita.getCalendar().get(Calendar.MONTH) + 1);
+        String año = Integer.toString(fechaCita.getCalendar().get(Calendar.YEAR));
+        String fechaCita= dia+"/"+mes+"/"+año;
+        
+        
+        try {
+        cedula = Integer.parseInt(cedAdmin.getText());
+        } catch (java.lang.NumberFormatException ex) {
+            try{
+            cedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Error al ingresar la cédula, ingrese una cédula correcta.")); 
+            } catch (java.lang.NumberFormatException exx){
+
+            }
+        }
+    }//GEN-LAST:event_asigBtnAdminActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String nDir= "C:\\GestiónVeterinaria";
+        File a = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombre= "Agenda.csv"; 
+        File agenda= new File (ruta, nombre); //Archivo clientes
+        
+        
+        if (!agenda.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                agenda.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        
+        int cedula = 0;
+        
+        String dia= Integer.toString(fechaCita.getCalendar().get(Calendar.DAY_OF_MONTH));
+        String mes = Integer.toString(fechaCita.getCalendar().get(Calendar.MONTH) + 1);
+        String año = Integer.toString(fechaCita.getCalendar().get(Calendar.YEAR));
+        String fechaCita= dia+"/"+mes+"/"+año;
+        
+        
+        try {
+        cedula = Integer.parseInt(cedAdmin.getText());
+        } catch (java.lang.NumberFormatException ex) {
+            try{
+            cedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Error al ingresar la cédula, ingrese una cédula correcta.")); 
+            } catch (java.lang.NumberFormatException exx){
+
+            }
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void elimBtnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elimBtnAdminActionPerformed
+        String nDir= "C:\\GestiónVeterinaria";
+        File a = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombre= "Agenda.csv"; 
+        File agenda= new File (ruta, nombre); //Archivo clientes
+        
+        
+        if (!agenda.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                agenda.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        
+        int cedula = 0;
+        
+        String dia= Integer.toString(fechaCita.getCalendar().get(Calendar.DAY_OF_MONTH));
+        String mes = Integer.toString(fechaCita.getCalendar().get(Calendar.MONTH) + 1);
+        String año = Integer.toString(fechaCita.getCalendar().get(Calendar.YEAR));
+        String fechaCita= dia+"/"+mes+"/"+año;
+        
+        
+        try {
+        cedula = Integer.parseInt(cedAdmin.getText());
+        } catch (java.lang.NumberFormatException ex) {
+            try{
+            cedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Error al ingresar la cédula, ingrese una cédula correcta.")); 
+            } catch (java.lang.NumberFormatException exx){
+
+            }
+        }
+        
+    }//GEN-LAST:event_elimBtnAdminActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1609,6 +1849,7 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JButton botonAgenda;
     private javax.swing.JButton botonHisClinica;
     private javax.swing.JButton botonHisClinicas;
+    private javax.swing.JButton buscarAdmin;
     private javax.swing.JButton buscarBtn;
     private javax.swing.JButton cancelarCitaBtn;
     private javax.swing.JTextField cedAdmin;
@@ -1636,6 +1877,7 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JButton guardarBtn;
     private javax.swing.JRadioButton guarderíaAdm;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private com.toedter.calendar.JDateChooser jDateChooser3;
     private javax.swing.JLabel jLabel1;
