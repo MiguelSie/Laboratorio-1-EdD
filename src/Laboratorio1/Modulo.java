@@ -82,11 +82,12 @@ public class Modulo extends javax.swing.JFrame {
         ModificarCitasCliente = new javax.swing.JFrame();
         jPanel4 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        buscarCedulaCita = new javax.swing.JTextField();
         cancelarCitaBtn = new javax.swing.JButton();
         ModificarCitaBtn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tablaCitas = new javax.swing.JTable();
+        buscarCitaBtn = new javax.swing.JButton();
         ModuloVeterinario = new javax.swing.JFrame();
         jPanel6 = new javax.swing.JPanel();
         botonAgenda = new javax.swing.JButton();
@@ -433,12 +434,17 @@ public class Modulo extends javax.swing.JFrame {
         });
 
         modifBtn.setText("Cancelar o modificar una cita");
+        modifBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifBtnActionPerformed(evt);
+            }
+        });
 
         jLabel22.setText("Cedula");
 
         jScrollPane6.setViewportView(cedulaCita);
 
-        fechaCita.setDateFormatString("dd/hh");
+        fechaCita.setDateFormatString("dd/MM/yy");
 
         jLabel23.setText("Fecha de la cita");
 
@@ -515,7 +521,7 @@ public class Modulo extends javax.swing.JFrame {
 
         ModificarCitaBtn.setText("Modificar");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tablaCitas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -531,14 +537,21 @@ public class Modulo extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable2);
-        if (jTable2.getColumnModel().getColumnCount() > 0) {
-            jTable2.getColumnModel().getColumn(0).setResizable(false);
-            jTable2.getColumnModel().getColumn(1).setResizable(false);
-            jTable2.getColumnModel().getColumn(2).setResizable(false);
-            jTable2.getColumnModel().getColumn(3).setResizable(false);
-            jTable2.getColumnModel().getColumn(4).setResizable(false);
+        jScrollPane2.setViewportView(tablaCitas);
+        if (tablaCitas.getColumnModel().getColumnCount() > 0) {
+            tablaCitas.getColumnModel().getColumn(0).setResizable(false);
+            tablaCitas.getColumnModel().getColumn(1).setResizable(false);
+            tablaCitas.getColumnModel().getColumn(2).setResizable(false);
+            tablaCitas.getColumnModel().getColumn(3).setResizable(false);
+            tablaCitas.getColumnModel().getColumn(4).setResizable(false);
         }
+
+        buscarCitaBtn.setText("Buscar");
+        buscarCitaBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarCitaBtnActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout jPanel4Layout = new org.jdesktop.layout.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -550,8 +563,10 @@ public class Modulo extends javax.swing.JFrame {
                         .add(15, 15, 15)
                         .add(jLabel9)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 67, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 125, Short.MAX_VALUE)
+                        .add(buscarCedulaCita, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 67, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(buscarCitaBtn)
+                        .add(18, 18, 18)
                         .add(cancelarCitaBtn)
                         .add(18, 18, 18)
                         .add(ModificarCitaBtn))
@@ -566,9 +581,10 @@ public class Modulo extends javax.swing.JFrame {
                 .add(19, 19, 19)
                 .add(jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel9)
-                    .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(buscarCedulaCita, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(cancelarCitaBtn)
-                    .add(ModificarCitaBtn))
+                    .add(ModificarCitaBtn)
+                    .add(buscarCitaBtn))
                 .add(18, 18, 18)
                 .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1526,10 +1542,12 @@ public class Modulo extends javax.swing.JFrame {
             }
         }
         
+        String servicio = "Sin servicio";
+        int precio = 0;
         int cedula = 0;
         
         String dia= Integer.toString(fechaCita.getCalendar().get(Calendar.DAY_OF_MONTH));
-        String mes = Integer.toString(fechaCita.getCalendar().get(Calendar.MONTH) + 1);
+        String mes = Integer.toString(fechaCita.getCalendar().get(Calendar.MONTH));
         String año = Integer.toString(fechaCita.getCalendar().get(Calendar.YEAR));
         String fechaCita= dia+"/"+mes+"/"+año;
         
@@ -1545,7 +1563,44 @@ public class Modulo extends javax.swing.JFrame {
         }
         
         
-        
+       if (consultaVet.isSelected()) {
+           servicio = "Consulta Veterinario";
+           precio = 60000;
+       } else if (control.isSelected()) {
+           servicio = "Control";
+           precio = 10000;
+       } else if(despa.isSelected()) {
+           servicio = "Desparasitación";
+           precio = 40000;
+       } else if(vacun.isSelected()) {
+           servicio = "Vacunación";
+           precio = 35000;
+       } else if (guard.isSelected()) {
+           servicio = "Guardería";
+           precio = 35000;
+       } else if (radio.isSelected()) {
+           servicio = "Radiología";
+           precio = 100000;
+       } else if (baño.isSelected()) {
+           servicio = "Baño";
+           precio = 25000;
+       } else {
+           JOptionPane.showMessageDialog(null, "Seleccione un servicio");
+       }
+       
+       try (FileWriter aw = new FileWriter(agenda.getAbsoluteFile(), true)) {
+            BufferedWriter abw = new BufferedWriter(aw);
+            abw.write(cedula + "," + servicio + "," + precio + "," + fechaCita);
+            abw.newLine();
+            abw.flush();
+            abw.close();
+            aw.close();
+
+        } catch (IOException ex) {
+            
+        }
+       
+        cedulaCita.setText("");
         
         
         
@@ -1787,6 +1842,97 @@ public class Modulo extends javax.swing.JFrame {
         
     }//GEN-LAST:event_elimBtnAdminActionPerformed
 
+    private void modifBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifBtnActionPerformed
+        String nDir= "C:\\GestiónVeterinaria";
+        File a = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombre= "Agenda.csv"; 
+        File agenda= new File (ruta, nombre); //Archivo clientes
+        
+        
+        if (!agenda.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                agenda.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        DefaultTableModel model = (DefaultTableModel) tablaCitas.getModel();
+        
+        model.setRowCount(0);
+            try (Scanner sc = new Scanner(agenda)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedula = Integer.parseInt(data[0]);
+                    String servicio = data[1];
+                    int precio = Integer.parseInt(data[2]);
+                    String fecha = data[3];
+                    model.addRow(new Object[]{cedula, servicio, precio, fecha});
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
+            }
+        
+        ModificarCitasCliente.setSize(500,308);
+        ModificarCitasCliente.setResizable(false);
+        ModificarCitasCliente.setLocation(720,360);
+        ModificarCitasCliente.setVisible(true);
+    }//GEN-LAST:event_modifBtnActionPerformed
+
+    private void buscarCitaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarCitaBtnActionPerformed
+        String nDir= "C:\\GestiónVeterinaria";
+        File a = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombre= "Agenda.csv"; 
+        File agenda= new File (ruta, nombre); //Archivo clientes
+        
+        
+        if (!agenda.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                agenda.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        DefaultTableModel model = (DefaultTableModel) tablaCitas.getModel();
+        
+        model.setRowCount(0);
+            try (Scanner sc = new Scanner(agenda)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedula = Integer.parseInt(data[0]);
+                    String servicio = data[1];
+                    int precio = Integer.parseInt(data[2]);
+                    String fecha = data[3];
+                    model.addRow(new Object[]{cedula, servicio, precio, fecha});
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
+            }
+            
+            int buscarCedula=0;
+            try {
+            buscarCedula = Integer.parseInt(buscarCedulaCita.getText());
+            } catch (NumberFormatException exx){
+            
+            }
+        
+        int i=0;
+        while (i<model.getRowCount()){
+        int cedClienteBusc = (int) (model.getValueAt(i, 0));
+            if (buscarCedula == cedClienteBusc){
+                i++;
+            } else {
+                model.removeRow(i);
+            }
+        }
+        
+    }//GEN-LAST:event_buscarCitaBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1851,6 +1997,8 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JButton botonHisClinicas;
     private javax.swing.JButton buscarAdmin;
     private javax.swing.JButton buscarBtn;
+    private javax.swing.JTextField buscarCedulaCita;
+    private javax.swing.JButton buscarCitaBtn;
     private javax.swing.JButton cancelarCitaBtn;
     private javax.swing.JTextField cedAdmin;
     private javax.swing.JTextField cedCliente;
@@ -1916,10 +2064,8 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable5;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
@@ -1933,6 +2079,7 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JRadioButton radiologíaAdm;
     private javax.swing.JTextField razaPer;
     private javax.swing.JButton solicitarBtn;
+    private javax.swing.JTable tablaCitas;
     private javax.swing.JTable tablaClientes;
     private javax.swing.JTable tablaClinica;
     private javax.swing.JRadioButton vacun;
