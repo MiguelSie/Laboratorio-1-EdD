@@ -1428,7 +1428,8 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_botonHisClinicaActionPerformed
 
     private void botonAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgendaActionPerformed
-        
+
+        //Que se carguen los datos de la agenda del veterinario
         AgendaVet.setSize(400,400);
         AgendaVet.setResizable(false);
         AgendaVet.setLocation(720,360);
@@ -1670,7 +1671,7 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_guardarBtnActionPerformed
 
     private void solicitarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solicitarBtnActionPerformed
-        //Añade datos al archivo Agenda
+        //Añade datos al archivo Citas
         String nDir= "C:\\GestiónVeterinaria";
         File a = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
@@ -1686,7 +1687,7 @@ public class Modulo extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
             }
         }
-        
+        //Crea el archivo agenda en el mismo directorio
         String nombreA= "Agenda.csv"; 
         File agenda= new File (ruta, nombreA); //Archivo agenda
         
@@ -2002,6 +2003,10 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_elimBtnAdminActionPerformed
 
     private void modifBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifBtnActionPerformed
+        //Hacer que aquí se cargue otro frame invisible, donde se guarda el
+        //archivo Agenda, así se pueden modificar las citas en ambos
+        //archivos al mismo tiempo en la tabla de modificar citas.
+        
         //Muestra el Frame con el archivo agenda
         String nDir= "C:\\GestiónVeterinaria";
         File a = new File(nDir); //Carpeta en el disco C
@@ -2020,7 +2025,7 @@ public class Modulo extends javax.swing.JFrame {
         }
         DefaultTableModel model = (DefaultTableModel) tablaCitas.getModel();
         
-        //Escribe los datos del archivo Agenda en la tabla
+        //Escribe los datos del archivo Citas en la tabla
         model.setRowCount(0);
             try (Scanner sc = new Scanner(citas)) {
                 while (sc.hasNextLine()) {
