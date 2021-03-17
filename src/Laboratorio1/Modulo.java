@@ -97,7 +97,7 @@ public class Modulo extends javax.swing.JFrame {
         botonHisClinica = new javax.swing.JButton();
         AgendaVet = new javax.swing.JFrame();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        tablaAgenda = new javax.swing.JTable();
         HistoriaClinica = new javax.swing.JFrame();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -462,6 +462,7 @@ public class Modulo extends javax.swing.JFrame {
             .add(ModuloCitasLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(despa)
                     .add(control)
                     .add(consultaVet)
                     .add(ModuloCitasLayout.createSequentialGroup()
@@ -474,13 +475,10 @@ public class Modulo extends javax.swing.JFrame {
                     .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                         .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
                             .add(org.jdesktop.layout.GroupLayout.LEADING, ModuloCitasLayout.createSequentialGroup()
-                                .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                    .add(org.jdesktop.layout.GroupLayout.LEADING, ModuloCitasLayout.createSequentialGroup()
-                                        .add(jLabel22)
-                                        .add(26, 26, 26)
-                                        .add(jScrollPane6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 82, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .add(org.jdesktop.layout.GroupLayout.LEADING, despa))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jLabel22)
+                                .add(26, 26, 26)
+                                .add(jScrollPane6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 82, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(55, 55, 55)
                                 .add(fechaCita, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(org.jdesktop.layout.GroupLayout.LEADING, ModuloCitasLayout.createSequentialGroup()
                                 .add(solicitarBtn)
@@ -672,7 +670,7 @@ public class Modulo extends javax.swing.JFrame {
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
         );
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tablaAgenda.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -688,7 +686,7 @@ public class Modulo extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(tablaAgenda);
 
         org.jdesktop.layout.GroupLayout AgendaVetLayout = new org.jdesktop.layout.GroupLayout(AgendaVet.getContentPane());
         AgendaVet.getContentPane().setLayout(AgendaVetLayout);
@@ -876,11 +874,11 @@ public class Modulo extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Cedula", "Servicio", "Precio", "Fecha", "Hora"
+                "Cedula", "Mascota", "Servicio", "Precio", "Fecha", "Hora"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -890,10 +888,9 @@ public class Modulo extends javax.swing.JFrame {
         jScrollPane5.setViewportView(tablaAdmin);
         if (tablaAdmin.getColumnModel().getColumnCount() > 0) {
             tablaAdmin.getColumnModel().getColumn(0).setResizable(false);
-            tablaAdmin.getColumnModel().getColumn(1).setResizable(false);
-            tablaAdmin.getColumnModel().getColumn(2).setResizable(false);
             tablaAdmin.getColumnModel().getColumn(3).setResizable(false);
             tablaAdmin.getColumnModel().getColumn(4).setResizable(false);
+            tablaAdmin.getColumnModel().getColumn(5).setResizable(false);
         }
 
         jLabel14.setText("Cédula");
@@ -1206,7 +1203,8 @@ public class Modulo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    boolean Consulta = false, Control = false, Desparasitacion = false, Vacunacion = false, Radiologia = false;
     private void guardarClientes(DefaultTableModel model){
         String nDir = "C:\\GestiónVeterinaria";
         File f = new File(nDir);
@@ -1257,6 +1255,41 @@ public class Modulo extends javax.swing.JFrame {
             }
         }
         try (FileWriter aw = new FileWriter(citas.getAbsoluteFile())) {
+            BufferedWriter baw = new BufferedWriter(aw);
+            for (int i = 0; i < model.getRowCount(); i++) {
+                int cedula = (int) model.getValueAt(i, 0);
+                String nombreM = (String) model.getValueAt(i, 1);
+                String servicio = (String) model.getValueAt(i, 2);
+                int precio = (int) model.getValueAt(i, 3);
+                String fecha = (String) model.getValueAt(i, 4);
+                Float horas = (Float) model.getValueAt (i,5);
+                baw.write(cedula + "," + nombreM + "," + servicio + "," + precio + "," + fecha + "," + horas);
+                baw.newLine();
+            }
+            baw.flush();
+            baw.close();
+            aw.close();
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Error al crear el archivo");
+        }
+    }
+    
+    private void guardarAgenda(DefaultTableModel model){
+        String nDir = "C:\\GestiónVeterinaria";
+        File a = new File(nDir);
+        String ruta = "C:\\GestiónVeterinaria"; //Carpeta donde se guarda el archivo
+        String nombre = "Agenda.csv"; 
+        File agenda = new File(ruta, nombre);
+
+        if (!agenda.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                agenda.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error");
+            }
+        }
+        try (FileWriter aw = new FileWriter(agenda.getAbsoluteFile())) {
             BufferedWriter baw = new BufferedWriter(aw);
             for (int i = 0; i < model.getRowCount(); i++) {
                 int cedula = (int) model.getValueAt(i, 0);
@@ -1428,7 +1461,42 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_botonHisClinicaActionPerformed
 
     private void botonAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgendaActionPerformed
-
+        String nDir= "C:\\GestiónVeterinaria";
+        File a = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombreC= "Agenda.csv"; 
+        File agenda= new File (ruta, nombreC); //Archivo Citas
+        
+        
+        if (!agenda.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                agenda.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        
+        DefaultTableModel model = (DefaultTableModel) tablaAgenda.getModel();
+        
+        //Escribe los datos del archivo Citas en la tabla
+        model.setRowCount(0);
+            try (Scanner sc = new Scanner(agenda)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedulaA = Integer.parseInt(data[0]);
+                    String nombreMA = data[1];
+                    String servicioA = data[2];
+                    int precioA = Integer.parseInt(data[3]);
+                    String fechaA = data[4];
+                    float horasA = Float.parseFloat(data[5]);
+                    model.addRow(new Object[]{cedulaA, nombreMA, servicioA, precioA, fechaA, horasA});
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
+            }
+        
         //Que se carguen los datos de la agenda del veterinario
         AgendaVet.setSize(400,400);
         AgendaVet.setResizable(false);
@@ -1618,40 +1686,6 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_buscarBtnActionPerformed
 
     private void gestAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestAgendaActionPerformed
-        //Muestra el Frame con el archivo agenda
-        String nDir= "C:\\GestiónVeterinaria";
-        File a = new File(nDir); //Carpeta en el disco C
-        String ruta = "C:\\GestiónVeterinaria";
-        String nombre= "Agenda.csv"; 
-        File agenda= new File (ruta, nombre); //Archivo Agenda
-        
-        
-        if (!agenda.exists()) { //No existe el archivo
-            a.mkdir();
-            try {
-                agenda.createNewFile();
-            } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
-            }
-        }
-        DefaultTableModel model = (DefaultTableModel) tablaAdmin.getModel();
-        
-        //Escribe los datos del archivo Agenda en la tabla
-        model.setRowCount(0);
-            try (Scanner sc = new Scanner(agenda)) {
-                while (sc.hasNextLine()) {
-                    String linea = sc.nextLine();
-                    String data[] = linea.split(",");
-                    int cedula = Integer.parseInt(data[0]);
-                    String servicio = data[1];
-                    int precio = Integer.parseInt(data[2]);
-                    String fecha = data[3];
-                    model.addRow(new Object[]{cedula, servicio, precio, fecha});
-                }
-            } catch (FileNotFoundException e) {
-                System.out.println("El archivo no se encontró");
-            }
-        
         AsignarAdmin.setSize(426,331);
         AsignarAdmin.setResizable(false);
         AsignarAdmin.setLocation(720,360);
@@ -1659,6 +1693,42 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_gestAgendaActionPerformed
 
     private void verAgendaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verAgendaBtnActionPerformed
+        String nDir= "C:\\GestiónVeterinaria";
+        File a = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombre= "Citas.csv"; 
+        File citas= new File (ruta, nombre); //Archivo Citas
+        
+        
+        if (!citas.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                citas.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        DefaultTableModel model = (DefaultTableModel) tablaAdmin.getModel();
+        
+        //Escribe los datos del archivo Citas en la tabla
+        model.setRowCount(0);
+            try (Scanner sc = new Scanner(citas)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedula = Integer.parseInt(data[0]);
+                    String nombreM = data[1];
+                    String servicio = data[2];
+                    int precio = Integer.parseInt(data[3]);
+                    String fecha = data[4];
+                    float horas = Float.parseFloat(data[5]);
+                    model.addRow(new Object[]{cedula, nombreM, servicio, precio, fecha, horas});
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
+            }
+        
+        
         AgendaAdmin.setSize(460,301);
         AgendaAdmin.setResizable(false);
         AgendaAdmin.setLocation(720,360);
@@ -1676,7 +1746,7 @@ public class Modulo extends javax.swing.JFrame {
         File a = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
         String nombreC= "Citas.csv"; 
-        File citas= new File (ruta, nombreC); //Archivo agenda
+        File citas= new File (ruta, nombreC); //Archivo Citas
         
         
         if (!citas.exists()) { //No existe el archivo
@@ -1800,6 +1870,26 @@ public class Modulo extends javax.swing.JFrame {
        JOptionPane.showMessageDialog(null, "Error al crear cita");
        }
        
+      DefaultTableModel model = (DefaultTableModel) tablaAgenda.getModel();
+        
+        //Escribe los datos del archivo Citas en la tabla
+        model.setRowCount(0);
+            try (Scanner sc = new Scanner(agenda)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedulaA = Integer.parseInt(data[0]);
+                    String nombreMA = data[1];
+                    String servicioA = data[2];
+                    int precioA = Integer.parseInt(data[3]);
+                    String fechaA = data[4];
+                    float horasA = Float.parseFloat(data[5]);
+                    model.addRow(new Object[]{cedulaA, nombreMA, servicioA, precioA, fechaA, horasA});
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
+            }
+       
         cedulaCita.setText("");
         nomMascota.setText("");
         
@@ -1875,14 +1965,14 @@ public class Modulo extends javax.swing.JFrame {
         String nDir= "C:\\GestiónVeterinaria";
         File a = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
-        String nombre= "Agenda.csv"; 
-        File agenda= new File (ruta, nombre); //Archivo Agenda
+        String nombre= "Citas.csv"; 
+        File citas= new File (ruta, nombre); //Archivo Citas
         
         
-        if (!agenda.exists()) { //No existe el archivo
+        if (!citas.exists()) { //No existe el archivo
             a.mkdir();
             try {
-                agenda.createNewFile();
+                citas.createNewFile();
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
             }
@@ -1891,15 +1981,17 @@ public class Modulo extends javax.swing.JFrame {
         
         //Escribe los datos del archivo Agenda en la tabla
         model.setRowCount(0);
-            try (Scanner sc = new Scanner(agenda)) {
+            try (Scanner sc = new Scanner(citas)) {
                 while (sc.hasNextLine()) {
                     String linea = sc.nextLine();
                     String data[] = linea.split(",");
                     int cedula = Integer.parseInt(data[0]);
-                    String servicio = data[1];
-                    int precio = Integer.parseInt(data[2]);
-                    String fecha = data[3];
-                    model.addRow(new Object[]{cedula, servicio, precio, fecha});
+                    String nombreM = data[1];
+                    String servicio = data[2];
+                    int precio = Integer.parseInt(data[3]);
+                    String fecha = data[4];
+                    Float horas = Float.parseFloat(data[5]);
+                    model.addRow(new Object[]{cedula, nombreM, servicio, precio, fecha, horas});
                 }
             } catch (FileNotFoundException e) {
                 System.out.println("El archivo no se encontró");
@@ -1909,7 +2001,7 @@ public class Modulo extends javax.swing.JFrame {
             try {
             buscarCedula = Integer.parseInt(cedAdmin.getText());
             } catch (NumberFormatException exx){
-            buscarCedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite una cédula correcta"));
+            
             }
         
         //Ciclo de búsqueda para la cedula digitada
@@ -1953,23 +2045,42 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_bañoMouseClicked
 
     private void asigBtnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asigBtnAdminActionPerformed
-        
+        AsignarAdmin.setSize(426,331);
+        AsignarAdmin.setResizable(false);
+        AsignarAdmin.setLocation(720,360);
+        AsignarAdmin.setVisible(true);
     }//GEN-LAST:event_asigBtnAdminActionPerformed
 
     private void elimBtnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elimBtnAdminActionPerformed
-        //Función cancelar Cita, se elimina del archivo directamente para evitar que tenga problemas de lógica con el botón buscar
         DefaultTableModel model = (DefaultTableModel) tablaAdmin.getModel();
+        DefaultTableModel model2 = (DefaultTableModel) tablaAgenda.getModel();
         int selectedRow = tablaAdmin.getSelectedRow();
         int cedulaRow = (int) model.getValueAt(selectedRow, 0);
-        String servicioRow = (String) model.getValueAt(selectedRow, 1);
-        int precioRow = (int) model.getValueAt(selectedRow, 2);
-        String fechaRow = (String) model.getValueAt(selectedRow, 3);
+        String nombreMRow = (String) model.getValueAt(selectedRow,1);
+        String servicioRow = (String) model.getValueAt(selectedRow, 2);
+        int precioRow = (int) model.getValueAt(selectedRow, 3);
+        String fechaRow = (String) model.getValueAt(selectedRow, 4);
+        Float horasRow = (Float) model.getValueAt (selectedRow, 5);
         
         String nDir= "C:\\GestiónVeterinaria";
         File a = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
-        String nombre= "Agenda.csv"; 
-        File agenda= new File (ruta, nombre); //Archivo Agenda
+        String nombre= "Citas.csv"; 
+        File citas= new File (ruta, nombre); //Archivo Citas
+        
+        
+        if (!citas.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                citas.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        
+        //Crea el archivo agenda en el mismo directorio
+        String nombreA= "Agenda.csv"; 
+        File agenda= new File (ruta, nombreA); //Archivo agenda
         
         
         if (!agenda.exists()) { //No existe el archivo
@@ -1981,18 +2092,39 @@ public class Modulo extends javax.swing.JFrame {
             }
         }
         
-        model.setRowCount(0);
-            try (Scanner sc = new Scanner(agenda)) {
+            model.setRowCount(0);
+            try (Scanner sc = new Scanner(citas)) {
                 while (sc.hasNextLine()) {
                     String linea = sc.nextLine();
                     String data[] = linea.split(",");
                     int cedula = Integer.parseInt(data[0]);
-                    String servicio = data[1];
-                    int precio = Integer.parseInt(data[2]);
-                    String fecha = data[3]; 
-                    if (cedula==cedulaRow && servicio.equals(servicioRow) && precio == precioRow && fecha.equals(fechaRow)){
+                    String nombreM = data[1];
+                    String servicio = data[2];
+                    int precio = Integer.parseInt(data[3]);
+                    String fecha = data[4]; 
+                    float horas = Float.parseFloat(data[5]);
+                    if (cedula==cedulaRow && servicio.equals(servicioRow) && precio == precioRow && fecha.equals(fechaRow) && nombreM.equals(nombreMRow) && horas==horasRow){
                     } else {
-                    model.addRow(new Object[]{cedula, servicio, precio, fecha});                  
+                    model.addRow(new Object[]{cedula, nombreM, servicio, precio, fecha, horas});                  
+                    }
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
+            }
+            
+            try (Scanner sc = new Scanner(agenda)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedulaA = Integer.parseInt(data[0]);
+                    String nombreMA = data[1];
+                    String servicioA = data[2];
+                    int precioA = Integer.parseInt(data[3]);
+                    String fechaA = data[4]; 
+                    float horasA = Float.parseFloat(data[5]);
+                    if (cedulaA==cedulaRow && servicioA.equals(servicioRow) && precioA == precioRow && fechaA.equals(fechaRow) && nombreMA.equals(nombreMRow) && horasA==horasRow){
+                    } else {
+                    model.addRow(new Object[]{cedulaA, nombreMA, servicioA, precioA, fechaA, horasA});                  
                     }
                 }
             } catch (FileNotFoundException e) {
@@ -2000,6 +2132,7 @@ public class Modulo extends javax.swing.JFrame {
             }
 
         guardarCita(model);
+        guardarAgenda(model2);
     }//GEN-LAST:event_elimBtnAdminActionPerformed
 
     private void modifBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifBtnActionPerformed
@@ -2012,7 +2145,7 @@ public class Modulo extends javax.swing.JFrame {
         File a = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
         String nombre= "Citas.csv"; 
-        File citas= new File (ruta, nombre); //Archivo Agenda
+        File citas= new File (ruta, nombre); //Archivo Citas
         
         
         if (!citas.exists()) { //No existe el archivo
@@ -2055,7 +2188,7 @@ public class Modulo extends javax.swing.JFrame {
         File a = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
         String nombre= "Citas.csv"; 
-        File citas= new File (ruta, nombre); //Archivo Agenda
+        File citas= new File (ruta, nombre); //Archivo Citas
         
         
         if (!citas.exists()) { //No existe el archivo
@@ -2109,6 +2242,7 @@ public class Modulo extends javax.swing.JFrame {
     private void cancelarCitaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarCitaBtnActionPerformed
         
         DefaultTableModel model = (DefaultTableModel) tablaCitas.getModel();
+        DefaultTableModel model2 = (DefaultTableModel) tablaAgenda.getModel();
         int selectedRow = tablaCitas.getSelectedRow();
         int cedulaRow = (int) model.getValueAt(selectedRow, 0);
         String nombreMRow = (String) model.getValueAt(selectedRow,1);
@@ -2133,6 +2267,20 @@ public class Modulo extends javax.swing.JFrame {
             }
         }
         
+        //Crea el archivo agenda en el mismo directorio
+        String nombreA= "Agenda.csv"; 
+        File agenda= new File (ruta, nombreA); //Archivo agenda
+        
+        
+        if (!agenda.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                agenda.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        
             model.setRowCount(0);
             try (Scanner sc = new Scanner(citas)) {
                 while (sc.hasNextLine()) {
@@ -2152,8 +2300,28 @@ public class Modulo extends javax.swing.JFrame {
             } catch (FileNotFoundException e) {
                 System.out.println("El archivo no se encontró");
             }
+            
+            try (Scanner sc = new Scanner(agenda)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedulaA = Integer.parseInt(data[0]);
+                    String nombreMA = data[1];
+                    String servicioA = data[2];
+                    int precioA = Integer.parseInt(data[3]);
+                    String fechaA = data[4]; 
+                    float horasA = Float.parseFloat(data[5]);
+                    if (cedulaA==cedulaRow && servicioA.equals(servicioRow) && precioA == precioRow && fechaA.equals(fechaRow) && nombreMA.equals(nombreMRow) && horasA==horasRow){
+                    } else {
+                    model.addRow(new Object[]{cedulaA, nombreMA, servicioA, precioA, fechaA, horasA});                  
+                    }
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
+            }
 
         guardarCita(model);
+        guardarAgenda(model2);
     }//GEN-LAST:event_cancelarCitaBtnActionPerformed
 
     private void guardarAgendaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarAgendaBtnActionPerformed
@@ -2303,7 +2471,6 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JTable jTable3;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
@@ -2319,6 +2486,7 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JTextField razaPer;
     private javax.swing.JButton solicitarBtn;
     private javax.swing.JTable tablaAdmin;
+    private javax.swing.JTable tablaAgenda;
     private javax.swing.JTable tablaCitas;
     private javax.swing.JTable tablaClientes;
     private javax.swing.JTable tablaClinica;
