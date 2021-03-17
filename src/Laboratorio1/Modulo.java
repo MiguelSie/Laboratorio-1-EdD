@@ -687,6 +687,14 @@ public class Modulo extends javax.swing.JFrame {
             }
         });
         jScrollPane3.setViewportView(tablaAgenda);
+        if (tablaAgenda.getColumnModel().getColumnCount() > 0) {
+            tablaAgenda.getColumnModel().getColumn(0).setResizable(false);
+            tablaAgenda.getColumnModel().getColumn(1).setResizable(false);
+            tablaAgenda.getColumnModel().getColumn(2).setResizable(false);
+            tablaAgenda.getColumnModel().getColumn(3).setResizable(false);
+            tablaAgenda.getColumnModel().getColumn(4).setResizable(false);
+            tablaAgenda.getColumnModel().getColumn(5).setResizable(false);
+        }
 
         org.jdesktop.layout.GroupLayout AgendaVetLayout = new org.jdesktop.layout.GroupLayout(AgendaVet.getContentPane());
         AgendaVet.getContentPane().setLayout(AgendaVetLayout);
@@ -878,7 +886,7 @@ public class Modulo extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Float.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -888,6 +896,8 @@ public class Modulo extends javax.swing.JFrame {
         jScrollPane5.setViewportView(tablaAdmin);
         if (tablaAdmin.getColumnModel().getColumnCount() > 0) {
             tablaAdmin.getColumnModel().getColumn(0).setResizable(false);
+            tablaAdmin.getColumnModel().getColumn(1).setResizable(false);
+            tablaAdmin.getColumnModel().getColumn(2).setResizable(false);
             tablaAdmin.getColumnModel().getColumn(3).setResizable(false);
             tablaAdmin.getColumnModel().getColumn(4).setResizable(false);
             tablaAdmin.getColumnModel().getColumn(5).setResizable(false);
@@ -1686,7 +1696,7 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_buscarBtnActionPerformed
 
     private void gestAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestAgendaActionPerformed
-        AsignarAdmin.setSize(426,331);
+        AsignarAdmin.setSize(446,340);
         AsignarAdmin.setResizable(false);
         AsignarAdmin.setLocation(720,360);
         AsignarAdmin.setVisible(true);
@@ -1696,14 +1706,14 @@ public class Modulo extends javax.swing.JFrame {
         String nDir= "C:\\GestiónVeterinaria";
         File a = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
-        String nombre= "Citas.csv"; 
-        File citas= new File (ruta, nombre); //Archivo Citas
+        String nombre= "Agenda.csv"; 
+        File agenda= new File (ruta, nombre); //Archivo Citas
         
         
-        if (!citas.exists()) { //No existe el archivo
+        if (!agenda.exists()) { //No existe el archivo
             a.mkdir();
             try {
-                citas.createNewFile();
+                agenda.createNewFile();
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
             }
@@ -1712,7 +1722,7 @@ public class Modulo extends javax.swing.JFrame {
         
         //Escribe los datos del archivo Citas en la tabla
         model.setRowCount(0);
-            try (Scanner sc = new Scanner(citas)) {
+            try (Scanner sc = new Scanner(agenda)) {
                 while (sc.hasNextLine()) {
                     String linea = sc.nextLine();
                     String data[] = linea.split(",");
@@ -1729,7 +1739,7 @@ public class Modulo extends javax.swing.JFrame {
             }
         
         
-        AgendaAdmin.setSize(460,301);
+        AgendaAdmin.setSize(530,340);
         AgendaAdmin.setResizable(false);
         AgendaAdmin.setLocation(720,360);
         AgendaAdmin.setVisible(true);
