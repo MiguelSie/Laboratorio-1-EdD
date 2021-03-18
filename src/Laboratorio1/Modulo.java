@@ -64,6 +64,7 @@ public class Modulo extends javax.swing.JFrame {
         elimBtnCliente = new javax.swing.JButton();
         guardarBtn = new javax.swing.JButton();
         ModuloCitas = new javax.swing.JFrame();
+        jPanel7 = new javax.swing.JPanel();
         consultaVet = new javax.swing.JRadioButton();
         control = new javax.swing.JRadioButton();
         despa = new javax.swing.JRadioButton();
@@ -71,16 +72,16 @@ public class Modulo extends javax.swing.JFrame {
         guard = new javax.swing.JRadioButton();
         radio = new javax.swing.JRadioButton();
         baño = new javax.swing.JRadioButton();
-        solicitarBtn = new javax.swing.JButton();
-        modifBtn = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         cedulaCita = new javax.swing.JTextPane();
-        fechaCita = new com.toedter.calendar.JDateChooser();
-        jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         nomMascota = new javax.swing.JTextPane();
+        jLabel23 = new javax.swing.JLabel();
+        fechaCita = new com.toedter.calendar.JDateChooser();
+        modifBtn = new javax.swing.JButton();
+        solicitarBtn = new javax.swing.JButton();
         citasOp = new javax.swing.ButtonGroup();
         ModificarCitasCliente = new javax.swing.JFrame();
         jPanel4 = new javax.swing.JPanel();
@@ -96,19 +97,21 @@ public class Modulo extends javax.swing.JFrame {
         botonAgenda = new javax.swing.JButton();
         botonHisClinica = new javax.swing.JButton();
         AgendaVet = new javax.swing.JFrame();
+        jPanel8 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaAgenda = new javax.swing.JTable();
         HistoriaClinica = new javax.swing.JFrame();
+        jPanel9 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        fechaHC = new com.toedter.calendar.JDateChooser();
+        cedulaHC = new javax.swing.JTextField();
+        perroHC = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         diagnosticoHC = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         prescripcionHC = new javax.swing.JTextField();
-        cedulaHC = new javax.swing.JTextField();
-        perroHC = new javax.swing.JTextField();
-        fechaHC = new com.toedter.calendar.JDateChooser();
         añadirInfoClinica = new javax.swing.JButton();
         botonHisClinicas = new javax.swing.JButton();
         DatosClinicos = new javax.swing.JFrame();
@@ -116,16 +119,10 @@ public class Modulo extends javax.swing.JFrame {
         tablaClinica = new javax.swing.JTable();
         ModuloAdmin = new javax.swing.JFrame();
         jPanel5 = new javax.swing.JPanel();
-        genFact = new javax.swing.JButton();
         gestAgenda = new javax.swing.JButton();
+        genFact = new javax.swing.JButton();
         AsignarAdmin = new javax.swing.JFrame();
-        consultaAdm = new javax.swing.JRadioButton();
-        controlAdm = new javax.swing.JRadioButton();
-        desparasitacionAdm = new javax.swing.JRadioButton();
-        vacunacionAdm = new javax.swing.JRadioButton();
-        guarderiaAdm = new javax.swing.JRadioButton();
-        radiologiaAdm = new javax.swing.JRadioButton();
-        bañoAdm = new javax.swing.JRadioButton();
+        jPanel10 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         cedulaAdmin = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
@@ -134,13 +131,28 @@ public class Modulo extends javax.swing.JFrame {
         razaMascotaAdmin = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         colorMascotaAdmin = new javax.swing.JTextField();
-        jLabel20 = new javax.swing.JLabel();
-        fechaNacimientoAdmin = new com.toedter.calendar.JDateChooser();
-        jLabel21 = new javax.swing.JLabel();
-        fechaConsulAdmin = new com.toedter.calendar.JDateChooser();
         asignarDatosAdmin = new javax.swing.JButton();
+        consultaAdm = new javax.swing.JRadioButton();
+        controlAdm = new javax.swing.JRadioButton();
+        desparasitacionAdm = new javax.swing.JRadioButton();
+        vacunacionAdm = new javax.swing.JRadioButton();
+        guarderiaAdm = new javax.swing.JRadioButton();
+        radiologiaAdm = new javax.swing.JRadioButton();
+        bañoAdm = new javax.swing.JRadioButton();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        fechaNacimientoAdmin = new com.toedter.calendar.JDateChooser();
+        fechaConsulAdmin = new com.toedter.calendar.JDateChooser();
         verAgendaBtn = new javax.swing.JButton();
         GestionAdmin = new javax.swing.JFrame();
+        jPanel11 = new javax.swing.JPanel();
+        cedFacturar = new javax.swing.JTextField();
+        buscarAdmin = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tablaFactura = new javax.swing.JTable();
+        facturarAdmin = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        totalPagar = new javax.swing.JTextField();
         BotonesAdmin = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -149,19 +161,46 @@ public class Modulo extends javax.swing.JFrame {
         Veterinario = new javax.swing.JButton();
         Admin = new javax.swing.JButton();
 
+        ModuloCliente.setTitle("Cliente");
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setToolTipText("");
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Cédula");
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Nombre Perro");
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Raza Perro");
+        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Color Perro");
+        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Fecha de nacimiento");
+        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        fechaNacim.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        colorPer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        razaPer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        nomPer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         cedCliente.setToolTipText("");
+        cedCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cedCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cedClienteActionPerformed(evt);
@@ -194,58 +233,54 @@ public class Modulo extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel2Layout.createSequentialGroup()
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(33, 33, 33)
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel6)
-                            .add(jLabel5)
-                            .add(jLabel4)
-                            .add(jLabel3))
-                        .add(55, 55, 55))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(añadirBtn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 85, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel7))
-                        .add(18, 18, 18)))
+                .add(33, 33, 33)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                    .add(jLabel4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jLabel5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jLabel6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel2Layout.createSequentialGroup()
+                        .add(añadirBtn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 85, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(0, 0, Short.MAX_VALUE))
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jLabel7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(jLabel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .add(18, 18, 18)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                     .add(cedCliente)
                     .add(nomPer)
                     .add(razaPer)
                     .add(colorPer)
                     .add(fechaNacim, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(actualizarDatos)
                     .add(moduloCitas))
-                .add(26, 26, 26))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel3)
-                    .add(cedCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(15, Short.MAX_VALUE)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(cedCliente)
+                    .add(jLabel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .add(28, 28, 28)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel4)
-                    .add(nomPer, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(nomPer, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(actualizarDatos, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(28, 28, 28)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel5)
-                    .add(razaPer, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jLabel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(razaPer, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(28, 28, 28)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel6)
-                    .add(colorPer, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(colorPer, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(moduloCitas, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(25, 25, 25)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(jLabel7)
-                    .add(fechaNacim, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(fechaNacim, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(jLabel7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(añadirBtn)
                 .add(17, 17, 17))
@@ -264,7 +299,16 @@ public class Modulo extends javax.swing.JFrame {
             .add(jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        ActualizarDatos.setTitle("Datos");
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Ingrese su cédula");
+        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        cedulaBuscarCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         buscarBtn.setText("Buscar");
         buscarBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -272,6 +316,8 @@ public class Modulo extends javax.swing.JFrame {
                 buscarBtnActionPerformed(evt);
             }
         });
+
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
         tablaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -322,10 +368,10 @@ public class Modulo extends javax.swing.JFrame {
                     .add(jPanel3Layout.createSequentialGroup()
                         .add(jLabel8)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(cedulaBuscarCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 69, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
+                        .add(cedulaBuscarCliente)
+                        .add(6, 6, 6)
                         .add(buscarBtn)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(guardarBtn)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(elimBtnCliente))
@@ -337,14 +383,14 @@ public class Modulo extends javax.swing.JFrame {
             .add(jPanel3Layout.createSequentialGroup()
                 .add(18, 18, 18)
                 .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel8)
-                    .add(cedulaBuscarCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(buscarBtn)
                     .add(elimBtnCliente)
-                    .add(guardarBtn))
+                    .add(guardarBtn)
+                    .add(cedulaBuscarCliente))
                 .add(18, 18, 18)
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .add(28, 28, 28))
         );
 
         org.jdesktop.layout.GroupLayout ActualizarDatosLayout = new org.jdesktop.layout.GroupLayout(ActualizarDatos.getContentPane());
@@ -358,7 +404,14 @@ public class Modulo extends javax.swing.JFrame {
             .add(jPanel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        ModuloCitas.setTitle("Seleccionar Cita");
+        ModuloCitas.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+
+        consultaVet.setBackground(new java.awt.Color(255, 255, 255));
         citasOp.add(consultaVet);
+        consultaVet.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         consultaVet.setText("Consulta Veterinario $60.000 1h");
         consultaVet.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -371,7 +424,9 @@ public class Modulo extends javax.swing.JFrame {
             }
         });
 
+        control.setBackground(new java.awt.Color(255, 255, 255));
         citasOp.add(control);
+        control.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         control.setText("Control $10.000 1/2h");
         control.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -379,15 +434,24 @@ public class Modulo extends javax.swing.JFrame {
             }
         });
 
+        despa.setBackground(new java.awt.Color(255, 255, 255));
         citasOp.add(despa);
+        despa.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         despa.setText("Desparasitación $40.000 1/2h");
         despa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 despaMouseClicked(evt);
             }
         });
+        despa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                despaActionPerformed(evt);
+            }
+        });
 
+        vacun.setBackground(new java.awt.Color(255, 255, 255));
         citasOp.add(vacun);
+        vacun.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         vacun.setText("Vacunación $35.000 1/2h");
         vacun.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -395,7 +459,9 @@ public class Modulo extends javax.swing.JFrame {
             }
         });
 
+        guard.setBackground(new java.awt.Color(255, 255, 255));
         citasOp.add(guard);
+        guard.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         guard.setText("Guardería $35.000 1 día");
         guard.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -403,7 +469,9 @@ public class Modulo extends javax.swing.JFrame {
             }
         });
 
+        radio.setBackground(new java.awt.Color(255, 255, 255));
         citasOp.add(radio);
+        radio.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         radio.setText("Radiología $100.000 1h");
         radio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -411,11 +479,44 @@ public class Modulo extends javax.swing.JFrame {
             }
         });
 
+        baño.setBackground(new java.awt.Color(255, 255, 255));
         citasOp.add(baño);
+        baño.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         baño.setText("Baño $25.000 2h");
         baño.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bañoMouseClicked(evt);
+            }
+        });
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("Cedula");
+        jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        cedulaCita.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane6.setViewportView(cedulaCita);
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("Mascota");
+        jLabel24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        nomMascota.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane7.setViewportView(nomMascota);
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setText("Fecha de la cita");
+        jLabel23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        fechaCita.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        fechaCita.setDateFormatString("dd/MM/yy");
+
+        modifBtn.setText("Modificar una cita");
+        modifBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifBtnActionPerformed(evt);
             }
         });
 
@@ -426,63 +527,42 @@ public class Modulo extends javax.swing.JFrame {
             }
         });
 
-        modifBtn.setText("Cancelar o modificar una cita");
-        modifBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifBtnActionPerformed(evt);
-            }
-        });
-
-        jLabel22.setText("Cedula");
-
-        jScrollPane6.setViewportView(cedulaCita);
-
-        fechaCita.setDateFormatString("dd/MM/yy");
-
-        jLabel23.setText("Fecha de la cita");
-
-        jLabel24.setText("Mascota");
-
-        jScrollPane7.setViewportView(nomMascota);
-
-        org.jdesktop.layout.GroupLayout ModuloCitasLayout = new org.jdesktop.layout.GroupLayout(ModuloCitas.getContentPane());
-        ModuloCitas.getContentPane().setLayout(ModuloCitasLayout);
-        ModuloCitasLayout.setHorizontalGroup(
-            ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(ModuloCitasLayout.createSequentialGroup()
+        org.jdesktop.layout.GroupLayout jPanel7Layout = new org.jdesktop.layout.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(despa)
-                    .add(control)
-                    .add(consultaVet)
-                    .add(ModuloCitasLayout.createSequentialGroup()
-                        .add(jLabel24, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 52, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel7Layout.createSequentialGroup()
+                        .add(modifBtn)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jScrollPane7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 82, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(vacun)
-                    .add(guard)
-                    .add(radio)
-                    .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                        .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, ModuloCitasLayout.createSequentialGroup()
-                                .add(jLabel22)
-                                .add(26, 26, 26)
-                                .add(jScrollPane6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 82, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(55, 55, 55)
-                                .add(fechaCita, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, ModuloCitasLayout.createSequentialGroup()
-                                .add(solicitarBtn)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .add(modifBtn)))
-                        .add(ModuloCitasLayout.createSequentialGroup()
-                            .add(baño)
-                            .add(81, 81, 81)
-                            .add(jLabel23))))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .add(solicitarBtn)
+                        .add(0, 0, Short.MAX_VALUE))
+                    .add(jPanel7Layout.createSequentialGroup()
+                        .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                            .add(consultaVet, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel7Layout.createSequentialGroup()
+                                .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(jLabel22, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(jLabel24, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(jLabel23, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .add(10, 10, 10)
+                                .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                    .add(fechaCita, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
+                                    .add(jScrollPane7)
+                                    .add(jScrollPane6)))
+                            .add(control, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(despa, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(vacun, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(guard, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(radio, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(baño, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
-        ModuloCitasLayout.setVerticalGroup(
-            ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(ModuloCitasLayout.createSequentialGroup()
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(consultaVet)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -496,26 +576,47 @@ public class Modulo extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(radio)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(baño)
-                    .add(jLabel23))
+                .add(baño)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(jScrollPane6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                    .add(jLabel22, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jLabel22)
-                    .add(jScrollPane6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(fechaCita, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(17, 17, 17)
-                .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jLabel24)
-                    .add(jScrollPane7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 24, Short.MAX_VALUE)
-                .add(ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(solicitarBtn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 35, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(modifBtn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 35, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(jScrollPane7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                    .add(jLabel24, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(fechaCita, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(jLabel23, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(modifBtn)
+                    .add(solicitarBtn))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        org.jdesktop.layout.GroupLayout ModuloCitasLayout = new org.jdesktop.layout.GroupLayout(ModuloCitas.getContentPane());
+        ModuloCitas.getContentPane().setLayout(ModuloCitasLayout);
+        ModuloCitasLayout.setHorizontalGroup(
+            ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+        );
+        ModuloCitasLayout.setVerticalGroup(
+            ModuloCitasLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        ModificarCitasCliente.setTitle("Módulo de Citas");
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Cédula");
+        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        buscarCedulaCita.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         cancelarCitaBtn.setText("Cancelar");
         cancelarCitaBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -544,7 +645,6 @@ public class Modulo extends javax.swing.JFrame {
         if (tablaCitas.getColumnModel().getColumnCount() > 0) {
             tablaCitas.getColumnModel().getColumn(0).setResizable(false);
             tablaCitas.getColumnModel().getColumn(1).setResizable(false);
-            tablaCitas.getColumnModel().getColumn(2).setResizable(false);
             tablaCitas.getColumnModel().getColumn(3).setResizable(false);
             tablaCitas.getColumnModel().getColumn(4).setResizable(false);
             tablaCitas.getColumnModel().getColumn(5).setResizable(false);
@@ -575,12 +675,12 @@ public class Modulo extends javax.swing.JFrame {
                         .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 476, Short.MAX_VALUE))
                     .add(jPanel4Layout.createSequentialGroup()
                         .add(15, 15, 15)
-                        .add(jLabel9)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(buscarCedulaCita, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 67, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(jLabel9, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(buscarCedulaCita, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 85, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(buscarCitaBtn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 95, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(18, 18, 18)
                         .add(guardarAgendaBtn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 92, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(cancelarCitaBtn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 86, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
@@ -591,11 +691,11 @@ public class Modulo extends javax.swing.JFrame {
             .add(jPanel4Layout.createSequentialGroup()
                 .add(19, 19, 19)
                 .add(jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel9)
-                    .add(buscarCedulaCita, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(buscarCitaBtn)
                     .add(guardarAgendaBtn)
-                    .add(cancelarCitaBtn))
+                    .add(cancelarCitaBtn)
+                    .add(buscarCedulaCita, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(15, 15, 15)
                 .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
                 .addContainerGap())
@@ -611,6 +711,10 @@ public class Modulo extends javax.swing.JFrame {
             ModificarCitasClienteLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        ModuloVeterinario.setTitle("Veterinario");
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
         botonAgenda.setText("Agenda");
         botonAgenda.addActionListener(new java.awt.event.ActionListener() {
@@ -660,6 +764,10 @@ public class Modulo extends javax.swing.JFrame {
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
         );
 
+        AgendaVet.setTitle("Agenda");
+
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
+
         tablaAgenda.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -671,52 +779,98 @@ public class Modulo extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Float.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane3.setViewportView(tablaAgenda);
         if (tablaAgenda.getColumnModel().getColumnCount() > 0) {
             tablaAgenda.getColumnModel().getColumn(0).setResizable(false);
             tablaAgenda.getColumnModel().getColumn(1).setResizable(false);
-            tablaAgenda.getColumnModel().getColumn(2).setResizable(false);
             tablaAgenda.getColumnModel().getColumn(3).setResizable(false);
             tablaAgenda.getColumnModel().getColumn(4).setResizable(false);
             tablaAgenda.getColumnModel().getColumn(5).setResizable(false);
         }
 
-        org.jdesktop.layout.GroupLayout AgendaVetLayout = new org.jdesktop.layout.GroupLayout(AgendaVet.getContentPane());
-        AgendaVet.getContentPane().setLayout(AgendaVetLayout);
-        AgendaVetLayout.setHorizontalGroup(
-            AgendaVetLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, AgendaVetLayout.createSequentialGroup()
+        org.jdesktop.layout.GroupLayout jPanel8Layout = new org.jdesktop.layout.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .add(jScrollPane3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
+                .add(jScrollPane3)
                 .addContainerGap())
         );
-        AgendaVetLayout.setVerticalGroup(
-            AgendaVetLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(AgendaVetLayout.createSequentialGroup()
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(jScrollPane3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
+        org.jdesktop.layout.GroupLayout AgendaVetLayout = new org.jdesktop.layout.GroupLayout(AgendaVet.getContentPane());
+        AgendaVet.getContentPane().setLayout(AgendaVetLayout);
+        AgendaVetLayout.setHorizontalGroup(
+            AgendaVetLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel8, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        AgendaVetLayout.setVerticalGroup(
+            AgendaVetLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel8, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        HistoriaClinica.setTitle("Datos Clinicos");
+
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Fecha de la Consulta");
         jLabel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Cedula");
         jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Nombre del Perro");
         jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        fechaHC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        cedulaHC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        perroHC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Diagnóstico");
         jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        diagnosticoHC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel15.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Prescripción");
         jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        prescripcionHC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         añadirInfoClinica.setText("Añadir información");
         añadirInfoClinica.addActionListener(new java.awt.event.ActionListener() {
@@ -732,69 +886,81 @@ public class Modulo extends javax.swing.JFrame {
             }
         });
 
-        org.jdesktop.layout.GroupLayout HistoriaClinicaLayout = new org.jdesktop.layout.GroupLayout(HistoriaClinica.getContentPane());
-        HistoriaClinica.getContentPane().setLayout(HistoriaClinicaLayout);
-        HistoriaClinicaLayout.setHorizontalGroup(
-            HistoriaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(HistoriaClinicaLayout.createSequentialGroup()
+        org.jdesktop.layout.GroupLayout jPanel9Layout = new org.jdesktop.layout.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .add(HistoriaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, prescripcionHC)
-                    .add(diagnosticoHC)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, HistoriaClinicaLayout.createSequentialGroup()
-                        .add(0, 0, Short.MAX_VALUE)
-                        .add(botonHisClinicas))
-                    .add(HistoriaClinicaLayout.createSequentialGroup()
-                        .add(HistoriaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(HistoriaClinicaLayout.createSequentialGroup()
-                                .add(HistoriaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                    .add(jLabel12, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .add(jLabel10, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                                    .add(jLabel11, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .add(jLabel13, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(HistoriaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                    .add(cedulaHC)
-                                    .add(perroHC)
-                                    .add(fechaHC, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)))
-                            .add(añadirInfoClinica, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 141, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(0, 159, Short.MAX_VALUE)))
-                .addContainerGap())
+                .add(jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel9Layout.createSequentialGroup()
+                        .add(jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(jLabel12, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(jLabel11, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(jLabel10, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .add(18, 18, 18)
+                        .add(jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(fechaHC, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(cedulaHC)
+                            .add(perroHC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 137, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(359, 359, 359))
+                    .add(jPanel9Layout.createSequentialGroup()
+                        .add(jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                .add(jLabel13, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 134, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(diagnosticoHC)
+                                .add(jLabel15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(prescripcionHC, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE))
+                            .add(jPanel9Layout.createSequentialGroup()
+                                .add(añadirInfoClinica, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 141, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(18, 18, 18)
+                                .add(botonHisClinicas)))
+                        .add(0, 0, Short.MAX_VALUE))))
         );
-        HistoriaClinicaLayout.setVerticalGroup(
-            HistoriaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(HistoriaClinicaLayout.createSequentialGroup()
-                .add(27, 27, 27)
-                .add(HistoriaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(HistoriaClinicaLayout.createSequentialGroup()
-                        .add(HistoriaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(jLabel10, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(fechaHC, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE))
-                        .add(33, 33, 33))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, HistoriaClinicaLayout.createSequentialGroup()
-                        .add(botonHisClinicas, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 52, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(6, 6, 6)))
-                .add(HistoriaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jLabel10, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(jPanel9Layout.createSequentialGroup()
+                        .add(fechaHC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(0, 0, Short.MAX_VALUE)))
+                .add(18, 18, 18)
+                .add(jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel11, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, HistoriaClinicaLayout.createSequentialGroup()
-                        .add(cedulaHC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(4, 4, 4)))
-                .add(HistoriaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(cedulaHC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(18, 18, 18)
+                .add(jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel12, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 32, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(perroHC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(perroHC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 32, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(18, 18, 18)
                 .add(jLabel13, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(diagnosticoHC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 84, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(18, 18, 18)
                 .add(jLabel15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 29, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(prescripcionHC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 81, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 11, Short.MAX_VALUE)
-                .add(añadirInfoClinica)
-                .addContainerGap())
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel9Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(añadirInfoClinica)
+                    .add(botonHisClinicas))
+                .add(17, 17, 17))
         );
+
+        org.jdesktop.layout.GroupLayout HistoriaClinicaLayout = new org.jdesktop.layout.GroupLayout(HistoriaClinica.getContentPane());
+        HistoriaClinica.getContentPane().setLayout(HistoriaClinicaLayout);
+        HistoriaClinicaLayout.setHorizontalGroup(
+            HistoriaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 313, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+        );
+        HistoriaClinicaLayout.setVerticalGroup(
+            HistoriaClinicaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel9, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        DatosClinicos.setTitle("Historiales Clinicos");
 
         tablaClinica.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -803,8 +969,28 @@ public class Modulo extends javax.swing.JFrame {
             new String [] {
                 "Fecha de la Consulta", "Cedula", "Nombre del Perro", "Diagnóstico", "Prescripción"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane4.setViewportView(tablaClinica);
+        if (tablaClinica.getColumnModel().getColumnCount() > 0) {
+            tablaClinica.getColumnModel().getColumn(0).setResizable(false);
+            tablaClinica.getColumnModel().getColumn(1).setResizable(false);
+            tablaClinica.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         org.jdesktop.layout.GroupLayout DatosClinicosLayout = new org.jdesktop.layout.GroupLayout(DatosClinicos.getContentPane());
         DatosClinicos.getContentPane().setLayout(DatosClinicosLayout);
@@ -817,23 +1003,9 @@ public class Modulo extends javax.swing.JFrame {
             .add(jScrollPane4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
         );
 
-        org.jdesktop.layout.GroupLayout jPanel5Layout = new org.jdesktop.layout.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 402, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 66, Short.MAX_VALUE)
-        );
+        ModuloAdmin.setTitle("Administrador");
 
-        genFact.setText("Generar factura");
-        genFact.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                genFactActionPerformed(evt);
-            }
-        });
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         gestAgenda.setText("Gestión de agenda");
         gestAgenda.addActionListener(new java.awt.event.ActionListener() {
@@ -842,6 +1014,34 @@ public class Modulo extends javax.swing.JFrame {
             }
         });
 
+        genFact.setText("Generar factura");
+        genFact.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                genFactActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout jPanel5Layout = new org.jdesktop.layout.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(128, Short.MAX_VALUE)
+                .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(genFact, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 140, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(gestAgenda))
+                .add(134, 134, 134))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel5Layout.createSequentialGroup()
+                .add(48, 48, 48)
+                .add(gestAgenda, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(28, 28, 28)
+                .add(genFact, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(69, Short.MAX_VALUE))
+        );
+
         org.jdesktop.layout.GroupLayout ModuloAdminLayout = new org.jdesktop.layout.GroupLayout(ModuloAdmin.getContentPane());
         ModuloAdmin.getContentPane().setLayout(ModuloAdminLayout);
         ModuloAdminLayout.setHorizontalGroup(
@@ -849,56 +1049,47 @@ public class Modulo extends javax.swing.JFrame {
             .add(ModuloAdminLayout.createSequentialGroup()
                 .add(jPanel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(0, 0, Short.MAX_VALUE))
-            .add(ModuloAdminLayout.createSequentialGroup()
-                .add(128, 128, 128)
-                .add(ModuloAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(gestAgenda, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                    .add(genFact, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ModuloAdminLayout.setVerticalGroup(
             ModuloAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(ModuloAdminLayout.createSequentialGroup()
-                .add(jPanel5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(gestAgenda, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(39, 39, 39)
-                .add(genFact, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(82, 82, 82))
+            .add(jPanel5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        BotonesAdmin.add(consultaAdm);
-        consultaAdm.setText("Consulta Veterinario   $60.000 x 1hr");
+        AsignarAdmin.setTitle("Agendar Citas");
 
-        BotonesAdmin.add(controlAdm);
-        controlAdm.setText("Control                     $10.000 x 1/2hr");
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
 
-        BotonesAdmin.add(desparasitacionAdm);
-        desparasitacionAdm.setText("Desparasitación        $40.000 x 1/2hr");
-
-        BotonesAdmin.add(vacunacionAdm);
-        vacunacionAdm.setText("Vacunación                $35.000 x 1/2hr");
-
-        BotonesAdmin.add(guarderiaAdm);
-        guarderiaAdm.setText("Guardería                  $35.000 x 1 día");
-
-        BotonesAdmin.add(radiologiaAdm);
-        radiologiaAdm.setText("Radiología                  $100.000 x 1hr");
-
-        BotonesAdmin.add(bañoAdm);
-        bañoAdm.setText("Baño                          $25.000 x 2hrs");
-
+        jLabel16.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("Cedula");
+        jLabel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        cedulaAdmin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("Nombre mascota");
+        jLabel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        nomMascotaAdmin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel18.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("Raza");
+        jLabel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        razaMascotaAdmin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel19.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("Color");
+        jLabel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel20.setText("Fecha de Nacimiento");
-
-        jLabel21.setText("Fecha de la Consulta");
+        colorMascotaAdmin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         asignarDatosAdmin.setText("Asignar");
         asignarDatosAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -907,6 +1098,58 @@ public class Modulo extends javax.swing.JFrame {
             }
         });
 
+        consultaAdm.setBackground(new java.awt.Color(255, 255, 255));
+        BotonesAdmin.add(consultaAdm);
+        consultaAdm.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        consultaAdm.setText("Consulta Veterinario   $60.000 x 1hr");
+
+        controlAdm.setBackground(new java.awt.Color(255, 255, 255));
+        BotonesAdmin.add(controlAdm);
+        controlAdm.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        controlAdm.setText("Control                     $10.000 x 1/2hr");
+
+        desparasitacionAdm.setBackground(new java.awt.Color(255, 255, 255));
+        BotonesAdmin.add(desparasitacionAdm);
+        desparasitacionAdm.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        desparasitacionAdm.setText("Desparasitación        $40.000 x 1/2hr");
+
+        vacunacionAdm.setBackground(new java.awt.Color(255, 255, 255));
+        BotonesAdmin.add(vacunacionAdm);
+        vacunacionAdm.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        vacunacionAdm.setText("Vacunación                $35.000 x 1/2hr");
+        vacunacionAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vacunacionAdmActionPerformed(evt);
+            }
+        });
+
+        guarderiaAdm.setBackground(new java.awt.Color(255, 255, 255));
+        BotonesAdmin.add(guarderiaAdm);
+        guarderiaAdm.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        guarderiaAdm.setText("Guardería                  $35.000 x 1 día");
+
+        radiologiaAdm.setBackground(new java.awt.Color(255, 255, 255));
+        BotonesAdmin.add(radiologiaAdm);
+        radiologiaAdm.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        radiologiaAdm.setText("Radiología                  $100.000 x 1hr");
+
+        bañoAdm.setBackground(new java.awt.Color(255, 255, 255));
+        BotonesAdmin.add(bañoAdm);
+        bañoAdm.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        bañoAdm.setText("Baño                          $25.000 x 2hrs");
+
+        jLabel20.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("Fecha de Nacimiento");
+        jLabel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel21.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("Fecha de la Consulta");
+        jLabel21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         verAgendaBtn.setText("Ver citas");
         verAgendaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -914,119 +1157,237 @@ public class Modulo extends javax.swing.JFrame {
             }
         });
 
+        org.jdesktop.layout.GroupLayout jPanel10Layout = new org.jdesktop.layout.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel10Layout.createSequentialGroup()
+                        .add(0, 0, Short.MAX_VALUE)
+                        .add(jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, nomMascotaAdmin)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, cedulaAdmin)
+                            .add(jLabel17)
+                            .add(jLabel16, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 108, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel18, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 112, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(razaMascotaAdmin)
+                            .add(jLabel19, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(colorMascotaAdmin, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE))
+                        .add(18, 18, 18)
+                        .add(jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                            .add(controlAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(consultaAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(desparasitacionAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(vacunacionAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(guarderiaAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(radiologiaAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(bañoAdm)
+                            .add(jPanel10Layout.createSequentialGroup()
+                                .add(jLabel20)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jLabel21))))
+                    .add(jPanel10Layout.createSequentialGroup()
+                        .add(asignarDatosAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 190, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(23, 23, 23)
+                        .add(jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(verAgendaBtn, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(jPanel10Layout.createSequentialGroup()
+                                .add(0, 0, Short.MAX_VALUE)
+                                .add(fechaNacimientoAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(58, 58, 58)
+                                .add(fechaConsulAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel16)
+                    .add(consultaAdm))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(cedulaAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(controlAdm))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel17)
+                    .add(desparasitacionAdm))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(nomMascotaAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(vacunacionAdm))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel18)
+                    .add(guarderiaAdm))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(razaMascotaAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(radiologiaAdm))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel19)
+                    .add(bañoAdm))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(colorMascotaAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel20)
+                    .add(jLabel21))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(fechaNacimientoAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(fechaConsulAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(11, 11, 11)
+                .add(jPanel10Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(asignarDatosAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 39, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(verAgendaBtn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 39, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         org.jdesktop.layout.GroupLayout AsignarAdminLayout = new org.jdesktop.layout.GroupLayout(AsignarAdmin.getContentPane());
         AsignarAdmin.getContentPane().setLayout(AsignarAdminLayout);
         AsignarAdminLayout.setHorizontalGroup(
             AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(AsignarAdminLayout.createSequentialGroup()
-                .addContainerGap()
-                .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(AsignarAdminLayout.createSequentialGroup()
-                        .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                .add(jLabel16)
-                                .add(cedulaAdmin)
-                                .add(jLabel17)
-                                .add(nomMascotaAdmin)
-                                .add(jLabel18)
-                                .add(razaMascotaAdmin, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
-                            .add(jLabel19))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(consultaAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(desparasitacionAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, controlAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(vacunacionAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(guarderiaAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(radiologiaAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(bañoAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .add(AsignarAdminLayout.createSequentialGroup()
-                        .add(colorMascotaAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel20)
-                            .add(AsignarAdminLayout.createSequentialGroup()
-                                .add(10, 10, 10)
-                                .add(fechaNacimientoAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 9, Short.MAX_VALUE)
-                        .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(AsignarAdminLayout.createSequentialGroup()
-                                .add(10, 10, 10)
-                                .add(fechaConsulAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(jLabel21)))
-                    .add(AsignarAdminLayout.createSequentialGroup()
-                        .add(asignarDatosAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 190, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(verAgendaBtn, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+            .add(jPanel10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
         );
         AsignarAdminLayout.setVerticalGroup(
             AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(AsignarAdminLayout.createSequentialGroup()
+            .add(jPanel10, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        GestionAdmin.setTitle("Facturación");
+
+        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
+
+        cedFacturar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        buscarAdmin.setText("Buscar");
+        buscarAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarAdminActionPerformed(evt);
+            }
+        });
+
+        tablaFactura.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Cédula", "Mascota", "Servicio", "Precio", "Fecha"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(tablaFactura);
+        if (tablaFactura.getColumnModel().getColumnCount() > 0) {
+            tablaFactura.getColumnModel().getColumn(0).setResizable(false);
+            tablaFactura.getColumnModel().getColumn(1).setResizable(false);
+            tablaFactura.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        facturarAdmin.setText("Facturar");
+        facturarAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                facturarAdminActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Total a pagar:");
+        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        totalPagar.setEditable(false);
+        totalPagar.setBackground(new java.awt.Color(255, 255, 255));
+        totalPagar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        totalPagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                totalPagarActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout jPanel11Layout = new org.jdesktop.layout.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(jPanel11Layout.createSequentialGroup()
+                        .add(jLabel14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 105, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(18, 18, 18)
+                        .add(totalPagar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 114, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jPanel11Layout.createSequentialGroup()
+                        .add(jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jScrollPane5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE)
+                            .add(jPanel11Layout.createSequentialGroup()
+                                .add(cedFacturar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 108, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(18, 18, 18)
+                                .add(buscarAdmin)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .add(facturarAdmin)))
+                        .addContainerGap())))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
-                .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(AsignarAdminLayout.createSequentialGroup()
-                        .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(consultaAdm)
-                            .add(jLabel16))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(controlAdm)
-                            .add(cedulaAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(desparasitacionAdm)
-                            .add(jLabel17))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(vacunacionAdm)
-                            .add(nomMascotaAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(guarderiaAdm)
-                            .add(jLabel18))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(radiologiaAdm)
-                            .add(razaMascotaAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(bañoAdm)
-                            .add(jLabel19))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(colorMascotaAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(1, 1, 1)
-                        .add(fechaNacimientoAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(AsignarAdminLayout.createSequentialGroup()
-                        .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel21)
-                            .add(jLabel20))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(fechaConsulAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .add(17, 17, 17)
-                .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(asignarDatosAdmin, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-                    .add(verAgendaBtn, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .add(jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(cedFacturar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(buscarAdmin)
+                    .add(facturarAdmin))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jScrollPane5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 240, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(18, 18, 18)
+                .add(jPanel11Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel14)
+                    .add(totalPagar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         org.jdesktop.layout.GroupLayout GestionAdminLayout = new org.jdesktop.layout.GroupLayout(GestionAdmin.getContentPane());
         GestionAdmin.getContentPane().setLayout(GestionAdminLayout);
         GestionAdminLayout.setHorizontalGroup(
             GestionAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 442, Short.MAX_VALUE)
+            .add(jPanel11, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
         );
         GestionAdminLayout.setVerticalGroup(
             GestionAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 330, Short.MAX_VALUE)
+            .add(jPanel11, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Veterinaria");
+        setBackground(new java.awt.Color(0, 0, 0));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         jPanel1.setMaximumSize(new java.awt.Dimension(3367, 3367));
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Módulo de administración Veterinaria");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel2.setText("Ingresar como...");
 
         Cliente.setText("Cliente");
@@ -1058,25 +1419,25 @@ public class Modulo extends javax.swing.JFrame {
             .add(jPanel1Layout.createSequentialGroup()
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel1Layout.createSequentialGroup()
-                        .add(87, 87, 87)
-                        .add(jLabel1))
+                        .add(147, 147, 147)
+                        .add(jLabel2))
                     .add(jPanel1Layout.createSequentialGroup()
-                        .add(126, 126, 126)
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(Veterinario, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(Admin, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                            .add(Cliente, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .add(jLabel2)
-                                .add(11, 11, 11)))))
-                .addContainerGap(100, Short.MAX_VALUE))
+                        .add(137, 137, 137)
+                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(Veterinario, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(Cliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(Admin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                    .add(jPanel1Layout.createSequentialGroup()
+                        .add(30, 30, 30)
+                        .add(jLabel1)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel1Layout.createSequentialGroup()
-                .add(38, 38, 38)
+                .add(43, 43, 43)
                 .add(jLabel1)
-                .add(18, 18, 18)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(jLabel2)
                 .add(18, 18, 18)
                 .add(Cliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 39, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -1084,18 +1445,18 @@ public class Modulo extends javax.swing.JFrame {
                 .add(Veterinario, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(18, 18, 18)
                 .add(Admin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -1244,22 +1605,6 @@ public class Modulo extends javax.swing.JFrame {
         
         
     }
-    private void VeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeterinarioActionPerformed
-        //Abre el módulo Veterinario
-        ModuloVeterinario.setSize(400,250);
-        ModuloVeterinario.setResizable(false);
-        ModuloVeterinario.setLocation(720,360);
-        ModuloVeterinario.setVisible(true);
-    }//GEN-LAST:event_VeterinarioActionPerformed
-
-    private void ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteActionPerformed
-        //Abre el módulo Cliente
-        ModuloCliente.setSize(410,400);
-        ModuloCliente.setResizable(false);
-        ModuloCliente.setLocation(720, 360);
-        ModuloCliente.setVisible(true);
-    }//GEN-LAST:event_ClienteActionPerformed
-
     private void actualizarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarDatosActionPerformed
         //Abre el frame para actualizar datos del cliente
         String nDir= "C:\\GestiónVeterinaria";
@@ -1295,7 +1640,7 @@ public class Modulo extends javax.swing.JFrame {
                 System.out.println("El archivo no se encontró");
             }
         
-        ActualizarDatos.setSize(540,405);
+        ActualizarDatos.setSize(540,350);
         ActualizarDatos.setResizable(false);
         ActualizarDatos.setLocation(720,360);
         ActualizarDatos.setVisible(true);
@@ -1303,7 +1648,7 @@ public class Modulo extends javax.swing.JFrame {
 
     private void moduloCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moduloCitasActionPerformed
         //Abre el módulo de Citas
-        ModuloCitas.setSize(355,345);
+        ModuloCitas.setSize(280,380);
         ModuloCitas.setResizable(false);
         ModuloCitas.setLocation(720,360);
         ModuloCitas.setVisible(true);
@@ -1343,7 +1688,7 @@ public class Modulo extends javax.swing.JFrame {
                 System.out.println("El archivo no se encontró");
             }
               
-        DatosClinicos.setSize(600,318);
+        DatosClinicos.setSize(600,320);
         DatosClinicos.setResizable(false);
         DatosClinicos.setLocation(720,360);
         DatosClinicos.setVisible(true);
@@ -1351,7 +1696,7 @@ public class Modulo extends javax.swing.JFrame {
 
     private void botonHisClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHisClinicaActionPerformed
 
-        HistoriaClinica.setSize(500,500);
+        HistoriaClinica.setSize(330,510);
         HistoriaClinica.setResizable(false);
         HistoriaClinica.setLocation(720,360);
         HistoriaClinica.setVisible(true);
@@ -1395,23 +1740,58 @@ public class Modulo extends javax.swing.JFrame {
             }
         
         //Que se carguen los datos de la agenda del veterinario
-        AgendaVet.setSize(400,400);
+        AgendaVet.setSize(480,350);
         AgendaVet.setResizable(false);
         AgendaVet.setLocation(720,360);
         AgendaVet.setVisible(true);
     }//GEN-LAST:event_botonAgendaActionPerformed
-
+    
     private void genFactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genFactActionPerformed
-        // TODO add your handling code here:
+        //Hacer que aquí se cargue otro frame invisible, donde se guarda el
+        //archivo Agenda, así se pueden modificar las citas en ambos
+        //archivos al mismo tiempo en la tabla de modificar citas.
+        
+        //Muestra el Frame con el archivo agenda
+        String nDir= "C:\\GestiónVeterinaria";
+        File a = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombre= "Citas.csv"; 
+        File citas= new File (ruta, nombre); //Archivo Citas
+        
+        
+        if (!citas.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                citas.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        DefaultTableModel model = (DefaultTableModel) tablaFactura.getModel();
+        
+        //Escribe los datos del archivo Citas en la tabla
+        model.setRowCount(0);
+            try (Scanner sc = new Scanner(citas)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedula = Integer.parseInt(data[0]);
+                    String nombreM = data[1];
+                    String servicio = data[2];
+                    int precio = Integer.parseInt(data[3]);
+                    String fecha = data[4];
+                    float horas = Float.parseFloat(data[5]);
+                    model.addRow(new Object[]{cedula, nombreM, servicio, precio, fecha, horas});
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
+            }
+        
+        GestionAdmin.setSize(540,380);
+        GestionAdmin.setResizable(false);
+        GestionAdmin.setLocation(720,360);
+        GestionAdmin.setVisible(true);
     }//GEN-LAST:event_genFactActionPerformed
-
-    private void AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminActionPerformed
-        //Abre el módulo Admin
-        ModuloAdmin.setSize(400,200);
-        ModuloAdmin.setResizable(false);
-        ModuloAdmin.setLocation(720,360);
-        ModuloAdmin.setVisible(true);
-    }//GEN-LAST:event_AdminActionPerformed
 
     private void añadirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirBtnActionPerformed
         //Añade datos a la tabla de datos del cliente
@@ -1581,54 +1961,11 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_buscarBtnActionPerformed
 
     private void gestAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestAgendaActionPerformed
-        AsignarAdmin.setSize(446,340);
+        AsignarAdmin.setSize(500,330);
         AsignarAdmin.setResizable(false);
         AsignarAdmin.setLocation(720,360);
         AsignarAdmin.setVisible(true);
     }//GEN-LAST:event_gestAgendaActionPerformed
-
-    private void verAgendaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verAgendaBtnActionPerformed
-        String nDir= "C:\\GestiónVeterinaria";
-        File a = new File(nDir); //Carpeta en el disco C
-        String ruta = "C:\\GestiónVeterinaria";
-        String nombre= "Citas.csv"; 
-        File citas= new File (ruta, nombre); //Archivo Citas
-        
-        
-        if (!citas.exists()) { //No existe el archivo
-            a.mkdir();
-            try {
-                citas.createNewFile();
-            } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
-            }
-        }
-        DefaultTableModel model = (DefaultTableModel) tablaCitas.getModel();
-        
-        //Escribe los datos del archivo Citas en la tabla
-        model.setRowCount(0);
-            try (Scanner sc = new Scanner(citas)) {
-                while (sc.hasNextLine()) {
-                    String linea = sc.nextLine();
-                    String data[] = linea.split(",");
-                    int cedula = Integer.parseInt(data[0]);
-                    String nombreM = data[1];
-                    String servicio = data[2];
-                    int precio = Integer.parseInt(data[3]);
-                    String fecha = data[4];
-                    float horas = Float.parseFloat(data[5]);
-                    model.addRow(new Object[]{cedula, nombreM, servicio, precio, fecha, horas});
-                }
-            } catch (FileNotFoundException e) {
-                System.out.println("El archivo no se encontró");
-            }
-        
-        
-        ModificarCitasCliente.setSize(500,308);
-        ModificarCitasCliente.setResizable(false);
-        ModificarCitasCliente.setLocation(720,360);
-        ModificarCitasCliente.setVisible(true);
-    }//GEN-LAST:event_verAgendaBtnActionPerformed
 
     private void guardarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarBtnActionPerformed
         
@@ -1925,7 +2262,7 @@ public class Modulo extends javax.swing.JFrame {
                 System.out.println("El archivo no se encontró");
             }
         
-        ModificarCitasCliente.setSize(500,308);
+        ModificarCitasCliente.setSize(500,300);
         ModificarCitasCliente.setResizable(false);
         ModificarCitasCliente.setLocation(720,360);
         ModificarCitasCliente.setVisible(true);
@@ -2085,16 +2422,14 @@ public class Modulo extends javax.swing.JFrame {
         guardarCita(model);
     }//GEN-LAST:event_guardarAgendaBtnActionPerformed
 
-    private void asignarDatosAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asignarDatosAdminActionPerformed
+    private void buscarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarAdminActionPerformed
+        //Verifica la existencia del archivo agenda y busca dependiendo de la cédula digitada
         String nDir= "C:\\GestiónVeterinaria";
         File a = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
-        String nombreC= "Citas.csv"; 
-        File citas= new File (ruta, nombreC); //Archivo Citas
-        String nombreCl= "Clientes.csv"; 
-        File clientes= new File (ruta, nombreCl); //Archivo clientes
-        String nombreA= "Agenda.csv"; 
-        File agenda= new File (ruta, nombreA); //Archivo agenda
+        String nombre= "Citas.csv"; 
+        File citas= new File (ruta, nombre); //Archivo Citas
+        
         
         if (!citas.exists()) { //No existe el archivo
             a.mkdir();
@@ -2104,8 +2439,149 @@ public class Modulo extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
             }
         }
+        DefaultTableModel model = (DefaultTableModel) tablaFactura.getModel();
         
+        //Escribe los datos del archivo Agenda en la tabla
+        model.setRowCount(0);
+            try (Scanner sc = new Scanner(citas)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedula = Integer.parseInt(data[0]);
+                    String nombreM = data[1];
+                    String servicio = data[2];
+                    int precio = Integer.parseInt(data[3]);
+                    String fecha = data[4];
+                    model.addRow(new Object[]{cedula, nombreM, servicio, precio, fecha});
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
+            }
+            
+            int buscarCedula=0;
+            try {
+            buscarCedula = Integer.parseInt(cedFacturar.getText());
+            } catch (NumberFormatException exx){
+            
+            }
         
+        //Ciclo de búsqueda para la cedula digitada
+        int i=0;
+        while (i<model.getRowCount()){
+        int cedClienteBusc = (int) (model.getValueAt(i, 0));
+            if (buscarCedula == cedClienteBusc){
+                i++;
+            } else {
+                model.removeRow(i);
+            }
+        }
+    }//GEN-LAST:event_buscarAdminActionPerformed
+
+    private void totalPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalPagarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_totalPagarActionPerformed
+
+    private void facturarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facturarAdminActionPerformed
+        DefaultTableModel model = (DefaultTableModel) tablaFactura.getModel();
+        
+        int totalpagar = 0;
+        
+        for (int i = 0; i < model.getRowCount(); i++) {
+            totalpagar += (int) (model.getValueAt(i, 3));
+        }
+        
+        totalPagar.setText(String.valueOf(totalpagar));
+    }//GEN-LAST:event_facturarAdminActionPerformed
+
+    private void ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteActionPerformed
+        //Abre el módulo Cliente
+        ModuloCliente.setSize(430,370);
+        ModuloCliente.setResizable(false);
+        ModuloCliente.setLocation(720, 360);
+        ModuloCliente.setVisible(true);
+    }//GEN-LAST:event_ClienteActionPerformed
+
+    private void VeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeterinarioActionPerformed
+        //Abre el módulo Veterinario
+        ModuloVeterinario.setSize(420,270);
+        ModuloVeterinario.setResizable(false);
+        ModuloVeterinario.setLocation(720,360);
+        ModuloVeterinario.setVisible(true);
+    }//GEN-LAST:event_VeterinarioActionPerformed
+
+    private void AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminActionPerformed
+        //Abre el módulo Admin
+        ModuloAdmin.setSize(402,306);
+        ModuloAdmin.setResizable(false);
+        ModuloAdmin.setLocation(720,360);
+        ModuloAdmin.setVisible(true);
+    }//GEN-LAST:event_AdminActionPerformed
+
+    private void despaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_despaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_despaActionPerformed
+
+    private void verAgendaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verAgendaBtnActionPerformed
+        String nDir= "C:\\GestiónVeterinaria";
+        File a = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombre= "Citas.csv";
+        File citas= new File (ruta, nombre); //Archivo Citas
+
+        if (!citas.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                citas.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        DefaultTableModel model = (DefaultTableModel) tablaCitas.getModel();
+
+        //Escribe los datos del archivo Citas en la tabla
+        model.setRowCount(0);
+        try (Scanner sc = new Scanner(citas)) {
+            while (sc.hasNextLine()) {
+                String linea = sc.nextLine();
+                String data[] = linea.split(",");
+                int cedula = Integer.parseInt(data[0]);
+                String nombreM = data[1];
+                String servicio = data[2];
+                int precio = Integer.parseInt(data[3]);
+                String fecha = data[4];
+                float horas = Float.parseFloat(data[5]);
+                model.addRow(new Object[]{cedula, nombreM, servicio, precio, fecha, horas});
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("El archivo no se encontró");
+        }
+
+        ModificarCitasCliente.setSize(500,300);
+        ModificarCitasCliente.setResizable(false);
+        ModificarCitasCliente.setLocation(720,360);
+        ModificarCitasCliente.setVisible(true);
+    }//GEN-LAST:event_verAgendaBtnActionPerformed
+
+    private void asignarDatosAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asignarDatosAdminActionPerformed
+        String nDir= "C:\\GestiónVeterinaria";
+        File a = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombreC= "Citas.csv";
+        File citas= new File (ruta, nombreC); //Archivo Citas
+        String nombreCl= "Clientes.csv";
+        File clientes= new File (ruta, nombreCl); //Archivo clientes
+        String nombreA= "Agenda.csv";
+        File agenda= new File (ruta, nombreA); //Archivo agenda
+
+        if (!citas.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                citas.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+
         if (!agenda.exists()) { //No existe el archivo
             a.mkdir();
             try {
@@ -2114,7 +2590,7 @@ public class Modulo extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
             }
         }
-        
+
         if (!clientes.exists()) { //No existe el archivo
             a.mkdir();
             try {
@@ -2123,90 +2599,87 @@ public class Modulo extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
             }
         }
-        
+
         String servicio = "Sin servicio";
         int precio = 0;
         int cedula = 0;
-        
+
         //Fecha de la cita
         String dia= Integer.toString(fechaConsulAdmin.getCalendar().get(Calendar.DAY_OF_MONTH));
         String mes = Integer.toString(fechaConsulAdmin.getCalendar().get(Calendar.MONTH)+1);
         String año = Integer.toString(fechaConsulAdmin.getCalendar().get(Calendar.YEAR));
         String fechaCita= dia+"/"+mes+"/"+año;
-        
-        
+
         //Fecha de nacimiento de la mascota del cliente
         String diaCl= Integer.toString(fechaNacimientoAdmin.getCalendar().get(Calendar.DAY_OF_MONTH));
         String mesCl = Integer.toString(fechaNacimientoAdmin.getCalendar().get(Calendar.MONTH) + 1);
         String añoCl = Integer.toString(fechaNacimientoAdmin.getCalendar().get(Calendar.YEAR));
-        String fechaN= dia+"/"+mes+"/"+año;   
-        
+        String fechaN= dia+"/"+mes+"/"+año;
+
         //Recibe el número de cédula y lo verifica
         try {
-        cedula = Integer.parseInt(cedulaAdmin.getText());
+            cedula = Integer.parseInt(cedulaAdmin.getText());
         } catch (java.lang.NumberFormatException ex) {
             try{
-            cedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Error al ingresar la cédula, ingrese una cédula correcta.")); 
+                cedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Error al ingresar la cédula, ingrese una cédula correcta."));
             } catch (java.lang.NumberFormatException exx){
 
             }
         }
-        
-        
-        
+
         //Recibe los datos de la mascota
         String nombreM= nomMascotaAdmin.getText();
         String razaP= razaMascotaAdmin.getText();
         String colorM= colorMascotaAdmin.getText();
-        
+
         //Con este boolean se verifica si afecta la agenda del veterinario
         boolean ambos=true;
-        
+
         float tiempo=0f;
         float horas=0f;
-        
+
         //Se verifica cuál Servicio ha sido solicitado junto con su precio
-       if (consultaAdm.isSelected()) {
-           servicio = "Consulta Veterinario";
-           precio = 60000;
-           tiempo= 1f;
-           horas=getHoras(citas, tiempo, fechaCita);
-       } else if (controlAdm.isSelected()) {
-           servicio = "Control";
-           precio = 10000;
-           tiempo= 0.5f;
-           horas=getHoras(citas, tiempo, fechaCita);
-       } else if(desparasitacionAdm.isSelected()) {
-           servicio = "Desparasitación";
-           precio = 40000;
-           tiempo=0.5f;
-           horas=getHoras(citas, tiempo, fechaCita);
-       } else if(vacunacionAdm.isSelected()) {
-           servicio = "Vacunación";
-           precio = 35000;
-           tiempo=0.5f;
-           horas=getHoras(citas, tiempo, fechaCita);
-       } else if (guarderiaAdm.isSelected()) {
-           servicio = "Guardería";
-           precio = 35000;
-           ambos=false;
-           horas=24f;
-       } else if (radiologiaAdm.isSelected()) {
-           servicio = "Radiología";
-           precio = 100000;
-           tiempo=1f;
-           horas=getHoras(citas, tiempo, fechaCita);
-       } else if (bañoAdm.isSelected()) {
-           servicio = "Baño";
-           precio = 25000;
-           ambos=false;
-           horas=24f;
-       } else {
-           JOptionPane.showMessageDialog(null, "Seleccione un servicio");
-       }
-       
-       //Se escriben los datos en el achivo clientes
-       try (FileWriter fw = new FileWriter(clientes.getAbsoluteFile(), true)) {
+        if (consultaAdm.isSelected()) {
+            servicio = "Consulta Veterinario";
+            precio = 60000;
+            tiempo= 1f;
+            horas=getHoras(citas, tiempo, fechaCita);
+        } else if (controlAdm.isSelected()) {
+            servicio = "Control";
+            precio = 10000;
+            tiempo= 0.5f;
+            horas=getHoras(citas, tiempo, fechaCita);
+        } else if(desparasitacionAdm.isSelected()) {
+            servicio = "Desparasitación";
+            precio = 40000;
+            tiempo=0.5f;
+            horas=getHoras(citas, tiempo, fechaCita);
+        } else if(vacunacionAdm.isSelected()) {
+            servicio = "Vacunación";
+            precio = 35000;
+            tiempo=0.5f;
+            horas=getHoras(citas, tiempo, fechaCita);
+        } else if (guarderiaAdm.isSelected()) {
+            servicio = "Guardería";
+            precio = 35000;
+            ambos=false;
+            horas=24f;
+        } else if (radiologiaAdm.isSelected()) {
+            servicio = "Radiología";
+            precio = 100000;
+            tiempo=1f;
+            horas=getHoras(citas, tiempo, fechaCita);
+        } else if (bañoAdm.isSelected()) {
+            servicio = "Baño";
+            precio = 25000;
+            ambos=false;
+            horas=24f;
+        } else {
+            JOptionPane.showMessageDialog(null, "Seleccione un servicio");
+        }
+
+        //Se escriben los datos en el achivo clientes
+        try (FileWriter fw = new FileWriter(clientes.getAbsoluteFile(), true)) {
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(cedula + "," + nombreM + "," + razaP + "," + colorM + "," + fechaN );
             bw.newLine();
@@ -2215,65 +2688,69 @@ public class Modulo extends javax.swing.JFrame {
             fw.close();
 
         } catch (IOException ex) {
-            
-        }
-       
-       if (horas!=-1){
-       //Se escriben los datos recolectados en el Archivo citas (y agenda si amerita)
-       try (FileWriter aw = new FileWriter(citas.getAbsoluteFile(), true)) {
-            BufferedWriter abw = new BufferedWriter(aw);
-            abw.write(cedula + "," + nombreM + "," + servicio + "," + precio + "," + fechaCita + "," + horas);
-            abw.newLine();
-            abw.flush();
-            abw.close();
-            aw.close();
 
-        } catch (IOException ex) {
-            
         }
-       
-       if (ambos==true){
-       try (FileWriter bw = new FileWriter(agenda.getAbsoluteFile(), true)) {
-            BufferedWriter abcw = new BufferedWriter(bw);
-            abcw.write(cedula + "," + nombreM + "," + servicio + "," + precio + "," + fechaCita + "," + horas);
-            abcw.newLine();
-            abcw.flush();
-            abcw.close();
-            bw.close();
-        } catch (IOException ex) {
-            
+
+        if (horas!=-1){
+            //Se escriben los datos recolectados en el Archivo citas (y agenda si amerita)
+            try (FileWriter aw = new FileWriter(citas.getAbsoluteFile(), true)) {
+                BufferedWriter abw = new BufferedWriter(aw);
+                abw.write(cedula + "," + nombreM + "," + servicio + "," + precio + "," + fechaCita + "," + horas);
+                abw.newLine();
+                abw.flush();
+                abw.close();
+                aw.close();
+
+            } catch (IOException ex) {
+
+            }
+
+            if (ambos==true){
+                try (FileWriter bw = new FileWriter(agenda.getAbsoluteFile(), true)) {
+                    BufferedWriter abcw = new BufferedWriter(bw);
+                    abcw.write(cedula + "," + nombreM + "," + servicio + "," + precio + "," + fechaCita + "," + horas);
+                    abcw.newLine();
+                    abcw.flush();
+                    abcw.close();
+                    bw.close();
+                } catch (IOException ex) {
+
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al crear cita");
         }
-       }
-       } else {
-       JOptionPane.showMessageDialog(null, "Error al crear cita");
-       }
-       
-      DefaultTableModel model = (DefaultTableModel) tablaAgenda.getModel();
-        
+
+        DefaultTableModel model = (DefaultTableModel) tablaAgenda.getModel();
+
         //Escribe los datos del archivo agenda en la tabla de Agenda
         model.setRowCount(0);
-            try (Scanner sc = new Scanner(agenda)) {
-                while (sc.hasNextLine()) {
-                    String linea = sc.nextLine();
-                    String data[] = linea.split(",");
-                    int cedulaA = Integer.parseInt(data[0]);
-                    String nombreMA = data[1];
-                    String servicioA = data[2];
-                    int precioA = Integer.parseInt(data[3]);
-                    String fechaA = data[4];
-                    float horasA = Float.parseFloat(data[5]);
-                    model.addRow(new Object[]{cedulaA, nombreMA, servicioA, precioA, fechaA, horasA});
-                }
-            } catch (FileNotFoundException e) {
-                System.out.println("El archivo no se encontró");
+        try (Scanner sc = new Scanner(agenda)) {
+            while (sc.hasNextLine()) {
+                String linea = sc.nextLine();
+                String data[] = linea.split(",");
+                int cedulaA = Integer.parseInt(data[0]);
+                String nombreMA = data[1];
+                String servicioA = data[2];
+                int precioA = Integer.parseInt(data[3]);
+                String fechaA = data[4];
+                float horasA = Float.parseFloat(data[5]);
+                model.addRow(new Object[]{cedulaA, nombreMA, servicioA, precioA, fechaA, horasA});
             }
-       
+        } catch (FileNotFoundException e) {
+            System.out.println("El archivo no se encontró");
+        }
+
         cedulaAdmin.setText("");
         nomMascotaAdmin.setText("");
         razaMascotaAdmin.setText("");
         colorMascotaAdmin.setText("");
-        
+
     }//GEN-LAST:event_asignarDatosAdminActionPerformed
+
+    private void vacunacionAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vacunacionAdmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vacunacionAdmActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2335,11 +2812,13 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JButton botonAgenda;
     private javax.swing.JButton botonHisClinica;
     private javax.swing.JButton botonHisClinicas;
+    private javax.swing.JButton buscarAdmin;
     private javax.swing.JButton buscarBtn;
     private javax.swing.JTextField buscarCedulaCita;
     private javax.swing.JButton buscarCitaBtn;
     private javax.swing.JButton cancelarCitaBtn;
     private javax.swing.JTextField cedCliente;
+    private javax.swing.JTextField cedFacturar;
     private javax.swing.JTextField cedulaAdmin;
     private javax.swing.JTextField cedulaBuscarCliente;
     private javax.swing.JTextPane cedulaCita;
@@ -2355,6 +2834,7 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JRadioButton desparasitacionAdm;
     private javax.swing.JTextField diagnosticoHC;
     private javax.swing.JButton elimBtnCliente;
+    private javax.swing.JButton facturarAdmin;
     private com.toedter.calendar.JDateChooser fechaCita;
     private com.toedter.calendar.JDateChooser fechaConsulAdmin;
     private com.toedter.calendar.JDateChooser fechaHC;
@@ -2371,6 +2851,7 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -2390,15 +2871,21 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JButton modifBtn;
@@ -2417,6 +2904,8 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JTable tablaCitas;
     private javax.swing.JTable tablaClientes;
     private javax.swing.JTable tablaClinica;
+    private javax.swing.JTable tablaFactura;
+    private javax.swing.JTextField totalPagar;
     private javax.swing.JRadioButton vacun;
     private javax.swing.JRadioButton vacunacionAdm;
     private javax.swing.JButton verAgendaBtn;
