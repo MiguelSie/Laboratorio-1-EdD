@@ -123,21 +123,21 @@ public class Modulo extends javax.swing.JFrame {
         controlAdm = new javax.swing.JRadioButton();
         desparasitacionAdm = new javax.swing.JRadioButton();
         vacunacionAdm = new javax.swing.JRadioButton();
-        guarderíaAdm = new javax.swing.JRadioButton();
-        radiologíaAdm = new javax.swing.JRadioButton();
+        guarderiaAdm = new javax.swing.JRadioButton();
+        radiologiaAdm = new javax.swing.JRadioButton();
         bañoAdm = new javax.swing.JRadioButton();
         jLabel16 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        cedulaAdmin = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        nomMascotaAdmin = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        razaMascotaAdmin = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        colorMascotaAdmin = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        fechaNacimientoAdmin = new com.toedter.calendar.JDateChooser();
         jLabel21 = new javax.swing.JLabel();
-        jDateChooser3 = new com.toedter.calendar.JDateChooser();
+        fechaConsulAdmin = new com.toedter.calendar.JDateChooser();
         asignarDatosAdmin = new javax.swing.JButton();
         verAgendaBtn = new javax.swing.JButton();
         GestionAdmin = new javax.swing.JFrame();
@@ -578,9 +578,9 @@ public class Modulo extends javax.swing.JFrame {
                         .add(jLabel9)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(buscarCedulaCita, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 67, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(buscarCitaBtn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 95, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(buscarCitaBtn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 95, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .add(guardarAgendaBtn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 92, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(cancelarCitaBtn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 86, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
@@ -879,18 +879,18 @@ public class Modulo extends javax.swing.JFrame {
         BotonesAdmin.add(vacunacionAdm);
         vacunacionAdm.setText("Vacunación                $35.000 x 1/2hr");
 
-        BotonesAdmin.add(guarderíaAdm);
-        guarderíaAdm.setText("Guardería                  $35.000 x 1 día");
+        BotonesAdmin.add(guarderiaAdm);
+        guarderiaAdm.setText("Guardería                  $35.000 x 1 día");
 
-        BotonesAdmin.add(radiologíaAdm);
-        radiologíaAdm.setText("Radiología                  $100.000 x 1hr");
+        BotonesAdmin.add(radiologiaAdm);
+        radiologiaAdm.setText("Radiología                  $100.000 x 1hr");
 
         BotonesAdmin.add(bañoAdm);
         bañoAdm.setText("Baño                          $25.000 x 2hrs");
 
         jLabel16.setText("Cedula");
 
-        jLabel17.setText("Nombre del Perro");
+        jLabel17.setText("Nombre mascota");
 
         jLabel18.setText("Raza");
 
@@ -925,11 +925,11 @@ public class Modulo extends javax.swing.JFrame {
                         .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                                 .add(jLabel16)
-                                .add(jTextField6)
+                                .add(cedulaAdmin)
                                 .add(jLabel17)
-                                .add(jTextField7)
+                                .add(nomMascotaAdmin)
                                 .add(jLabel18)
-                                .add(jTextField8, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                                .add(razaMascotaAdmin, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
                             .add(jLabel19))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
@@ -937,22 +937,22 @@ public class Modulo extends javax.swing.JFrame {
                             .add(desparasitacionAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, controlAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .add(vacunacionAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(guarderíaAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(radiologíaAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(guarderiaAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(radiologiaAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .add(bañoAdm, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .add(AsignarAdminLayout.createSequentialGroup()
-                        .add(jTextField9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(colorMascotaAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel20)
                             .add(AsignarAdminLayout.createSequentialGroup()
                                 .add(10, 10, 10)
-                                .add(jDateChooser2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                .add(fechaNacimientoAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 9, Short.MAX_VALUE)
                         .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(AsignarAdminLayout.createSequentialGroup()
                                 .add(10, 10, 10)
-                                .add(jDateChooser3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                .add(fechaConsulAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(jLabel21)))
                     .add(AsignarAdminLayout.createSequentialGroup()
                         .add(asignarDatosAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 190, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -972,7 +972,7 @@ public class Modulo extends javax.swing.JFrame {
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(controlAdm)
-                            .add(jTextField6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(cedulaAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(desparasitacionAdm)
@@ -980,29 +980,29 @@ public class Modulo extends javax.swing.JFrame {
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(vacunacionAdm)
-                            .add(jTextField7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(nomMascotaAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(guarderíaAdm)
+                            .add(guarderiaAdm)
                             .add(jLabel18))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(radiologíaAdm)
-                            .add(jTextField8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(radiologiaAdm)
+                            .add(razaMascotaAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                             .add(bañoAdm)
                             .add(jLabel19))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jTextField9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(colorMascotaAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(1, 1, 1)
-                        .add(jDateChooser2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(fechaNacimientoAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(AsignarAdminLayout.createSequentialGroup()
                         .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(jLabel21)
                             .add(jLabel20))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jDateChooser3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(fechaConsulAdmin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .add(17, 17, 17)
                 .add(AsignarAdminLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(asignarDatosAdmin, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
@@ -1121,11 +1121,11 @@ public class Modulo extends javax.swing.JFrame {
             BufferedWriter bw = new BufferedWriter(fw);
             for (int i = 0; i < model.getRowCount(); i++) {
                 int cedula = (int) model.getValueAt(i, 0);
-                String nomPer = (String) model.getValueAt(i, 1);
-                String razaPer = (String) model.getValueAt(i, 2);
-                String colorPer = (String) model.getValueAt(i, 3);
+                String nombreM = (String) model.getValueAt(i, 1);
+                String razaM = (String) model.getValueAt(i, 2);
+                String colorM = (String) model.getValueAt(i, 3);
                 String fecha= (String) model.getValueAt(i,4);
-                bw.write(cedula + "," + nomPer + "," + razaPer + "," + colorPer+ "," + fecha);
+                bw.write(cedula + "," + nombreM + "," + razaM + "," + colorM+ "," + fecha);
                 bw.newLine();
             }
             bw.flush();
@@ -1285,11 +1285,11 @@ public class Modulo extends javax.swing.JFrame {
                     String linea = sc.nextLine();
                     String data[] = linea.split(",");
                     int cedula = Integer.parseInt(data[0]);
-                    String nomPer = data[1];
-                    String razaPer = data[2];
-                    String colorPer = data[3];
+                    String nombreM = data[1];
+                    String razaM = data[2];
+                    String colorM = data[3];
                     String fecha= data[4];
-                    model.addRow(new Object[]{cedula, nomPer, razaPer, colorPer, fecha});
+                    model.addRow(new Object[]{cedula, nombreM, razaM, colorM, fecha});
                 }
             } catch (FileNotFoundException e) {
                 System.out.println("El archivo no se encontró");
@@ -1451,13 +1451,13 @@ public class Modulo extends javax.swing.JFrame {
         }
         
 
-        String nombreP = nomPer.getText();
-        String razaP= razaPer.getText();
-        String colorP= colorPer.getText();
+        String nombreM = nomPer.getText();
+        String razaM= razaPer.getText();
+        String colorM= colorPer.getText();
         
         try (FileWriter fw = new FileWriter(clientes.getAbsoluteFile(), true)) {
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(cedula + "," + nombreP + "," + razaP + "," + colorP + "," + fechaN );
+            bw.write(cedula + "," + nombreM + "," + razaM + "," + colorM + "," + fechaN );
             bw.newLine();
             bw.flush();
             bw.close();
@@ -1479,15 +1479,13 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_cedClienteActionPerformed
 
     private void elimBtnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elimBtnClienteActionPerformed
-        //Tenemos que hacer que, al eliminar una row, no se guarde todo el modelo
-        //de la nueva tabla, sino que solo se guarde (en el archivo) la row que
-        //se eliminó, pues interfiere con el botón de buscar
+
         DefaultTableModel model = (DefaultTableModel) tablaClientes.getModel();
         int selectedRow = tablaClientes.getSelectedRow();
         int cedulaRow = (int) model.getValueAt(selectedRow, 0);
-        String nomPerRow = (String) model.getValueAt(selectedRow, 1);
-        String razaPerRow = (String) model.getValueAt(selectedRow, 2);
-        String colorPerRow = (String) model.getValueAt(selectedRow, 3);
+        String nombreMRow = (String) model.getValueAt(selectedRow, 1);
+        String razaMRow = (String) model.getValueAt(selectedRow, 2);
+        String colorMRow = (String) model.getValueAt(selectedRow, 3);
         String fechaRow= (String) model.getValueAt(selectedRow,4);
         
         String nDir= "C:\\GestiónVeterinaria";
@@ -1512,13 +1510,13 @@ public class Modulo extends javax.swing.JFrame {
                     String linea = sc.nextLine();
                     String data[] = linea.split(",");
                     int cedula = Integer.parseInt(data[0]);
-                    String nomPer = data[1];
-                    String razaPer = data[2];
-                    String colorPer = data[3]; 
+                    String nombreM = data[1];
+                    String razaM = data[2];
+                    String colorM = data[3]; 
                     String fecha= data[4];
-                    if (cedula==cedulaRow && nomPer.equals(nomPerRow) && razaPer.equals(razaPerRow) && colorPer.equals(colorPerRow) && fecha.equals(fechaRow)){
+                    if (cedula==cedulaRow && nombreM.equals(nombreMRow) && razaM.equals(razaMRow) && colorM.equals(colorMRow) && fecha.equals(fechaRow)){
                     } else {
-                    model.addRow(new Object[]{cedula, nomPer, razaPer, colorPer, fecha});                  
+                    model.addRow(new Object[]{cedula, nombreM, razaM, colorM, fecha});                  
                     }
                 }
             } catch (FileNotFoundException e) {
@@ -1553,11 +1551,11 @@ public class Modulo extends javax.swing.JFrame {
                     String linea = sc.nextLine();
                     String data[] = linea.split(",");
                     int cedula = Integer.parseInt(data[0]);
-                    String nomPer = data[1];
-                    String razaPer = data[2];
-                    String colorPer = data[3];
+                    String nombreM = data[1];
+                    String razaM = data[2];
+                    String colorM = data[3];
                     String fecha= data[4];
-                    model.addRow(new Object[]{cedula, nomPer, razaPer, colorPer, fecha});
+                    model.addRow(new Object[]{cedula, nombreM, razaM, colorM, fecha});
                 }
             } catch (FileNotFoundException e) {
                 System.out.println("El archivo no se encontró");
@@ -1633,7 +1631,8 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_verAgendaBtnActionPerformed
 
     private void guardarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarBtnActionPerformed
-        DefaultTableModel model = (DefaultTableModel) tablaClientes.getModel();
+        
+        DefaultTableModel model = (DefaultTableModel) tablaClientes.getModel();               
         guardarClientes(model);
     }//GEN-LAST:event_guardarBtnActionPerformed
 
@@ -1738,7 +1737,7 @@ public class Modulo extends javax.swing.JFrame {
        
        
        if (horas!=-1){
-       //Se escriben los datos recolectados en el Archivo Clientes (y agenda si amerita)
+       //Se escriben los datos recolectados en el Archivo citas (y agenda si amerita)
        try (FileWriter aw = new FileWriter(citas.getAbsoluteFile(), true)) {
             BufferedWriter abw = new BufferedWriter(aw);
             abw.write(cedula + "," + nombreM + "," + servicio + "," + precio + "," + fechaCita + "," + horas);
@@ -1769,7 +1768,7 @@ public class Modulo extends javax.swing.JFrame {
        
       DefaultTableModel model = (DefaultTableModel) tablaAgenda.getModel();
         
-        //Escribe los datos del archivo Citas en la tabla
+        //Escribe los datos del archivo agenda en la tabla de Agenda
         model.setRowCount(0);
             try (Scanner sc = new Scanner(agenda)) {
                 while (sc.hasNextLine()) {
@@ -1950,6 +1949,7 @@ public class Modulo extends javax.swing.JFrame {
             }
         }
         DefaultTableModel model = (DefaultTableModel) tablaCitas.getModel();
+        DefaultTableModel model2 = (DefaultTableModel) tablaAgenda.getModel();
         
         //Escribe los datos del archivo Agenda en la tabla
         model.setRowCount(0);
@@ -2032,6 +2032,7 @@ public class Modulo extends javax.swing.JFrame {
         }
         
             model.setRowCount(0);
+            model2.setRowCount(0);
             try (Scanner sc = new Scanner(citas)) {
                 while (sc.hasNextLine()) {
                     String linea = sc.nextLine();
@@ -2063,7 +2064,7 @@ public class Modulo extends javax.swing.JFrame {
                     float horasA = Float.parseFloat(data[5]);
                     if (cedulaA==cedulaRow && servicioA.equals(servicioRow) && precioA == precioRow && fechaA.equals(fechaRow) && nombreMA.equals(nombreMRow) && horasA==horasRow){
                     } else {
-                    model.addRow(new Object[]{cedulaA, nombreMA, servicioA, precioA, fechaA, horasA});                  
+                    model2.addRow(new Object[]{cedulaA, nombreMA, servicioA, precioA, fechaA, horasA});                  
                     }
                 }
             } catch (FileNotFoundException e) {
@@ -2085,7 +2086,193 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_guardarAgendaBtnActionPerformed
 
     private void asignarDatosAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asignarDatosAdminActionPerformed
-        // TODO add your handling code here:
+        String nDir= "C:\\GestiónVeterinaria";
+        File a = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombreC= "Citas.csv"; 
+        File citas= new File (ruta, nombreC); //Archivo Citas
+        String nombreCl= "Clientes.csv"; 
+        File clientes= new File (ruta, nombreCl); //Archivo clientes
+        String nombreA= "Agenda.csv"; 
+        File agenda= new File (ruta, nombreA); //Archivo agenda
+        
+        if (!citas.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                citas.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        
+        
+        if (!agenda.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                agenda.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        
+        if (!clientes.exists()) { //No existe el archivo
+            a.mkdir();
+            try {
+                clientes.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        
+        String servicio = "Sin servicio";
+        int precio = 0;
+        int cedula = 0;
+        
+        //Fecha de la cita
+        String dia= Integer.toString(fechaConsulAdmin.getCalendar().get(Calendar.DAY_OF_MONTH));
+        String mes = Integer.toString(fechaConsulAdmin.getCalendar().get(Calendar.MONTH)+1);
+        String año = Integer.toString(fechaConsulAdmin.getCalendar().get(Calendar.YEAR));
+        String fechaCita= dia+"/"+mes+"/"+año;
+        
+        
+        //Fecha de nacimiento de la mascota del cliente
+        String diaCl= Integer.toString(fechaNacimientoAdmin.getCalendar().get(Calendar.DAY_OF_MONTH));
+        String mesCl = Integer.toString(fechaNacimientoAdmin.getCalendar().get(Calendar.MONTH) + 1);
+        String añoCl = Integer.toString(fechaNacimientoAdmin.getCalendar().get(Calendar.YEAR));
+        String fechaN= dia+"/"+mes+"/"+año;   
+        
+        //Recibe el número de cédula y lo verifica
+        try {
+        cedula = Integer.parseInt(cedulaAdmin.getText());
+        } catch (java.lang.NumberFormatException ex) {
+            try{
+            cedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Error al ingresar la cédula, ingrese una cédula correcta.")); 
+            } catch (java.lang.NumberFormatException exx){
+
+            }
+        }
+        
+        
+        
+        //Recibe los datos de la mascota
+        String nombreM= nomMascotaAdmin.getText();
+        String razaP= razaMascotaAdmin.getText();
+        String colorM= colorMascotaAdmin.getText();
+        
+        //Con este boolean se verifica si afecta la agenda del veterinario
+        boolean ambos=true;
+        
+        float tiempo=0f;
+        float horas=0f;
+        
+        //Se verifica cuál Servicio ha sido solicitado junto con su precio
+       if (consultaAdm.isSelected()) {
+           servicio = "Consulta Veterinario";
+           precio = 60000;
+           tiempo= 1f;
+           horas=getHoras(citas, tiempo, fechaCita);
+       } else if (controlAdm.isSelected()) {
+           servicio = "Control";
+           precio = 10000;
+           tiempo= 0.5f;
+           horas=getHoras(citas, tiempo, fechaCita);
+       } else if(desparasitacionAdm.isSelected()) {
+           servicio = "Desparasitación";
+           precio = 40000;
+           tiempo=0.5f;
+           horas=getHoras(citas, tiempo, fechaCita);
+       } else if(vacunacionAdm.isSelected()) {
+           servicio = "Vacunación";
+           precio = 35000;
+           tiempo=0.5f;
+           horas=getHoras(citas, tiempo, fechaCita);
+       } else if (guarderiaAdm.isSelected()) {
+           servicio = "Guardería";
+           precio = 35000;
+           ambos=false;
+           horas=24f;
+       } else if (radiologiaAdm.isSelected()) {
+           servicio = "Radiología";
+           precio = 100000;
+           tiempo=1f;
+           horas=getHoras(citas, tiempo, fechaCita);
+       } else if (bañoAdm.isSelected()) {
+           servicio = "Baño";
+           precio = 25000;
+           ambos=false;
+           horas=24f;
+       } else {
+           JOptionPane.showMessageDialog(null, "Seleccione un servicio");
+       }
+       
+       //Se escriben los datos en el achivo clientes
+       try (FileWriter fw = new FileWriter(clientes.getAbsoluteFile(), true)) {
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(cedula + "," + nombreM + "," + razaP + "," + colorM + "," + fechaN );
+            bw.newLine();
+            bw.flush();
+            bw.close();
+            fw.close();
+
+        } catch (IOException ex) {
+            
+        }
+       
+       if (horas!=-1){
+       //Se escriben los datos recolectados en el Archivo citas (y agenda si amerita)
+       try (FileWriter aw = new FileWriter(citas.getAbsoluteFile(), true)) {
+            BufferedWriter abw = new BufferedWriter(aw);
+            abw.write(cedula + "," + nombreM + "," + servicio + "," + precio + "," + fechaCita + "," + horas);
+            abw.newLine();
+            abw.flush();
+            abw.close();
+            aw.close();
+
+        } catch (IOException ex) {
+            
+        }
+       
+       if (ambos==true){
+       try (FileWriter bw = new FileWriter(agenda.getAbsoluteFile(), true)) {
+            BufferedWriter abcw = new BufferedWriter(bw);
+            abcw.write(cedula + "," + nombreM + "," + servicio + "," + precio + "," + fechaCita + "," + horas);
+            abcw.newLine();
+            abcw.flush();
+            abcw.close();
+            bw.close();
+        } catch (IOException ex) {
+            
+        }
+       }
+       } else {
+       JOptionPane.showMessageDialog(null, "Error al crear cita");
+       }
+       
+      DefaultTableModel model = (DefaultTableModel) tablaAgenda.getModel();
+        
+        //Escribe los datos del archivo agenda en la tabla de Agenda
+        model.setRowCount(0);
+            try (Scanner sc = new Scanner(agenda)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedulaA = Integer.parseInt(data[0]);
+                    String nombreMA = data[1];
+                    String servicioA = data[2];
+                    int precioA = Integer.parseInt(data[3]);
+                    String fechaA = data[4];
+                    float horasA = Float.parseFloat(data[5]);
+                    model.addRow(new Object[]{cedulaA, nombreMA, servicioA, precioA, fechaA, horasA});
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
+            }
+       
+        cedulaAdmin.setText("");
+        nomMascotaAdmin.setText("");
+        razaMascotaAdmin.setText("");
+        colorMascotaAdmin.setText("");
+        
     }//GEN-LAST:event_asignarDatosAdminActionPerformed
 
     /**
@@ -2153,10 +2340,12 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JButton buscarCitaBtn;
     private javax.swing.JButton cancelarCitaBtn;
     private javax.swing.JTextField cedCliente;
+    private javax.swing.JTextField cedulaAdmin;
     private javax.swing.JTextField cedulaBuscarCliente;
     private javax.swing.JTextPane cedulaCita;
     private javax.swing.JTextField cedulaHC;
     private javax.swing.ButtonGroup citasOp;
+    private javax.swing.JTextField colorMascotaAdmin;
     private javax.swing.JTextField colorPer;
     private javax.swing.JRadioButton consultaAdm;
     private javax.swing.JRadioButton consultaVet;
@@ -2167,16 +2356,16 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JTextField diagnosticoHC;
     private javax.swing.JButton elimBtnCliente;
     private com.toedter.calendar.JDateChooser fechaCita;
+    private com.toedter.calendar.JDateChooser fechaConsulAdmin;
     private com.toedter.calendar.JDateChooser fechaHC;
     private com.toedter.calendar.JDateChooser fechaNacim;
+    private com.toedter.calendar.JDateChooser fechaNacimientoAdmin;
     private javax.swing.JButton genFact;
     private javax.swing.JButton gestAgenda;
     private javax.swing.JRadioButton guard;
     private javax.swing.JButton guardarAgendaBtn;
     private javax.swing.JButton guardarBtn;
-    private javax.swing.JRadioButton guarderíaAdm;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
-    private com.toedter.calendar.JDateChooser jDateChooser3;
+    private javax.swing.JRadioButton guarderiaAdm;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2212,18 +2401,16 @@ public class Modulo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JButton modifBtn;
     private javax.swing.JButton moduloCitas;
     private javax.swing.JTextPane nomMascota;
+    private javax.swing.JTextField nomMascotaAdmin;
     private javax.swing.JTextField nomPer;
     private javax.swing.JTextField perroHC;
     private javax.swing.JTextField prescripcionHC;
     private javax.swing.JRadioButton radio;
-    private javax.swing.JRadioButton radiologíaAdm;
+    private javax.swing.JRadioButton radiologiaAdm;
+    private javax.swing.JTextField razaMascotaAdmin;
     private javax.swing.JTextField razaPer;
     private javax.swing.JButton solicitarBtn;
     private javax.swing.JTable tablaAgenda;

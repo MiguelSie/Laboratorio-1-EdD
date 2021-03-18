@@ -575,9 +575,9 @@
                               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="buscarCedulaCita" min="-2" pref="67" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="buscarCitaBtn" min="-2" pref="95" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
+                              <Component id="buscarCitaBtn" min="-2" pref="95" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="guardarAgendaBtn" min="-2" pref="92" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="cancelarCitaBtn" min="-2" pref="86" max="-2" attributes="0"/>
@@ -1154,11 +1154,11 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField6" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="cedulaAdmin" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField7" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="nomMascotaAdmin" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField8" alignment="0" pref="150" max="32767" attributes="0"/>
+                                  <Component id="razaMascotaAdmin" alignment="0" pref="150" max="32767" attributes="0"/>
                               </Group>
                               <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -1168,26 +1168,26 @@
                               <Component id="desparasitacionAdm" max="32767" attributes="0"/>
                               <Component id="controlAdm" alignment="1" max="32767" attributes="0"/>
                               <Component id="vacunacionAdm" max="32767" attributes="0"/>
-                              <Component id="guarderíaAdm" max="32767" attributes="0"/>
-                              <Component id="radiologíaAdm" max="32767" attributes="0"/>
+                              <Component id="guarderiaAdm" max="32767" attributes="0"/>
+                              <Component id="radiologiaAdm" max="32767" attributes="0"/>
                               <Component id="bañoAdm" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="jTextField9" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="colorMascotaAdmin" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                  <Component id="jDateChooser2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="fechaNacimientoAdmin" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="9" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                  <Component id="jDateChooser3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="fechaConsulAdmin" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -1215,7 +1215,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="controlAdm" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cedulaAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -1225,17 +1225,17 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="vacunacionAdm" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="nomMascotaAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="guarderíaAdm" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="guarderiaAdm" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="radiologíaAdm" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radiologiaAdm" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="razaMascotaAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
@@ -1243,9 +1243,9 @@
                               <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTextField9" min="-2" max="-2" attributes="0"/>
+                          <Component id="colorMascotaAdmin" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                          <Component id="jDateChooser2" min="-2" max="-2" attributes="0"/>
+                          <Component id="fechaNacimientoAdmin" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -1253,7 +1253,7 @@
                               <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jDateChooser3" min="-2" max="-2" attributes="0"/>
+                          <Component id="fechaConsulAdmin" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
@@ -1299,7 +1299,7 @@
             <Property name="text" type="java.lang.String" value="Vacunaci&#xf3;n                $35.000 x 1/2hr"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="guarder&#xed;aAdm">
+        <Component class="javax.swing.JRadioButton" name="guarderiaAdm">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="BotonesAdmin"/>
@@ -1307,7 +1307,7 @@
             <Property name="text" type="java.lang.String" value="Guarder&#xed;a                  $35.000 x 1 d&#xed;a"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="radiolog&#xed;aAdm">
+        <Component class="javax.swing.JRadioButton" name="radiologiaAdm">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="BotonesAdmin"/>
@@ -1328,42 +1328,42 @@
             <Property name="text" type="java.lang.String" value="Cedula"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField6">
+        <Component class="javax.swing.JTextField" name="cedulaAdmin">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel17">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nombre del Perro"/>
+            <Property name="text" type="java.lang.String" value="Nombre mascota"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField7">
+        <Component class="javax.swing.JTextField" name="nomMascotaAdmin">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel18">
           <Properties>
             <Property name="text" type="java.lang.String" value="Raza"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField8">
+        <Component class="javax.swing.JTextField" name="razaMascotaAdmin">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel19">
           <Properties>
             <Property name="text" type="java.lang.String" value="Color"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField9">
+        <Component class="javax.swing.JTextField" name="colorMascotaAdmin">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel20">
           <Properties>
             <Property name="text" type="java.lang.String" value="Fecha de Nacimiento"/>
           </Properties>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser2">
+        <Component class="com.toedter.calendar.JDateChooser" name="fechaNacimientoAdmin">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel21">
           <Properties>
             <Property name="text" type="java.lang.String" value="Fecha de la Consulta"/>
           </Properties>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser3">
+        <Component class="com.toedter.calendar.JDateChooser" name="fechaConsulAdmin">
         </Component>
         <Component class="javax.swing.JButton" name="asignarDatosAdmin">
           <Properties>
