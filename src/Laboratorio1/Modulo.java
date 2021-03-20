@@ -192,6 +192,7 @@ public class Modulo extends javax.swing.JFrame {
         jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         fechaNacim.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        fechaNacim.setToolTipText("");
 
         colorPer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -382,12 +383,13 @@ public class Modulo extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel3Layout.createSequentialGroup()
                 .add(18, 18, 18)
-                .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(buscarBtn)
-                    .add(elimBtnCliente)
-                    .add(guardarBtn)
-                    .add(cedulaBuscarCliente))
+                .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(cedulaBuscarCliente)
+                    .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(jLabel8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(buscarBtn)
+                        .add(elimBtnCliente)
+                        .add(guardarBtn)))
                 .add(18, 18, 18)
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(28, 28, 28))
@@ -690,12 +692,13 @@ public class Modulo extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel4Layout.createSequentialGroup()
                 .add(19, 19, 19)
-                .add(jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(buscarCitaBtn)
-                    .add(guardarAgendaBtn)
-                    .add(cancelarCitaBtn)
-                    .add(buscarCedulaCita, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(buscarCedulaCita, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(jLabel9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(buscarCitaBtn)
+                        .add(guardarAgendaBtn)
+                        .add(cancelarCitaBtn)))
                 .add(15, 15, 15)
                 .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1273,17 +1276,14 @@ public class Modulo extends javax.swing.JFrame {
 
         tablaFactura.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Cédula", "Mascota", "Servicio", "Precio", "Fecha"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false
@@ -1301,7 +1301,9 @@ public class Modulo extends javax.swing.JFrame {
         if (tablaFactura.getColumnModel().getColumnCount() > 0) {
             tablaFactura.getColumnModel().getColumn(0).setResizable(false);
             tablaFactura.getColumnModel().getColumn(1).setResizable(false);
+            tablaFactura.getColumnModel().getColumn(2).setResizable(false);
             tablaFactura.getColumnModel().getColumn(3).setResizable(false);
+            tablaFactura.getColumnModel().getColumn(4).setResizable(false);
         }
 
         facturarAdmin.setText("Facturar");
@@ -1605,6 +1607,57 @@ public class Modulo extends javax.swing.JFrame {
         
         
     }
+    
+    private int verificarDatos (int ced, String nombreMascota){
+        boolean cedulaIgual=false, nombreMascot=false;
+    
+        String nDir= "C:\\GestiónVeterinaria";
+        File f = new File(nDir); //Carpeta en el disco C
+        String ruta = "C:\\GestiónVeterinaria";
+        String nombre= "Clientes.csv"; 
+        File clientes= new File (ruta, nombre); //Archivo clientes
+        
+        
+        if (!clientes.exists()) { //No existe el archivo
+            f.mkdir();
+            try {
+                clientes.createNewFile();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Error en la creación del archivo");
+            }
+        }
+        
+            try (Scanner sc = new Scanner(clientes)) {
+                while (sc.hasNextLine()) {
+                    String linea = sc.nextLine();
+                    String data[] = linea.split(",");
+                    int cedula = Integer.parseInt(data[0]);
+                    String nombreM = data[1];
+                    String razaM = data[2];
+                    String colorM = data[3];
+                    String fecha= data[4];
+                    if (ced==cedula){
+                        cedulaIgual=true;
+                    }
+                    if (nombreMascota.equals(nombreM)){
+                        nombreMascot=true;
+                    }
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("El archivo no se encontró");
+            }
+            
+            if (cedulaIgual==false){
+                return 2;
+            } else if (cedulaIgual==true && nombreMascot==false){
+                return 3;
+            } else if (cedulaIgual==true && nombreMascot==true) {
+                return 1;
+            }
+       return 0;
+    }
+    
+    
     private void actualizarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarDatosActionPerformed
         //Abre el frame para actualizar datos del cliente
         String nDir= "C:\\GestiónVeterinaria";
@@ -1747,9 +1800,6 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_botonAgendaActionPerformed
     
     private void genFactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genFactActionPerformed
-        //Hacer que aquí se cargue otro frame invisible, donde se guarda el
-        //archivo Agenda, así se pueden modificar las citas en ambos
-        //archivos al mismo tiempo en la tabla de modificar citas.
         
         //Muestra el Frame con el archivo agenda
         String nDir= "C:\\GestiónVeterinaria";
@@ -1795,6 +1845,9 @@ public class Modulo extends javax.swing.JFrame {
 
     private void añadirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirBtnActionPerformed
         //Añade datos a la tabla de datos del cliente
+        boolean todoCorrecto = true;
+        String dia="", mes="", año="";
+        
         
         String nDir= "C:\\GestiónVeterinaria";
         File f = new File(nDir); //Carpeta en el disco C
@@ -1813,11 +1866,14 @@ public class Modulo extends javax.swing.JFrame {
         }
         
         int cedula = 0;
-        
-        String dia= Integer.toString(fechaNacim.getCalendar().get(Calendar.DAY_OF_MONTH));
-        String mes = Integer.toString(fechaNacim.getCalendar().get(Calendar.MONTH) + 1);
-        String año = Integer.toString(fechaNacim.getCalendar().get(Calendar.YEAR));
-        String fechaN= dia+"/"+mes+"/"+año;      
+        try {
+         dia= Integer.toString(fechaNacim.getCalendar().get(Calendar.DAY_OF_MONTH));
+         mes = Integer.toString(fechaNacim.getCalendar().get(Calendar.MONTH) + 1);
+         año = Integer.toString(fechaNacim.getCalendar().get(Calendar.YEAR));
+        } catch (java.lang.NullPointerException ex) {
+            JOptionPane.showMessageDialog(null, "Ingrese una fecha correcta");
+        }
+        String fechaN= dia+"/"+mes+"/"+año;  
         
         
         try {
@@ -1830,7 +1886,7 @@ public class Modulo extends javax.swing.JFrame {
             }
         }
         
-
+        if (todoCorrecto=true){
         String nombreM = nomPer.getText();
         String razaM= razaPer.getText();
         String colorM= colorPer.getText();
@@ -1852,6 +1908,7 @@ public class Modulo extends javax.swing.JFrame {
         cedCliente.setText("");
         razaPer.setText("");
         colorPer.setText("");
+        }
     }//GEN-LAST:event_añadirBtnActionPerformed
 
     private void cedClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedClienteActionPerformed
@@ -1974,6 +2031,24 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_guardarBtnActionPerformed
 
     private void solicitarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solicitarBtnActionPerformed
+        String dia="", mes="", año="";
+        int cedula = 0;
+        //Recibe el número de cédula y lo verifica
+        try {
+        cedula = Integer.parseInt(cedulaCita.getText());
+        } catch (java.lang.NumberFormatException ex) {
+            try{
+                cedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Error al ingresar la cédula, ingrese una cédula correcta.")); 
+            } catch (java.lang.NumberFormatException exx){
+
+            }
+        }
+        //Recibe el nombre de la mascota
+        String nombreM= nomMascota.getText();
+        
+        int op = verificarDatos (cedula, nombreM);
+        
+        if (op==1){
         //Añade datos al archivo Citas
         String nDir= "C:\\GestiónVeterinaria";
         File a = new File(nDir); //Carpeta en el disco C
@@ -2006,25 +2081,16 @@ public class Modulo extends javax.swing.JFrame {
         
         String servicio = "Sin servicio";
         int precio = 0;
-        int cedula = 0;
         
-        String dia= Integer.toString(fechaCita.getCalendar().get(Calendar.DAY_OF_MONTH));
-        String mes = Integer.toString(fechaCita.getCalendar().get(Calendar.MONTH)+1);
-        String año = Integer.toString(fechaCita.getCalendar().get(Calendar.YEAR));
+        try {
+         dia= Integer.toString(fechaCita.getCalendar().get(Calendar.DAY_OF_MONTH));
+         mes = Integer.toString(fechaCita.getCalendar().get(Calendar.MONTH)+1);
+         año = Integer.toString(fechaCita.getCalendar().get(Calendar.YEAR));
+        } catch (java.lang.NullPointerException ex) {
+            JOptionPane.showMessageDialog(null, "Ingrese una fecha correcta");
+        }
         String fechaCita= dia+"/"+mes+"/"+año;
         
-        //Recibe el número de cédula y lo verifica
-        try {
-        cedula = Integer.parseInt(cedulaCita.getText());
-        } catch (java.lang.NumberFormatException ex) {
-            try{
-            cedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Error al ingresar la cédula, ingrese una cédula correcta.")); 
-            } catch (java.lang.NumberFormatException exx){
-
-            }
-        }
-        //Recibe el nombre de la mascota
-        String nombreM= nomMascota.getText();
         
         //Con este boolean se verifica si afecta la agenda del veterinario
         boolean ambos=true;
@@ -2125,7 +2191,13 @@ public class Modulo extends javax.swing.JFrame {
        
         cedulaCita.setText("");
         nomMascota.setText("");
-        
+        } else if (op==2){
+            JOptionPane.showMessageDialog(null, "Ingrese una cédula registrada");
+            cedulaCita.setText("");
+        } else if (op==3){
+            JOptionPane.showMessageDialog(null, "Ingrese una mascota registrada a esa cédula");
+            nomMascota.setText("");
+        }
         
         
     }//GEN-LAST:event_solicitarBtnActionPerformed
@@ -2135,6 +2207,23 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_consultaVetActionPerformed
 
     private void añadirInfoClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirInfoClinicaActionPerformed
+        String dia="", mes="", año="";
+        int cedula = 0;
+        try {
+        cedula = Integer.parseInt(cedulaHC.getText());
+        } catch (java.lang.NumberFormatException ex) {
+            try{
+            cedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Error al ingresar la cédula, ingrese una cédula correcta.")); 
+            } catch (java.lang.NumberFormatException exx){
+
+            }
+        }
+        String nomP = perroHC.getText();
+        
+        int op= verificarDatos (cedula, nomP);
+        
+        
+        if (op==1){
         String nDir= "C:\\GestiónVeterinaria";
         File hc = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
@@ -2151,26 +2240,18 @@ public class Modulo extends javax.swing.JFrame {
             }
         }
         
-        int cedula = 0;
-        
-        String dia= Integer.toString(fechaHC.getCalendar().get(Calendar.DAY_OF_MONTH));
-        String mes = Integer.toString(fechaHC.getCalendar().get(Calendar.MONTH) + 1);
-        String año = Integer.toString(fechaHC.getCalendar().get(Calendar.YEAR));
+        try {
+         dia= Integer.toString(fechaHC.getCalendar().get(Calendar.DAY_OF_MONTH));
+         mes = Integer.toString(fechaHC.getCalendar().get(Calendar.MONTH) + 1);
+         año = Integer.toString(fechaHC.getCalendar().get(Calendar.YEAR));
+         } catch (java.lang.NullPointerException ex) {
+            JOptionPane.showMessageDialog(null, "Ingrese una fecha correcta");
+        }
         String fechaHC= dia+"/"+mes+"/"+año;      
         
         
-        try {
-        cedula = Integer.parseInt(cedulaHC.getText());
-        } catch (java.lang.NumberFormatException ex) {
-            try{
-            cedula = Integer.parseInt(JOptionPane.showInputDialog(null, "Error al ingresar la cédula, ingrese una cédula correcta.")); 
-            } catch (java.lang.NumberFormatException exx){
-
-            }
-        }
         
 
-        String nomP = perroHC.getText();
         String diagnostico= diagnosticoHC.getText();
         String descripcion= prescripcionHC.getText();
         
@@ -2191,6 +2272,13 @@ public class Modulo extends javax.swing.JFrame {
         perroHC.setText("");
         diagnosticoHC.setText("");
         prescripcionHC.setText("");
+        } else if (op==2){
+            JOptionPane.showMessageDialog(null, "Ingrese una cédula registrada");
+            cedulaHC.setText("");
+        } else if (op==3){
+            JOptionPane.showMessageDialog(null, "Ingrese una mascota asociada a la cédula");
+            perroHC.setText("");
+        }
     }//GEN-LAST:event_añadirInfoClinicaActionPerformed
 
     private void consultaVetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultaVetMouseClicked
@@ -2563,6 +2651,7 @@ public class Modulo extends javax.swing.JFrame {
     }//GEN-LAST:event_verAgendaBtnActionPerformed
 
     private void asignarDatosAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asignarDatosAdminActionPerformed
+        String dia="", mes="", año="", diaCl="", mesCl="", añoCl="";
         String nDir= "C:\\GestiónVeterinaria";
         File a = new File(nDir); //Carpeta en el disco C
         String ruta = "C:\\GestiónVeterinaria";
@@ -2605,15 +2694,23 @@ public class Modulo extends javax.swing.JFrame {
         int cedula = 0;
 
         //Fecha de la cita
-        String dia= Integer.toString(fechaConsulAdmin.getCalendar().get(Calendar.DAY_OF_MONTH));
-        String mes = Integer.toString(fechaConsulAdmin.getCalendar().get(Calendar.MONTH)+1);
-        String año = Integer.toString(fechaConsulAdmin.getCalendar().get(Calendar.YEAR));
+        try {
+         dia= Integer.toString(fechaConsulAdmin.getCalendar().get(Calendar.DAY_OF_MONTH));
+         mes = Integer.toString(fechaConsulAdmin.getCalendar().get(Calendar.MONTH)+1);
+         año = Integer.toString(fechaConsulAdmin.getCalendar().get(Calendar.YEAR));
+        } catch (java.lang.NullPointerException ex) {
+            JOptionPane.showMessageDialog(null, "Ingrese una fecha correcta");
+        }
         String fechaCita= dia+"/"+mes+"/"+año;
 
+        try {
         //Fecha de nacimiento de la mascota del cliente
-        String diaCl= Integer.toString(fechaNacimientoAdmin.getCalendar().get(Calendar.DAY_OF_MONTH));
-        String mesCl = Integer.toString(fechaNacimientoAdmin.getCalendar().get(Calendar.MONTH) + 1);
-        String añoCl = Integer.toString(fechaNacimientoAdmin.getCalendar().get(Calendar.YEAR));
+         diaCl= Integer.toString(fechaNacimientoAdmin.getCalendar().get(Calendar.DAY_OF_MONTH));
+         mesCl = Integer.toString(fechaNacimientoAdmin.getCalendar().get(Calendar.MONTH) + 1);
+         añoCl = Integer.toString(fechaNacimientoAdmin.getCalendar().get(Calendar.YEAR));
+        } catch (java.lang.NullPointerException ex) {
+            JOptionPane.showMessageDialog(null, "Ingrese una fecha correcta");
+        }
         String fechaN= dia+"/"+mes+"/"+año;
 
         //Recibe el número de cédula y lo verifica
