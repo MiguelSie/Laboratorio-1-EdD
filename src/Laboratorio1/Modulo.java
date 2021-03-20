@@ -2033,6 +2033,7 @@ public class Modulo extends javax.swing.JFrame {
     private void solicitarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solicitarBtnActionPerformed
         String dia="", mes="", año="";
         int cedula = 0;
+        boolean servicioC = true, cedulaC = true, fechaC = true;
         //Recibe el número de cédula y lo verifica
         try {
         cedula = Integer.parseInt(cedulaCita.getText());
@@ -2088,6 +2089,7 @@ public class Modulo extends javax.swing.JFrame {
          año = Integer.toString(fechaCita.getCalendar().get(Calendar.YEAR));
         } catch (java.lang.NullPointerException ex) {
             JOptionPane.showMessageDialog(null, "Ingrese una fecha correcta");
+            fechaC = false;
         }
         String fechaCita= dia+"/"+mes+"/"+año;
         
@@ -2136,8 +2138,10 @@ public class Modulo extends javax.swing.JFrame {
            horas=24f;
        } else {
            JOptionPane.showMessageDialog(null, "Seleccione un servicio");
+           servicioC = false;
        }
        
+       if (cedulaC == true && servicioC == true && fechaC == true) {
        
        if (horas!=-1){
        //Se escriben los datos recolectados en el Archivo citas (y agenda si amerita)
@@ -2188,6 +2192,7 @@ public class Modulo extends javax.swing.JFrame {
             } catch (FileNotFoundException e) {
                 System.out.println("El archivo no se encontró");
             }
+       }
        
         cedulaCita.setText("");
         nomMascota.setText("");
